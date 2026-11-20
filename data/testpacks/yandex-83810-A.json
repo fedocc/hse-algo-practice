@@ -1,0 +1,619 @@
+{
+  "schema_version": 1,
+  "problem_id": "yandex-83810-A",
+  "language": "python3",
+  "comparison": "validator",
+  "timeout_seconds": 2,
+  "total_timeout_seconds": 30,
+  "provenance": {
+    "kind": "generated",
+    "title": "100 локальных проверок, включая примеры условия",
+    "source_url": "https://official.contest.yandex.ru/contest/83810/problems/A/",
+    "generator": "testpacks/generate_firstyear.py; seed fedor-local-tests-v1:83810-A",
+    "oracle": "Независимый прямой перебор, обход графа или модель на обычных списках",
+    "notes": "Неофициальный тренировочный набор. Проверяет ответы и граничные случаи; не воспроизводит все скрытые тесты и ограничения исходной платформы."
+  },
+  "cases": [
+    {
+      "id": "source-example-1",
+      "input": "ab",
+      "output": "bab",
+      "origin": "statement-example"
+    },
+    {
+      "id": "source-example-2",
+      "input": "a",
+      "output": "a",
+      "origin": "statement-example"
+    },
+    {
+      "id": "source-example-3",
+      "input": "abaa",
+      "output": "aabaa",
+      "origin": "statement-example"
+    },
+    {
+      "id": "boundary-1",
+      "input": "a\n",
+      "output": "a\n",
+      "origin": "generated-boundary"
+    },
+    {
+      "id": "boundary-2",
+      "input": "ab\n",
+      "output": "aba\n",
+      "origin": "generated-boundary"
+    },
+    {
+      "id": "boundary-3",
+      "input": "aba\n",
+      "output": "aba\n",
+      "origin": "generated-boundary"
+    },
+    {
+      "id": "boundary-4",
+      "input": "aaaa\n",
+      "output": "aaaa\n",
+      "origin": "generated-boundary"
+    },
+    {
+      "id": "boundary-5",
+      "input": "abac\n",
+      "output": "cabac\n",
+      "origin": "generated-boundary"
+    },
+    {
+      "id": "generated-9",
+      "input": "abccbabcbcbba\n",
+      "output": "abbcbcbabccbabcbcbba\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-10",
+      "input": "aaabaaaaba\n",
+      "output": "aaabaaaabaaa\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-11",
+      "input": "ababbcbabcbba\n",
+      "output": "ababbcbabcbbaba\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-12",
+      "input": "aacbbaacbbacaabba\n",
+      "output": "aacbbaacbbacaabbaacabbcaabbcaa\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-13",
+      "input": "acbaacbcacaacb\n",
+      "output": "acbaacbcacaacbcaacacbcaabca\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-14",
+      "input": "aaabbccbcb\n",
+      "output": "aaabbccbcbccbbaaa\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-15",
+      "input": "babcaabbbabaccbaabaaacaacbaaabcbcabb\n",
+      "output": "bbacbcbaaabcaacaaabaabccababbbaacbabcaabbbabaccbaabaaacaacbaaabcbcabb\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-16",
+      "input": "ccccbabbccabbbbcaccbbbacbcaaaa\n",
+      "output": "aaaacbcabbbccacbbbbaccbbabccccbabbccabbbbcaccbbbacbcaaaa\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-17",
+      "input": "cbabcbabaccacaacabbcbcacbcbaacbcbcbca\n",
+      "output": "cbabcbabaccacaacabbcbcacbcbaacbcbcbcaabcbcacbcbbacaacaccababcbabc\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-18",
+      "input": "bcbbacacbaacabaabbaacb\n",
+      "output": "bcaabbaabacaabcacabbcbbacacbaacabaabbaacb\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-19",
+      "input": "ccaacca\n",
+      "output": "accaacca\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-20",
+      "input": "cbacccabccbbabbbcbcbcbbcbbaacabbca\n",
+      "output": "acbbacaabbcbbcbcbcbbbabbccbacccabccbbabbbcbcbcbbcbbaacabbca\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-21",
+      "input": "caaccacbbacbabcccabccb\n",
+      "output": "bccbacccbabcabbcaccaaccacbbacbabcccabccb\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-22",
+      "input": "bcabcaacbabaabccacaba\n",
+      "output": "bcabcaacbabaabccacabacaccbaababcaacbacb\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-23",
+      "input": "ccabccabaabaaacccaccaabacbabcbb\n",
+      "output": "bbcbabcabaaccacccaaabaabaccbaccabccabaabaaacccaccaabacbabcbb\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-24",
+      "input": "bacbbbacbbabaababbccbbbbbacbbbaaacab\n",
+      "output": "bacaaabbbcabbbbbccbbabaababbcabbbcabacbbbacbbabaababbccbbbbbacbbbaaacab\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-25",
+      "input": "cbccbbaabcbaccccccbcbcbbccbcbcbabbbccaa\n",
+      "output": "aaccbbbabcbcbccbbcbcbccccccabcbaabbccbccbbaabcbaccccccbcbcbbccbcbcbabbbccaa\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-26",
+      "input": "accbcbbbcbaabaacbaacaccbcabbbaa\n",
+      "output": "accbcbbbcbaabaacbaacaccbcabbbaabbbacbccacaabcaabaabcbbbcbcca\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-27",
+      "input": "bbcaabcacaaacabcbbac\n",
+      "output": "cabbcbacaaacacbaacbbcaabcacaaacabcbbac\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-28",
+      "input": "cabaaaaabcaacbb\n",
+      "output": "cabaaaaabcaacbbcaacbaaaaabac\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-29",
+      "input": "cabc\n",
+      "output": "cabcbac\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-30",
+      "input": "acbcbbacacabcbbb\n",
+      "output": "acbcbbacacabcbbbcbacacabbcbca\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-31",
+      "input": "baaaaccbbaacbccccbabacaacbccbba\n",
+      "output": "abbccbcaacababccccbcaabbccaaaabaaaaccbbaacbccccbabacaacbccbba\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-32",
+      "input": "abcccbaacabcaacc\n",
+      "output": "ccaacbacaabcccbaacabcaacc\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-33",
+      "input": "bacabbcbcaaccbbaccccabbaacacccbbabab\n",
+      "output": "bababbcccacaabbaccccabbccaacbcbbacabbcbcaaccbbaccccabbaacacccbbabab\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-34",
+      "input": "acbbacbbcacacbcaaabaacccbbbbaabbc\n",
+      "output": "acbbacbbcacacbcaaabaacccbbbbaabbcbbaabbbbcccaabaaacbcacacbbcabbca\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-35",
+      "input": "aaccaccacacacca\n",
+      "output": "aaccaccacacaccaccaa\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-36",
+      "input": "cacbbc\n",
+      "output": "cacbbcac\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-37",
+      "input": "cacaccbbacbbbaccabcbabbbac\n",
+      "output": "cabbbabcbaccabbbcabbccacaccbbacbbbaccabcbabbbac\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-38",
+      "input": "caacc\n",
+      "output": "ccaacc\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-39",
+      "input": "babbcabbcaacbbacbabbca\n",
+      "output": "acbbabcabbcaacbbacbbabbcabbcaacbbacbabbca\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-40",
+      "input": "bacccaccbaccbabacabca\n",
+      "output": "acbacababccabccacccabacccaccbaccbabacabca\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-41",
+      "input": "abbcacbbcbbcbbabcaababbabb\n",
+      "output": "abbcacbbcbbcbbabcaababbabbabaacbabbcbbcbbcacbba\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-42",
+      "input": "accbca\n",
+      "output": "acbccaccbca\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-43",
+      "input": "accbaaaabababcacbacbabbcbbaabbaaab\n",
+      "output": "accbaaaabababcacbacbabbcbbaabbaaabbaabbcbbabcabcacbababaaaabcca\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-44",
+      "input": "cccacbbbccacbbbacabccbacaaacbaabb\n",
+      "output": "bbaabcaaacabccbacabbbcaccbbbcacccacbbbccacbbbacabccbacaaacbaabb\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-45",
+      "input": "cbbabacbbbbbbbcbbccccac\n",
+      "output": "cbbabacbbbbbbbcbbccccaccccbbcbbbbbbbcababbc\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-46",
+      "input": "cbbcbcacccabac\n",
+      "output": "cbbcbcacccabacccacbcbbc\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-47",
+      "input": "cacbb\n",
+      "output": "bbcacbb\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-48",
+      "input": "bbbabcbbabaaaabcbac\n",
+      "output": "cabcbaaaababbcbabbbabcbbabaaaabcbac\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-49",
+      "input": "bccbbccccbabbacaaaa\n",
+      "output": "aaaacabbabccccbbccbbccccbabbacaaaa\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-50",
+      "input": "cccaacbb\n",
+      "output": "bbcaacccaacbb\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-51",
+      "input": "abcaccabaaacaaa\n",
+      "output": "abcaccabaaacaaabaccacba\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-52",
+      "input": "ccbcaabbcacacbaccbaabaccbabacbbacb\n",
+      "output": "bcabbcababccabaabccabcacacbbaacbccbcaabbcacacbaccbaabaccbabacbbacb\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-53",
+      "input": "bacbbcabccbcbcccaaacbcbababcabbaaa\n",
+      "output": "aaabbacbababcbcaaacccbcbccbacbbcabccbcbcccaaacbcbababcabbaaa\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-54",
+      "input": "cabcccbbacbccbaaaaba\n",
+      "output": "cabcccbbacbccbaaaabaaaabccbcabbcccbac\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-55",
+      "input": "baccbaaccabcbacbccabcc\n",
+      "output": "baccbaaccabcbacbccabccbaccbcabcbaccaabccab\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-56",
+      "input": "b\n",
+      "output": "b\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-57",
+      "input": "cbbbabcacacbabb\n",
+      "output": "cbbbabcacacbabbbc\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-58",
+      "input": "cbccaa\n",
+      "output": "aaccbccaa\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-59",
+      "input": "abcaacabcacbbc\n",
+      "output": "abcaacabcacbbcacbacaacba\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-60",
+      "input": "acacbbb\n",
+      "output": "acacbbbcaca\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-61",
+      "input": "abcbbbacbabbbcaaaaccbccbbbb\n",
+      "output": "abcbbbacbabbbcaaaaccbccbbbbccbccaaaacbbbabcabbbcba\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-62",
+      "input": "acaaacabccaabacabbbbcaaaaaaaaccacbcc\n",
+      "output": "ccbcaccaaaaaaaacbbbbacabaaccbacaaacabccaabacabbbbcaaaaaaaaccacbcc\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-63",
+      "input": "abcacbaccbcbcbccbacabbbc\n",
+      "output": "cbbbacabccbcbcbccabcacbaccbcbcbccbacabbbc\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-64",
+      "input": "cabbcaaaaacbbcbcabc\n",
+      "output": "cabbcaaaaacbbcbcabcbacbcbbcaaaaacbbac\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-65",
+      "input": "accacccbbacccbaacbbcba\n",
+      "output": "abcbbcaabcccabbcccaccacccbbacccbaacbbcba\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-66",
+      "input": "aabaabcbcccabaaaca\n",
+      "output": "acaaabacccbcbaabaabcbcccabaaaca\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-67",
+      "input": "acababcccacccccababccacacbcccbcabac\n",
+      "output": "acababcccacccccababccacacbcccbcabacbcccbcacaccbabacccccacccbabaca\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-68",
+      "input": "aacbacccbcbacbbbaaacc\n",
+      "output": "aacbacccbcbacbbbaaaccaaabbbcabcbcccabcaa\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-69",
+      "input": "abcacbccabbacabcaababcbcbcababbccabbccca\n",
+      "output": "abcacbccabbacabcaababcbcbcababbccabbcccacccbbaccbbabacbcbcbabaacbacabbaccbcacba\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-70",
+      "input": "acbaabbcccbccabbccbaaccacbbbbbabac\n",
+      "output": "acbaabbcccbccabbccbaaccacbbbbbabacababbbbbcaccaabccbbaccbcccbbaabca\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-71",
+      "input": "cbaabcabbbbcacccccaacacccaaa\n",
+      "output": "aaacccacaacccccacbbbbacbaabcabbbbcacccccaacacccaaa\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-72",
+      "input": "cbbaabacbbb\n",
+      "output": "cbbaabacbbbcabaabbc\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-73",
+      "input": "cbcc\n",
+      "output": "ccbcc\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-74",
+      "input": "cabbaaacbaaacabbcbc\n",
+      "output": "cabbaaacbaaacabbcbcbbacaaabcaaabbac\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-75",
+      "input": "accaacbaacaccacabbbccc\n",
+      "output": "cccbbbacaccacaabcaaccaacbaacaccacabbbccc\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-76",
+      "input": "bcaabcbcab\n",
+      "output": "bacbcbaacbcaabcbcab\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-77",
+      "input": "bbca\n",
+      "output": "acbbca\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-78",
+      "input": "babaaccbbaaab\n",
+      "output": "babaaccbbaaabbccaabab\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-79",
+      "input": "acacababacbbbaaabcabaca\n",
+      "output": "acabacbaaabbbcababacacababacbbbaaabcabaca\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-80",
+      "input": "aaccbccccac\n",
+      "output": "aaccbccccaccccbccaa\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-81",
+      "input": "baabbcbac\n",
+      "output": "cabcbbaabbcbac\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-82",
+      "input": "acbbcabbcccaaba\n",
+      "output": "abaacccbbacbbcabbcccaaba\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-83",
+      "input": "ccaccbcababacccccbaaabaabccca\n",
+      "output": "acccbaabaaabcccccababacbccaccbcababacccccbaaabaabccca\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-84",
+      "input": "cbababcacaccbbbbacac\n",
+      "output": "cacabbbbccacacbababcacaccbbbbacac\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-85",
+      "input": "accacabcccbbabbcbababaca\n",
+      "output": "acabababcbbabbcccbacaccacabcccbbabbcbababaca\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-86",
+      "input": "ccccac\n",
+      "output": "caccccac\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-87",
+      "input": "aaacacccbaccaaaacabaabccaaccccaca\n",
+      "output": "aaacacccbaccaaaacabaabccaaccccacaccccaaccbaabacaaaaccabcccacaaa\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-88",
+      "input": "baabaacabbccaababccbacaaacbbc\n",
+      "output": "baabaacabbccaababccbacaaacbbcaaacabccbabaaccbbacaabaab\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-89",
+      "input": "cbbcbaacbcbcccaaacaaccacbba\n",
+      "output": "abbcaccaacaaacccbcbcaabcbbcbaacbcbcccaaacaaccacbba\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-90",
+      "input": "aaacccbabababbbabcbbccabaaaaaacc\n",
+      "output": "ccaaaaaabaccbbcbabbbabababcccaaacccbabababbbabcbbccabaaaaaacc\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-91",
+      "input": "bccbbcaaabbaacbbc\n",
+      "output": "bccbbcaaabbaacbbcaabbaaacbbccb\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-92",
+      "input": "cbbac\n",
+      "output": "cabbcbbac\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-93",
+      "input": "baabbbcaabbaaacacaccaacbaa\n",
+      "output": "aabcaaccacacaaabbaacbbbaabbbcaabbaaacacaccaacbaa\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-94",
+      "input": "bcbcbabacbaaabacacbbcabbbcbcbcaacaabbbaa\n",
+      "output": "bcbcbabacbaaabacacbbcabbbcbcbcaacaabbbaacaacbcbcbbbacbbcacabaaabcababcbcb\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-95",
+      "input": "bbcbabbbaaacbbccbbabcbabb\n",
+      "output": "bbcbabbbaaacbbccbbabcbabbccbbcaaabbbabcbb\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-96",
+      "input": "bbbbbcccbbc\n",
+      "output": "cbbcccbbbbbcccbbc\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-97",
+      "input": "ababaabcbccccbc\n",
+      "output": "ababaabcbccccbcbaababa\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-98",
+      "input": "aa\n",
+      "output": "aa\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-99",
+      "input": "caacbacbccbaac\n",
+      "output": "caabccbcabcaacbacbccbaac\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-100",
+      "input": "bbacbacb\n",
+      "output": "bcabcabbacbacb\n",
+      "origin": "generated"
+    }
+  ],
+  "checker": "shortest_containing_palindrome"
+}

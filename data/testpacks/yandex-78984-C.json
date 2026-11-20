@@ -1,0 +1,619 @@
+{
+  "schema_version": 1,
+  "problem_id": "yandex-78984-C",
+  "language": "python3",
+  "comparison": "validator",
+  "timeout_seconds": 2,
+  "total_timeout_seconds": 30,
+  "provenance": {
+    "kind": "generated",
+    "title": "100 локальных проверок, включая примеры условия",
+    "source_url": "https://official.contest.yandex.ru/contest/78984/problems/C/",
+    "generator": "testpacks/generate_firstyear.py; seed fedor-local-tests-v1:78984-C",
+    "oracle": "Независимый прямой перебор, обход графа или модель на обычных списках",
+    "notes": "Неофициальный тренировочный набор. Проверяет ответы и граничные случаи; не воспроизводит все скрытые тесты и ограничения исходной платформы."
+  },
+  "cases": [
+    {
+      "id": "source-example-1",
+      "input": "4",
+      "output": "2 2",
+      "origin": "statement-example"
+    },
+    {
+      "id": "boundary-1",
+      "input": "4\n",
+      "output": "2 2\n",
+      "origin": "generated-boundary"
+    },
+    {
+      "id": "boundary-2",
+      "input": "1000000\n",
+      "output": "17 999983\n",
+      "origin": "generated-boundary"
+    },
+    {
+      "id": "generated-4",
+      "input": "14172\n",
+      "output": "13 14159\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-5",
+      "input": "2158\n",
+      "output": "5 2153\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-6",
+      "input": "7326\n",
+      "output": "5 7321\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-7",
+      "input": "5132\n",
+      "output": "13 5119\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-8",
+      "input": "10016\n",
+      "output": "7 10009\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-9",
+      "input": "4168\n",
+      "output": "11 4157\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-10",
+      "input": "8688\n",
+      "output": "7 8681\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-11",
+      "input": "9598\n",
+      "output": "11 9587\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-12",
+      "input": "7662\n",
+      "output": "13 7649\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-13",
+      "input": "16014\n",
+      "output": "7 16007\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-14",
+      "input": "16066\n",
+      "output": "3 16063\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-15",
+      "input": "9578\n",
+      "output": "31 9547\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-16",
+      "input": "16554\n",
+      "output": "7 16547\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-17",
+      "input": "16654\n",
+      "output": "3 16651\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-18",
+      "input": "15190\n",
+      "output": "3 15187\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-19",
+      "input": "17986\n",
+      "output": "5 17981\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-20",
+      "input": "4634\n",
+      "output": "13 4621\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-21",
+      "input": "8434\n",
+      "output": "3 8431\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-22",
+      "input": "16808\n",
+      "output": "61 16747\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-23",
+      "input": "14084\n",
+      "output": "3 14081\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-24",
+      "input": "11358\n",
+      "output": "5 11353\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-25",
+      "input": "238\n",
+      "output": "5 233\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-26",
+      "input": "11810\n",
+      "output": "3 11807\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-27",
+      "input": "8558\n",
+      "output": "19 8539\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-28",
+      "input": "8004\n",
+      "output": "11 7993\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-29",
+      "input": "16842\n",
+      "output": "11 16831\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-30",
+      "input": "1622\n",
+      "output": "3 1619\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-31",
+      "input": "9630\n",
+      "output": "7 9623\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-32",
+      "input": "11718\n",
+      "output": "17 11701\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-33",
+      "input": "12748\n",
+      "output": "5 12743\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-34",
+      "input": "15844\n",
+      "output": "41 15803\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-35",
+      "input": "17450\n",
+      "output": "7 17443\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-36",
+      "input": "19710\n",
+      "output": "11 19699\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-37",
+      "input": "2702\n",
+      "output": "3 2699\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-38",
+      "input": "13492\n",
+      "output": "5 13487\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-39",
+      "input": "8886\n",
+      "output": "19 8867\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-40",
+      "input": "8126\n",
+      "output": "3 8123\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-41",
+      "input": "400\n",
+      "output": "3 397\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-42",
+      "input": "13942\n",
+      "output": "11 13931\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-43",
+      "input": "18942\n",
+      "output": "23 18919\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-44",
+      "input": "3938\n",
+      "output": "7 3931\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-45",
+      "input": "4490\n",
+      "output": "7 4483\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-46",
+      "input": "13248\n",
+      "output": "7 13241\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-47",
+      "input": "4498\n",
+      "output": "5 4493\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-48",
+      "input": "10940\n",
+      "output": "3 10937\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-49",
+      "input": "13442\n",
+      "output": "31 13411\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-50",
+      "input": "10832\n",
+      "output": "43 10789\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-51",
+      "input": "14728\n",
+      "output": "5 14723\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-52",
+      "input": "10516\n",
+      "output": "3 10513\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-53",
+      "input": "1818\n",
+      "output": "7 1811\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-54",
+      "input": "18210\n",
+      "output": "11 18199\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-55",
+      "input": "3682\n",
+      "output": "5 3677\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-56",
+      "input": "9762\n",
+      "output": "13 9749\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-57",
+      "input": "19974\n",
+      "output": "11 19963\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-58",
+      "input": "10574\n",
+      "output": "7 10567\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-59",
+      "input": "5198\n",
+      "output": "19 5179\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-60",
+      "input": "10258\n",
+      "output": "5 10253\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-61",
+      "input": "2168\n",
+      "output": "7 2161\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-62",
+      "input": "8816\n",
+      "output": "13 8803\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-63",
+      "input": "10946\n",
+      "output": "7 10939\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-64",
+      "input": "1184\n",
+      "output": "3 1181\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-65",
+      "input": "3814\n",
+      "output": "11 3803\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-66",
+      "input": "11884\n",
+      "output": "17 11867\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-67",
+      "input": "11326\n",
+      "output": "5 11321\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-68",
+      "input": "14106\n",
+      "output": "19 14087\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-69",
+      "input": "4880\n",
+      "output": "3 4877\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-70",
+      "input": "9358\n",
+      "output": "17 9341\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-71",
+      "input": "4140\n",
+      "output": "7 4133\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-72",
+      "input": "4706\n",
+      "output": "3 4703\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-73",
+      "input": "13696\n",
+      "output": "3 13693\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-74",
+      "input": "7476\n",
+      "output": "17 7459\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-75",
+      "input": "3144\n",
+      "output": "7 3137\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-76",
+      "input": "5446\n",
+      "output": "3 5443\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-77",
+      "input": "10138\n",
+      "output": "5 10133\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-78",
+      "input": "15790\n",
+      "output": "3 15787\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-79",
+      "input": "19244\n",
+      "output": "7 19237\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-80",
+      "input": "220\n",
+      "output": "23 197\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-81",
+      "input": "4662\n",
+      "output": "5 4657\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-82",
+      "input": "4746\n",
+      "output": "13 4733\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-83",
+      "input": "9522\n",
+      "output": "11 9511\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-84",
+      "input": "13298\n",
+      "output": "7 13291\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-85",
+      "input": "18148\n",
+      "output": "5 18143\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-86",
+      "input": "5858\n",
+      "output": "7 5851\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-87",
+      "input": "8282\n",
+      "output": "13 8269\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-88",
+      "input": "16680\n",
+      "output": "7 16673\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-89",
+      "input": "3788\n",
+      "output": "19 3769\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-90",
+      "input": "11844\n",
+      "output": "5 11839\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-91",
+      "input": "9976\n",
+      "output": "3 9973\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-92",
+      "input": "4044\n",
+      "output": "17 4027\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-93",
+      "input": "15636\n",
+      "output": "7 15629\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-94",
+      "input": "9678\n",
+      "output": "17 9661\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-95",
+      "input": "2134\n",
+      "output": "3 2131\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-96",
+      "input": "7462\n",
+      "output": "3 7459\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-97",
+      "input": "518734\n",
+      "output": "5 518729\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-98",
+      "input": "451602\n",
+      "output": "23 451579\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-99",
+      "input": "596580\n",
+      "output": "7 596573\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-100",
+      "input": "106012\n",
+      "output": "29 105983\n",
+      "origin": "generated"
+    }
+  ],
+  "checker": "goldbach_pair"
+}

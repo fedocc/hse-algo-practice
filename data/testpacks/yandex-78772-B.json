@@ -1,0 +1,618 @@
+{
+  "schema_version": 1,
+  "problem_id": "yandex-78772-B",
+  "language": "python3",
+  "comparison": "tokens",
+  "timeout_seconds": 2,
+  "total_timeout_seconds": 30,
+  "provenance": {
+    "kind": "generated",
+    "title": "100 локальных проверок, включая примеры условия",
+    "source_url": "https://official.contest.yandex.ru/contest/78772/problems/B/",
+    "generator": "testpacks/generate_firstyear.py; seed fedor-local-tests-v1:78772-B",
+    "oracle": "Независимый прямой перебор, обход графа или модель на обычных списках",
+    "notes": "Неофициальный тренировочный набор. Проверяет ответы и граничные случаи; не воспроизводит все скрытые тесты и ограничения исходной платформы."
+  },
+  "cases": [
+    {
+      "id": "source-example-1",
+      "input": "3\nSW\nS",
+      "output": "NO",
+      "origin": "statement-example"
+    },
+    {
+      "id": "source-example-2",
+      "input": "3\nSS\nS",
+      "output": "YES",
+      "origin": "statement-example"
+    },
+    {
+      "id": "boundary-1",
+      "input": "3\nSS\nS\n",
+      "output": "YES\n",
+      "origin": "generated-boundary"
+    },
+    {
+      "id": "boundary-2",
+      "input": "3\nSW\nS\n",
+      "output": "NO\n",
+      "origin": "generated-boundary"
+    },
+    {
+      "id": "generated-5",
+      "input": "4\nSSW\nWW\nW\n",
+      "output": "YES\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-6",
+      "input": "4\nSSW\nSS\nW\n",
+      "output": "NO\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-7",
+      "input": "7\nWWSWWW\nSWWWS\nWWWS\nWWS\nSW\nW\n",
+      "output": "NO\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-8",
+      "input": "5\nWWSW\nWWS\nWW\nW\n",
+      "output": "NO\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-9",
+      "input": "10\nSWSWWSSWW\nWWSWSWSW\nWWWSSWS\nSWWSWS\nSSSSS\nWSWW\nSSS\nSS\nW\n",
+      "output": "NO\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-10",
+      "input": "6\nWSSSS\nWWSS\nSSW\nWS\nS\n",
+      "output": "NO\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-11",
+      "input": "6\nSSWSW\nSSWS\nWSS\nSW\nS\n",
+      "output": "NO\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-12",
+      "input": "9\nSSSSSSWW\nWSWWWWS\nWWWSSS\nWWSSW\nWSWW\nWWW\nWW\nS\n",
+      "output": "NO\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-13",
+      "input": "4\nSSS\nSS\nW\n",
+      "output": "YES\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-14",
+      "input": "5\nSWWW\nWSS\nSS\nS\n",
+      "output": "NO\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-15",
+      "input": "9\nSSWSWSSW\nWWSSSSW\nWSWSSS\nWWSSW\nSSSS\nSSW\nWW\nS\n",
+      "output": "NO\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-16",
+      "input": "7\nWSWSWW\nWSSSW\nSWWS\nSWS\nSW\nW\n",
+      "output": "NO\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-17",
+      "input": "5\nSWSS\nSWS\nWS\nS\n",
+      "output": "NO\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-18",
+      "input": "6\nWSSWW\nWSWW\nSWS\nSW\nW\n",
+      "output": "NO\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-19",
+      "input": "6\nSSSWS\nSSWW\nWWW\nWW\nW\n",
+      "output": "NO\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-20",
+      "input": "11\nWWWSSWSSWS\nSSSSSWWSW\nSSWSSWSS\nSSWWSSS\nSWWSSW\nSSWSW\nSSSW\nSWW\nWS\nS\n",
+      "output": "NO\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-21",
+      "input": "3\nSS\nW\n",
+      "output": "YES\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-22",
+      "input": "7\nSSWWWW\nSSWSS\nWWSS\nWWS\nSS\nW\n",
+      "output": "NO\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-23",
+      "input": "5\nWSWW\nSSW\nWW\nW\n",
+      "output": "YES\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-24",
+      "input": "11\nWSSWSSSSSW\nWWWWWSWWS\nSSSWSWWS\nWSWWWSW\nWSSSSS\nSWWSW\nWSWS\nWSW\nSW\nW\n",
+      "output": "NO\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-25",
+      "input": "7\nSSWSWS\nWWWWW\nWWWW\nWSW\nSW\nS\n",
+      "output": "NO\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-26",
+      "input": "9\nWWWWWWWW\nWSSWWWW\nWSWSWW\nWSSSW\nWWWW\nSSS\nWW\nS\n",
+      "output": "NO\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-27",
+      "input": "4\nSWW\nSS\nS\n",
+      "output": "NO\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-28",
+      "input": "9\nSWWWWSWW\nSWSSSWS\nWSSSSW\nSWSSW\nSWWS\nSWW\nWW\nW\n",
+      "output": "NO\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-29",
+      "input": "11\nWSWSWSSWWS\nWWSSWWSSW\nSSWSSWWW\nWWSSSWW\nWSSWSW\nSWWSS\nSSWW\nWSS\nSW\nS\n",
+      "output": "NO\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-30",
+      "input": "12\nSWSSWSSSSSS\nSWSWWWSSWS\nSWWWSSSSW\nSWSSSSSW\nSSSWSWS\nSSSWWS\nWSWSS\nWWSS\nSWS\nWW\nS\n",
+      "output": "NO\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-31",
+      "input": "8\nWWSWWSW\nWWSSWW\nSSSSW\nWSWW\nSWW\nSW\nW\n",
+      "output": "NO\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-32",
+      "input": "5\nWWSW\nSSS\nWS\nS\n",
+      "output": "NO\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-33",
+      "input": "11\nSWWWSWSSWW\nWSSWSWSWW\nSSWSWWWW\nWSWSWWS\nSSSSSS\nWWSWS\nSSWW\nWWW\nSS\nW\n",
+      "output": "NO\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-34",
+      "input": "9\nWSSWSSSW\nWWWWSWS\nSWSWWS\nWSWWW\nWSWW\nSWW\nWW\nS\n",
+      "output": "NO\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-35",
+      "input": "9\nSSSWWWSS\nSWWWSWS\nWWWWWW\nSSWWS\nWWWW\nSWW\nSW\nS\n",
+      "output": "NO\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-36",
+      "input": "5\nSSSW\nWWW\nWW\nS\n",
+      "output": "NO\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-37",
+      "input": "4\nSSW\nSW\nS\n",
+      "output": "NO\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-38",
+      "input": "6\nWSSSW\nSSSW\nWWS\nSS\nS\n",
+      "output": "NO\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-39",
+      "input": "8\nWWSSWWW\nSWWWSS\nWWWWW\nWSSW\nWWW\nSW\nW\n",
+      "output": "NO\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-40",
+      "input": "5\nWSSS\nWWS\nWW\nW\n",
+      "output": "NO\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-41",
+      "input": "10\nSSSSSWSWS\nWSWWSSWW\nWWWSSSW\nWSWWSW\nSSSSW\nSSSW\nSWS\nWS\nS\n",
+      "output": "NO\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-42",
+      "input": "3\nWW\nW\n",
+      "output": "YES\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-43",
+      "input": "12\nWWSSSWWWWSW\nSSSWSWWSSS\nSSSSWSSWS\nWWWWSSWS\nWSWSSSW\nWSSSSW\nWSSSW\nWWSW\nWSS\nSS\nW\n",
+      "output": "NO\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-44",
+      "input": "10\nWSSWWSWWW\nWSSSSWSW\nWWSSSSS\nWSWSSS\nWSSSS\nWWSS\nSWS\nSW\nW\n",
+      "output": "NO\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-45",
+      "input": "4\nSWW\nWW\nW\n",
+      "output": "YES\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-46",
+      "input": "9\nSWSSWWSW\nSSSSWWS\nWWWWWW\nSWWWW\nSWSW\nWSS\nSS\nS\n",
+      "output": "NO\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-47",
+      "input": "12\nSWSSWWSSSSS\nWWWWWSSWWS\nWWWWSSWSW\nSSWWWSSW\nSSWWSSW\nWWSWSS\nSSWSS\nWWSS\nWSW\nWS\nS\n",
+      "output": "NO\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-48",
+      "input": "5\nWWWW\nSSS\nWW\nS\n",
+      "output": "YES\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-49",
+      "input": "7\nSWSSSS\nWWSWS\nWSSS\nSSW\nWS\nS\n",
+      "output": "NO\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-50",
+      "input": "6\nWWSSW\nWWSS\nWWS\nSW\nW\n",
+      "output": "NO\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-51",
+      "input": "6\nWWWSS\nWWSS\nWSS\nSS\nS\n",
+      "output": "YES\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-52",
+      "input": "6\nSWSWW\nWWSS\nWWS\nWS\nS\n",
+      "output": "NO\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-53",
+      "input": "10\nSWSWSWSWW\nSWSSWSWW\nWWSSWSS\nWSWWSW\nWWWSS\nWWWS\nWWW\nSW\nS\n",
+      "output": "NO\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-54",
+      "input": "10\nSSWSSSWWS\nSSWSWSWW\nSSSWSWS\nWWWSWS\nSWWSW\nSWWS\nWSS\nSW\nS\n",
+      "output": "NO\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-55",
+      "input": "7\nSWWWWW\nSSWWS\nSSWS\nSSW\nSW\nS\n",
+      "output": "NO\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-56",
+      "input": "10\nSWSSSSSSW\nSWSWSWWS\nWSSSSSW\nWWWSSS\nSWWSW\nSSSW\nSSS\nWW\nS\n",
+      "output": "NO\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-57",
+      "input": "10\nSSSWWWSSS\nWSWSWSWS\nSSWWWWW\nSSSWWW\nWSSWW\nWWWW\nSSW\nWS\nS\n",
+      "output": "NO\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-58",
+      "input": "7\nWWSSWS\nWWWWW\nSWSW\nSSS\nWS\nW\n",
+      "output": "NO\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-59",
+      "input": "12\nSSSSWWWSSWS\nWWSSWSWSSW\nWSWSSSWWW\nWWSWWSWW\nWSWSWSW\nSWSWWW\nWSSWS\nWSWS\nSSW\nSW\nS\n",
+      "output": "NO\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-60",
+      "input": "11\nWWSWWWSWSS\nSSWSSWWSS\nWWWWWSWS\nWSWSWSS\nWSSWWW\nSSWWW\nWWSW\nSWS\nSS\nW\n",
+      "output": "NO\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-61",
+      "input": "12\nSWWWWWSSSSS\nWSWWWWWSSW\nWSSSWWSSS\nSSSWSWWW\nWWSSWSS\nWSSWSW\nSWSWS\nWWSW\nSSS\nSW\nS\n",
+      "output": "NO\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-62",
+      "input": "11\nSSWWSSWSSS\nWSWSWWSSW\nSSWSWWWS\nSWSSWSW\nSSWSWS\nWWSWW\nWSWS\nSWW\nSW\nS\n",
+      "output": "NO\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-63",
+      "input": "10\nSSWWWSWWW\nSSWWWSSS\nSWSSWSW\nWSSSSS\nWSSSW\nSWWW\nSSS\nSW\nW\n",
+      "output": "NO\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-64",
+      "input": "10\nSSWSSSSWS\nSSWWSSSW\nSSSSSWW\nWSWSWS\nSWSSS\nWSSS\nWSW\nSW\nW\n",
+      "output": "NO\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-65",
+      "input": "8\nWWSWWSW\nWWWWSS\nWWWWW\nSWWS\nSWW\nWW\nS\n",
+      "output": "NO\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-66",
+      "input": "12\nWWSWWWWSWSS\nSSWSSSSSSS\nSWWWWSSWW\nSWSSSSWS\nSWSSWWW\nWSSWSW\nSSSSS\nSSWS\nSSW\nWW\nS\n",
+      "output": "NO\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-67",
+      "input": "10\nWWSWWSWSS\nSSWSWSSW\nWSSSSWW\nWSSWSW\nWWWSS\nSWSS\nSSS\nWW\nS\n",
+      "output": "NO\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-68",
+      "input": "4\nWSW\nSS\nW\n",
+      "output": "YES\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-69",
+      "input": "6\nWSWWS\nWWWW\nSWS\nWS\nW\n",
+      "output": "NO\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-70",
+      "input": "7\nWSWSWW\nWSWSW\nWWWW\nWWW\nWS\nS\n",
+      "output": "NO\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-71",
+      "input": "6\nWWSWW\nWSWW\nWSW\nWS\nW\n",
+      "output": "NO\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-72",
+      "input": "5\nSWSS\nSWS\nSW\nS\n",
+      "output": "NO\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-73",
+      "input": "5\nSSSS\nSWW\nWW\nS\n",
+      "output": "YES\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-74",
+      "input": "3\nWW\nS\n",
+      "output": "YES\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-75",
+      "input": "10\nSSWSSSWSS\nSSWSSSSW\nSWWSWSS\nWSWSSW\nSSWSS\nWWSS\nSSW\nSW\nW\n",
+      "output": "NO\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-76",
+      "input": "4\nWSS\nSS\nS\n",
+      "output": "YES\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-77",
+      "input": "8\nSSSWSWS\nWSWWWW\nWSSSS\nWWWW\nSWS\nSW\nS\n",
+      "output": "NO\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-78",
+      "input": "7\nSWWWWW\nSSWWW\nWSWS\nSSW\nSW\nW\n",
+      "output": "NO\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-79",
+      "input": "9\nSWWWWWWS\nSWSSSWS\nWSSWWS\nSWWWW\nWWSW\nWWW\nSS\nS\n",
+      "output": "NO\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-80",
+      "input": "12\nWSWWSWSSWWS\nSWSSSSWSWW\nSWWWWWWSW\nSSWWWWSS\nSSWWWSS\nSSSSWS\nSSSWW\nWWWS\nWWW\nSW\nS\n",
+      "output": "NO\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-81",
+      "input": "12\nSWSWSSSSWWS\nSSWSWSSSSS\nWWSWWSSSS\nSSSSWSSS\nWSSWWWS\nWWWWWW\nWSSSS\nWSWS\nSSW\nWW\nW\n",
+      "output": "NO\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-82",
+      "input": "12\nWWWSWSWSWSW\nWSWSSWWWWS\nSWSWWWWSW\nWSSWWSWW\nSSSSWSS\nWWWSWS\nSSSWS\nSSWS\nWSW\nWS\nS\n",
+      "output": "NO\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-83",
+      "input": "10\nWWWWWSSWW\nSWSWSSSW\nSSSSWSS\nSSWWWS\nWWSSS\nWSWS\nSWW\nSS\nW\n",
+      "output": "NO\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-84",
+      "input": "6\nSSWSW\nSSWW\nSWS\nWW\nW\n",
+      "output": "NO\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-85",
+      "input": "5\nSSWW\nSWS\nSS\nS\n",
+      "output": "NO\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-86",
+      "input": "7\nSWWWSW\nWWWWS\nWWWW\nWSS\nSS\nS\n",
+      "output": "NO\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-87",
+      "input": "9\nWSWWSSSW\nWWSSWWW\nSWWSSW\nSSSSW\nWWWW\nSWS\nWS\nS\n",
+      "output": "NO\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-88",
+      "input": "10\nSWSWWSWWW\nWWSWWSWS\nSSWSWWW\nWSSSSW\nWWWWW\nSWWW\nWSS\nSW\nW\n",
+      "output": "NO\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-89",
+      "input": "10\nWSSWWWSSW\nSWSWWWWS\nSSWSSWS\nSSWWSS\nSWWSS\nSSWS\nSSS\nWW\nS\n",
+      "output": "NO\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-90",
+      "input": "6\nSWWSS\nSSWW\nWWW\nWW\nW\n",
+      "output": "NO\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-91",
+      "input": "12\nSSSSWWWSSSW\nWSSWWSWSSW\nWSSSSSWSW\nWSSSWSSS\nWSWSSSS\nWWSWWS\nSSSSS\nWSSW\nSSW\nWW\nS\n",
+      "output": "NO\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-92",
+      "input": "6\nWWWSS\nWWWW\nWWW\nSS\nW\n",
+      "output": "NO\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-93",
+      "input": "9\nWWSSSSWW\nSWSSWWW\nWWSSWS\nWSSSS\nSWSW\nSSW\nWS\nS\n",
+      "output": "NO\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-94",
+      "input": "5\nWWSW\nSSW\nSW\nW\n",
+      "output": "YES\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-95",
+      "input": "9\nSSSWSSWS\nSWWWWSW\nWSWWWW\nSSWSW\nWWSS\nSSS\nSS\nS\n",
+      "output": "NO\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-96",
+      "input": "9\nWWWSSSSW\nSWWSWWS\nWWSSSS\nSWWSS\nSWWW\nWSS\nSS\nS\n",
+      "output": "NO\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-97",
+      "input": "19\nWSWWWSWSWSSSSSWSSS\nSSWSSWWSWWSSWSSWS\nWWWSWSWSSWWSSWWS\nWWWSWWSSSWWSWWW\nWWWWWSWSSSWWWW\nWSSSSWWWSWSSW\nWWWWSWWWSSSS\nSWWSWSSWSWS\nSSSWWWWWSW\nWWWSWWSWW\nSSWWWWSS\nWWSWWWW\nSSSWSS\nSSWWS\nSSWW\nSWW\nWS\nW\n",
+      "output": "NO\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-98",
+      "input": "35\nWWSWSSSSWSWSWSSWWWWSSSSWWSWSWWWSWW\nSWSSWWSWSWSWWWWSSWSWWWWSSSWWWSWSS\nSWWSSWWSWWWSSSSWSSSSSSSSSWSSWWWW\nSSSWSSWWWSSWSWWSSSSWWSSWSSWWWWW\nWWSWSSWWSWWSWWSSSSSSSSSSSWSWWW\nWWWWSSWWSSSSWSSWSWSWSWSSSWSSS\nWWSSSSSWWWWWWWSWWWSWWSSWWWSW\nWWWWWWSWWSSSSWWWSSSSSSWWSSS\nWWSSWWSSSWWSSWSWSSWSSWWSWW\nWWSSSWWSSSWSSWWWWSSWSWSSS\nSSSWSWWSSSWWWWSSSSWWSSWW\nWWWWSSSWSWSSWSWSWSSWWWS\nSSSSWWSSSSSSSWWSWWWWWS\nSWSSSSWWWSSWSWWWSSSSW\nWWWSWSSSWWWSSSSSWSWW\nSWWWWSWSSSWSSWSWWWW\nSWWWSWWSSSWWSWWWWW\nWSWSWWSSSSWSSSSSS\nSSSWWSSSWWWSSWWW\nSWSWWWWWWWWWSWW\nSWWWWWSSWSSWWW\nSWWSSSSSSSSWS\nWWSWWWSSSSWW\nWSWWWSWWSWW\nSSSSSSSSWW\nSSWWSWWSS\nWSSWSWSW\nWSWWWSS\nSSWSWS\nWSSSS\nWWSW\nWSW\nWS\nS\n",
+      "output": "NO\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-99",
+      "input": "23\nSWSSWWSWWWWSSWWWWSSSWW\nWSWSWSSWWSWSWSSSSWSWS\nSWWWSSWWWSWWSSSWSSSW\nSWSWSSSWSSSWWSSWWWS\nWSSSSWWWWSSSWSSWSW\nSSWSSSSSWWWSWSWWW\nSWSSSSSSSSWWWWWW\nWWSWWWWSSSWWSSW\nWWWSWSWWSWWSSS\nWSWWSWWSWWWSW\nSWSWWWSSSWSW\nSWWSSSSWWWS\nSWWWSWSSSS\nWWWWWWWWS\nWSSWSWSS\nWSWSSSS\nSWSSWS\nSWSWW\nSSSW\nSSW\nSW\nW\n",
+      "output": "NO\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-100",
+      "input": "7\nSSWSSW\nWWSSS\nWWSW\nWWS\nWW\nW\n",
+      "output": "NO\n",
+      "origin": "generated"
+    }
+  ]
+}

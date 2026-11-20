@@ -1,0 +1,618 @@
+{
+  "schema_version": 1,
+  "problem_id": "yandex-78772-A",
+  "language": "python3",
+  "comparison": "tokens",
+  "timeout_seconds": 2,
+  "total_timeout_seconds": 30,
+  "provenance": {
+    "kind": "generated",
+    "title": "100 локальных проверок, включая примеры условия",
+    "source_url": "https://official.contest.yandex.ru/contest/78772/problems/A/",
+    "generator": "testpacks/generate_firstyear.py; seed fedor-local-tests-v1:78772-A",
+    "oracle": "Независимый прямой перебор, обход графа или модель на обычных списках",
+    "notes": "Неофициальный тренировочный набор. Проверяет ответы и граничные случаи; не воспроизводит все скрытые тесты и ограничения исходной платформы."
+  },
+  "cases": [
+    {
+      "id": "source-example-1",
+      "input": "4 4\n5\n1 2 5\n2 3 6\n2 4 4\n3 4 7",
+      "output": "YES",
+      "origin": "statement-example"
+    },
+    {
+      "id": "source-example-2",
+      "input": "4 4\n5\n1 2 5\n2 3 4\n2 4 4\n3 4 7",
+      "output": "NO",
+      "origin": "statement-example"
+    },
+    {
+      "id": "boundary-1",
+      "input": "2 0\n1\n",
+      "output": "NO\n",
+      "origin": "generated-boundary"
+    },
+    {
+      "id": "boundary-2",
+      "input": "2 1\n1000000000\n1 2 1000000000\n",
+      "output": "YES\n",
+      "origin": "generated-boundary"
+    },
+    {
+      "id": "generated-5",
+      "input": "6 15\n26\n1 2 25\n1 3 38\n1 4 14\n1 5 22\n1 6 9\n2 3 35\n2 4 17\n2 5 9\n2 6 23\n3 4 37\n3 5 23\n3 6 8\n4 5 22\n4 6 20\n5 6 17\n",
+      "output": "NO\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-6",
+      "input": "8 13\n29\n1 2 12\n1 4 4\n1 5 36\n1 7 16\n2 3 39\n2 4 40\n2 6 7\n3 7 32\n4 6 29\n4 8 37\n5 7 6\n5 8 5\n6 7 11\n",
+      "output": "NO\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-7",
+      "input": "5 9\n1\n1 2 15\n1 3 21\n1 4 30\n1 5 24\n2 3 14\n2 4 22\n3 4 10\n3 5 4\n4 5 27\n",
+      "output": "YES\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-8",
+      "input": "6 12\n30\n1 2 10\n1 3 37\n1 4 20\n1 5 36\n1 6 20\n2 4 6\n2 5 11\n2 6 8\n3 5 34\n4 5 30\n4 6 7\n5 6 39\n",
+      "output": "YES\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-9",
+      "input": "6 6\n26\n1 2 23\n1 5 32\n2 4 18\n2 5 13\n3 4 35\n5 6 32\n",
+      "output": "YES\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-10",
+      "input": "2 1\n38\n1 2 36\n",
+      "output": "NO\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-11",
+      "input": "2 0\n17\n\n",
+      "output": "NO\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-12",
+      "input": "9 7\n20\n2 3 4\n2 5 34\n2 8 21\n3 9 31\n4 5 6\n6 7 26\n6 8 19\n",
+      "output": "NO\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-13",
+      "input": "6 4\n44\n1 3 13\n2 5 3\n3 4 4\n3 6 8\n",
+      "output": "NO\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-14",
+      "input": "8 22\n13\n1 2 33\n1 4 8\n1 6 22\n1 7 29\n1 8 1\n2 4 32\n2 5 39\n2 6 33\n2 8 37\n3 4 23\n3 5 33\n3 6 24\n3 7 7\n3 8 19\n4 5 34\n4 7 36\n5 6 20\n5 7 12\n5 8 10\n6 7 20\n6 8 29\n7 8 25\n",
+      "output": "YES\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-15",
+      "input": "6 4\n27\n1 3 18\n1 6 26\n2 6 8\n3 4 14\n",
+      "output": "NO\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-16",
+      "input": "2 1\n28\n1 2 3\n",
+      "output": "NO\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-17",
+      "input": "8 16\n15\n1 5 26\n1 8 9\n2 4 38\n2 6 30\n2 8 9\n3 4 26\n3 6 11\n3 8 9\n4 5 11\n4 6 27\n4 7 30\n4 8 33\n5 6 27\n5 7 2\n6 8 39\n7 8 34\n",
+      "output": "YES\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-18",
+      "input": "3 3\n39\n1 2 5\n1 3 27\n2 3 6\n",
+      "output": "NO\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-19",
+      "input": "2 0\n45\n\n",
+      "output": "NO\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-20",
+      "input": "7 18\n16\n1 2 9\n1 3 6\n1 4 13\n1 5 19\n1 6 31\n1 7 17\n2 3 30\n2 5 19\n2 7 10\n3 4 1\n3 5 23\n3 6 27\n3 7 23\n4 5 18\n4 7 28\n5 6 8\n5 7 21\n6 7 13\n",
+      "output": "YES\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-21",
+      "input": "5 0\n35\n\n",
+      "output": "NO\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-22",
+      "input": "9 17\n24\n1 3 38\n1 5 20\n1 6 36\n1 7 17\n1 9 11\n2 4 24\n2 8 10\n3 4 7\n3 6 9\n3 7 34\n3 9 39\n4 7 30\n4 8 13\n4 9 17\n5 8 5\n6 7 5\n6 8 16\n",
+      "output": "YES\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-23",
+      "input": "7 1\n18\n6 7 29\n",
+      "output": "NO\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-24",
+      "input": "8 28\n13\n1 2 38\n1 3 12\n1 4 26\n1 5 17\n1 6 3\n1 7 30\n1 8 22\n2 3 21\n2 4 13\n2 5 35\n2 6 25\n2 7 16\n2 8 7\n3 4 14\n3 5 19\n3 6 5\n3 7 4\n3 8 40\n4 5 25\n4 6 26\n4 7 6\n4 8 7\n5 6 25\n5 7 23\n5 8 17\n6 7 12\n6 8 20\n7 8 16\n",
+      "output": "YES\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-25",
+      "input": "2 0\n42\n\n",
+      "output": "NO\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-26",
+      "input": "2 1\n21\n1 2 14\n",
+      "output": "NO\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-27",
+      "input": "9 13\n38\n1 2 14\n1 3 37\n1 9 11\n3 4 34\n3 6 39\n3 8 25\n4 8 29\n4 9 24\n5 6 36\n5 9 1\n6 8 31\n7 8 37\n8 9 31\n",
+      "output": "NO\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-28",
+      "input": "8 28\n45\n1 2 13\n1 3 13\n1 4 30\n1 5 23\n1 6 39\n1 7 14\n1 8 14\n2 3 23\n2 4 11\n2 5 12\n2 6 23\n2 7 30\n2 8 9\n3 4 32\n3 5 11\n3 6 1\n3 7 39\n3 8 3\n4 5 33\n4 6 13\n4 7 33\n4 8 17\n5 6 10\n5 7 17\n5 8 31\n6 7 25\n6 8 10\n7 8 1\n",
+      "output": "NO\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-29",
+      "input": "7 17\n25\n1 2 20\n1 3 36\n1 4 33\n1 5 30\n1 7 26\n2 3 21\n2 4 11\n2 5 32\n2 6 27\n2 7 6\n3 4 21\n3 5 29\n3 7 19\n4 5 1\n4 6 21\n4 7 37\n6 7 27\n",
+      "output": "YES\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-30",
+      "input": "5 0\n24\n\n",
+      "output": "NO\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-31",
+      "input": "4 5\n28\n1 2 40\n1 3 10\n1 4 2\n2 4 33\n3 4 18\n",
+      "output": "YES\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-32",
+      "input": "5 4\n13\n1 4 38\n1 5 12\n2 5 34\n3 4 1\n",
+      "output": "NO\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-33",
+      "input": "5 4\n31\n1 2 5\n2 3 11\n2 4 4\n4 5 11\n",
+      "output": "NO\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-34",
+      "input": "7 0\n33\n\n",
+      "output": "NO\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-35",
+      "input": "3 0\n2\n\n",
+      "output": "NO\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-36",
+      "input": "8 13\n7\n1 4 32\n1 5 31\n1 8 28\n2 5 39\n2 7 3\n4 5 37\n4 7 26\n4 8 27\n5 6 31\n5 7 2\n5 8 15\n6 7 7\n6 8 2\n",
+      "output": "YES\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-37",
+      "input": "6 13\n19\n1 3 36\n1 4 32\n1 6 4\n2 3 14\n2 4 29\n2 5 32\n2 6 33\n3 4 17\n3 5 6\n3 6 25\n4 5 6\n4 6 17\n5 6 36\n",
+      "output": "YES\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-38",
+      "input": "5 3\n35\n1 3 39\n2 4 27\n3 5 11\n",
+      "output": "NO\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-39",
+      "input": "8 11\n8\n1 3 3\n1 7 32\n1 8 18\n2 8 39\n3 6 40\n3 7 12\n3 8 16\n4 7 28\n5 7 24\n5 8 12\n6 8 28\n",
+      "output": "YES\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-40",
+      "input": "9 4\n32\n1 5 7\n5 9 38\n6 7 3\n6 9 22\n",
+      "output": "NO\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-41",
+      "input": "8 19\n7\n1 2 38\n1 3 40\n1 4 34\n1 7 37\n1 8 24\n2 4 10\n2 5 12\n2 6 29\n2 7 37\n2 8 26\n3 5 5\n3 6 21\n3 8 2\n4 5 14\n4 7 39\n5 6 5\n5 7 20\n6 8 9\n7 8 3\n",
+      "output": "YES\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-42",
+      "input": "7 15\n23\n1 2 28\n1 3 9\n1 4 33\n1 6 5\n1 7 25\n2 5 37\n2 6 21\n2 7 9\n3 4 28\n3 6 7\n3 7 3\n4 6 28\n4 7 10\n5 6 25\n5 7 35\n",
+      "output": "YES\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-43",
+      "input": "9 15\n37\n1 2 1\n1 3 40\n1 5 13\n1 8 33\n1 9 11\n2 3 27\n2 7 33\n2 9 35\n3 5 7\n3 6 27\n3 8 35\n4 9 10\n5 6 6\n6 8 16\n7 8 12\n",
+      "output": "NO\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-44",
+      "input": "8 5\n43\n1 4 6\n1 7 16\n2 5 7\n3 4 19\n5 6 35\n",
+      "output": "NO\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-45",
+      "input": "6 8\n3\n1 2 14\n1 3 17\n2 3 20\n2 6 38\n3 4 14\n3 5 7\n3 6 2\n5 6 2\n",
+      "output": "YES\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-46",
+      "input": "6 11\n42\n1 3 28\n1 4 10\n1 5 18\n1 6 34\n2 3 18\n2 5 29\n2 6 11\n3 4 1\n3 5 18\n3 6 27\n4 5 40\n",
+      "output": "NO\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-47",
+      "input": "6 3\n23\n1 2 15\n1 5 13\n1 6 14\n",
+      "output": "NO\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-48",
+      "input": "3 2\n31\n1 3 16\n2 3 1\n",
+      "output": "NO\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-49",
+      "input": "8 4\n21\n1 2 24\n1 3 12\n1 6 26\n2 6 27\n",
+      "output": "NO\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-50",
+      "input": "8 25\n27\n1 2 25\n1 3 38\n1 4 25\n1 5 6\n1 6 30\n1 7 31\n1 8 7\n2 3 39\n2 4 32\n2 5 16\n2 6 40\n2 7 1\n3 4 26\n3 5 37\n3 6 1\n3 7 5\n4 5 9\n4 6 29\n4 7 13\n4 8 30\n5 6 1\n5 7 17\n5 8 29\n6 7 7\n6 8 26\n",
+      "output": "YES\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-51",
+      "input": "4 0\n25\n\n",
+      "output": "NO\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-52",
+      "input": "6 9\n19\n1 2 8\n1 4 7\n1 6 25\n2 5 33\n2 6 36\n3 4 9\n3 5 30\n3 6 5\n4 5 3\n",
+      "output": "YES\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-53",
+      "input": "8 3\n43\n1 3 21\n2 3 4\n4 6 31\n",
+      "output": "NO\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-54",
+      "input": "2 0\n33\n\n",
+      "output": "NO\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-55",
+      "input": "7 2\n32\n2 5 39\n5 6 40\n",
+      "output": "NO\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-56",
+      "input": "3 0\n32\n\n",
+      "output": "NO\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-57",
+      "input": "7 14\n35\n1 2 23\n1 3 13\n1 5 3\n1 6 17\n1 7 22\n2 3 15\n2 5 1\n2 6 24\n3 4 22\n3 6 8\n4 7 9\n5 6 22\n5 7 27\n6 7 36\n",
+      "output": "NO\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-58",
+      "input": "7 10\n39\n1 2 33\n1 5 7\n1 7 17\n2 6 17\n3 4 32\n3 6 22\n4 5 15\n4 7 4\n5 6 28\n6 7 28\n",
+      "output": "NO\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-59",
+      "input": "7 3\n16\n2 4 39\n4 6 17\n6 7 8\n",
+      "output": "NO\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-60",
+      "input": "4 5\n30\n1 2 28\n1 3 19\n1 4 23\n2 3 29\n3 4 6\n",
+      "output": "NO\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-61",
+      "input": "9 26\n31\n1 3 4\n1 4 2\n1 5 15\n1 8 39\n1 9 39\n2 3 26\n2 4 11\n2 7 16\n2 8 28\n2 9 31\n3 5 19\n3 6 26\n3 8 31\n3 9 21\n4 6 11\n4 8 3\n4 9 5\n5 6 35\n5 7 2\n5 8 24\n5 9 22\n6 8 8\n6 9 15\n7 8 38\n7 9 35\n8 9 7\n",
+      "output": "YES\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-62",
+      "input": "2 0\n24\n\n",
+      "output": "NO\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-63",
+      "input": "6 11\n4\n1 2 35\n1 3 8\n1 5 35\n1 6 22\n2 3 31\n2 4 8\n2 5 10\n2 6 7\n3 4 30\n3 5 1\n3 6 27\n",
+      "output": "YES\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-64",
+      "input": "8 7\n44\n2 3 11\n2 8 13\n3 5 32\n3 7 15\n3 8 13\n4 5 26\n4 7 20\n",
+      "output": "NO\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-65",
+      "input": "5 8\n23\n1 2 18\n1 4 24\n1 5 11\n2 4 28\n2 5 25\n3 4 2\n3 5 13\n4 5 31\n",
+      "output": "YES\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-66",
+      "input": "5 10\n5\n1 2 34\n1 3 33\n1 4 12\n1 5 3\n2 3 20\n2 4 10\n2 5 20\n3 4 18\n3 5 21\n4 5 12\n",
+      "output": "YES\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-67",
+      "input": "3 3\n35\n1 2 27\n1 3 6\n2 3 31\n",
+      "output": "NO\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-68",
+      "input": "4 0\n12\n\n",
+      "output": "NO\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-69",
+      "input": "5 4\n44\n1 2 2\n1 4 16\n2 5 40\n3 5 24\n",
+      "output": "NO\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-70",
+      "input": "2 1\n21\n1 2 23\n",
+      "output": "YES\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-71",
+      "input": "7 19\n30\n1 2 25\n1 3 14\n1 5 35\n1 6 5\n1 7 31\n2 3 14\n2 4 13\n2 5 1\n2 6 28\n2 7 2\n3 5 13\n3 6 22\n3 7 35\n4 5 23\n4 6 5\n4 7 26\n5 6 15\n5 7 37\n6 7 1\n",
+      "output": "YES\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-72",
+      "input": "2 1\n33\n1 2 15\n",
+      "output": "NO\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-73",
+      "input": "2 0\n31\n\n",
+      "output": "NO\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-74",
+      "input": "3 2\n7\n1 2 16\n2 3 21\n",
+      "output": "YES\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-75",
+      "input": "4 6\n20\n1 2 3\n1 3 11\n1 4 6\n2 3 17\n2 4 16\n3 4 18\n",
+      "output": "NO\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-76",
+      "input": "8 24\n37\n1 2 7\n1 3 31\n1 4 7\n1 6 37\n1 7 8\n1 8 25\n2 3 10\n2 4 14\n2 5 4\n2 6 13\n2 7 39\n2 8 21\n3 4 39\n3 5 27\n3 7 17\n3 8 22\n4 5 10\n4 7 20\n4 8 40\n5 6 7\n5 7 33\n5 8 21\n6 7 28\n7 8 19\n",
+      "output": "NO\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-77",
+      "input": "8 15\n5\n1 4 28\n1 6 39\n1 7 11\n1 8 16\n2 3 3\n2 5 22\n2 6 3\n3 6 24\n3 7 6\n4 5 25\n4 7 18\n4 8 39\n5 6 9\n5 7 40\n5 8 10\n",
+      "output": "YES\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-78",
+      "input": "9 12\n4\n1 5 17\n1 8 26\n2 4 36\n3 5 39\n3 8 27\n3 9 14\n4 5 40\n4 7 4\n4 8 33\n5 8 27\n6 7 11\n8 9 16\n",
+      "output": "YES\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-79",
+      "input": "2 1\n17\n1 2 31\n",
+      "output": "YES\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-80",
+      "input": "9 8\n18\n1 2 4\n1 5 34\n2 7 25\n2 9 20\n3 4 40\n3 9 6\n4 6 8\n5 6 6\n",
+      "output": "NO\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-81",
+      "input": "2 0\n19\n\n",
+      "output": "NO\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-82",
+      "input": "8 18\n36\n1 2 30\n1 3 32\n1 5 6\n1 7 39\n2 3 35\n2 4 14\n2 5 22\n2 6 17\n2 7 33\n2 8 22\n3 6 2\n3 7 29\n3 8 2\n4 7 3\n4 8 35\n5 7 24\n5 8 26\n6 8 11\n",
+      "output": "NO\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-83",
+      "input": "5 3\n38\n1 4 13\n2 4 38\n2 5 33\n",
+      "output": "NO\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-84",
+      "input": "4 1\n34\n3 4 6\n",
+      "output": "NO\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-85",
+      "input": "6 15\n4\n1 2 10\n1 3 11\n1 4 23\n1 5 19\n1 6 39\n2 3 15\n2 4 28\n2 5 25\n2 6 33\n3 4 40\n3 5 33\n3 6 39\n4 5 15\n4 6 19\n5 6 26\n",
+      "output": "YES\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-86",
+      "input": "2 0\n16\n\n",
+      "output": "NO\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-87",
+      "input": "8 6\n33\n1 2 15\n1 6 35\n2 7 20\n3 7 25\n6 7 33\n7 8 15\n",
+      "output": "NO\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-88",
+      "input": "6 8\n11\n1 4 28\n1 5 39\n2 5 18\n2 6 13\n3 5 34\n3 6 5\n4 5 20\n4 6 30\n",
+      "output": "YES\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-89",
+      "input": "8 26\n19\n1 2 9\n1 3 5\n1 4 6\n1 5 26\n1 7 24\n1 8 18\n2 3 36\n2 4 14\n2 5 21\n2 6 7\n2 7 38\n2 8 12\n3 4 22\n3 5 9\n3 6 8\n3 7 29\n3 8 25\n4 5 28\n4 6 6\n4 7 19\n4 8 29\n5 6 8\n5 7 12\n5 8 7\n6 7 40\n6 8 5\n",
+      "output": "YES\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-90",
+      "input": "8 19\n27\n1 2 3\n1 3 21\n1 5 4\n1 6 39\n1 8 6\n2 4 39\n2 5 35\n2 7 4\n2 8 30\n3 4 30\n3 5 37\n4 6 5\n4 7 23\n4 8 16\n5 7 15\n5 8 8\n6 7 7\n6 8 33\n7 8 16\n",
+      "output": "YES\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-91",
+      "input": "8 11\n25\n1 6 9\n2 3 20\n2 6 24\n2 7 20\n2 8 32\n3 4 18\n3 7 6\n3 8 39\n4 5 39\n5 7 24\n6 7 13\n",
+      "output": "NO\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-92",
+      "input": "7 1\n33\n3 4 20\n",
+      "output": "NO\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-93",
+      "input": "6 11\n21\n1 2 25\n1 4 6\n1 6 30\n2 4 1\n2 5 35\n2 6 4\n3 4 14\n3 5 8\n4 5 37\n4 6 28\n5 6 18\n",
+      "output": "YES\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-94",
+      "input": "8 24\n11\n1 2 32\n1 3 10\n1 4 32\n1 5 26\n1 6 17\n1 8 40\n2 3 10\n2 5 10\n2 6 7\n2 7 27\n3 4 23\n3 5 38\n3 6 38\n3 7 2\n3 8 36\n4 5 21\n4 6 1\n4 7 12\n4 8 10\n5 6 33\n5 7 24\n5 8 27\n6 7 17\n7 8 11\n",
+      "output": "YES\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-95",
+      "input": "8 23\n6\n1 2 22\n1 4 10\n1 5 40\n1 7 21\n1 8 28\n2 3 14\n2 4 24\n2 5 40\n2 6 3\n2 7 17\n2 8 29\n3 5 35\n3 6 35\n3 7 5\n3 8 3\n4 5 21\n4 6 40\n4 8 5\n5 6 24\n5 8 14\n6 7 7\n6 8 11\n7 8 7\n",
+      "output": "YES\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-96",
+      "input": "8 13\n33\n1 2 10\n1 3 2\n1 6 26\n1 8 14\n2 4 35\n2 5 11\n2 6 15\n3 4 35\n3 6 19\n4 5 12\n5 6 36\n5 8 19\n6 7 26\n",
+      "output": "NO\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-97",
+      "input": "15 72\n33\n1 2 19\n1 3 10\n1 4 9\n1 5 9\n1 7 4\n1 8 14\n1 9 20\n1 10 31\n1 11 2\n1 15 32\n2 3 8\n2 4 25\n2 5 14\n2 6 9\n2 9 26\n2 11 34\n2 12 25\n2 13 29\n2 14 13\n2 15 33\n3 4 1\n3 5 5\n3 6 5\n3 8 3\n3 10 17\n3 11 11\n3 15 13\n4 6 4\n4 7 34\n4 8 34\n4 9 40\n4 10 40\n4 11 6\n4 12 38\n4 13 37\n4 14 39\n4 15 24\n5 6 33\n5 8 34\n5 9 13\n5 10 24\n5 11 22\n5 13 32\n5 14 39\n5 15 5\n6 7 3\n6 8 7\n6 9 34\n6 10 39\n6 13 21\n6 14 8\n6 15 9\n7 9 27\n7 10 10\n7 12 1\n7 13 6\n7 15 19\n8 9 14\n8 10 30\n8 12 27\n8 13 37\n8 14 32\n9 10 20\n9 12 36\n9 13 6\n9 14 36\n10 12 8\n11 14 38\n12 14 36\n12 15 36\n13 15 2\n14 15 8\n",
+      "output": "NO\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-98",
+      "input": "13 47\n6\n1 6 33\n1 7 14\n1 8 7\n1 9 34\n1 10 26\n1 12 24\n2 3 31\n2 4 38\n2 5 18\n2 6 26\n2 9 28\n2 10 22\n2 11 17\n2 12 21\n2 13 2\n3 4 11\n3 5 28\n3 7 38\n3 10 7\n3 11 21\n4 5 4\n4 6 18\n4 7 6\n4 8 12\n4 9 29\n4 10 38\n4 11 18\n4 13 16\n5 7 29\n5 8 29\n5 10 8\n5 12 1\n5 13 34\n6 8 17\n6 9 14\n6 11 11\n6 13 2\n7 8 12\n7 10 36\n7 11 6\n8 10 31\n9 12 21\n9 13 14\n10 13 28\n11 12 7\n11 13 27\n12 13 2\n",
+      "output": "YES\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-99",
+      "input": "16 13\n36\n1 9 21\n3 6 1\n3 8 38\n5 9 26\n6 7 1\n6 9 23\n6 14 24\n7 12 34\n7 16 34\n8 11 1\n8 15 19\n9 14 34\n12 15 14\n",
+      "output": "NO\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-100",
+      "input": "9 33\n26\n1 2 8\n1 3 8\n1 4 4\n1 5 7\n1 6 17\n1 7 32\n1 8 17\n1 9 10\n2 3 27\n2 4 37\n2 5 24\n2 6 23\n2 7 6\n2 8 2\n2 9 11\n3 4 33\n3 5 39\n3 6 25\n3 7 21\n3 8 7\n3 9 18\n4 6 27\n4 7 24\n5 6 25\n5 7 22\n5 8 19\n5 9 31\n6 7 30\n6 8 15\n6 9 7\n7 8 4\n7 9 30\n8 9 6\n",
+      "output": "YES\n",
+      "origin": "generated"
+    }
+  ]
+}

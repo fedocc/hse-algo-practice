@@ -1,0 +1,618 @@
+{
+  "schema_version": 1,
+  "problem_id": "yandex-77621-C",
+  "language": "python3",
+  "comparison": "tokens",
+  "timeout_seconds": 2,
+  "total_timeout_seconds": 30,
+  "provenance": {
+    "kind": "generated",
+    "title": "100 локальных проверок, включая примеры условия",
+    "source_url": "https://official.contest.yandex.ru/contest/77621/problems/C/",
+    "generator": "testpacks/generate_firstyear.py; seed fedor-local-tests-v1:77621-C",
+    "oracle": "Независимый прямой перебор, обход графа или модель на обычных списках",
+    "notes": "Неофициальный тренировочный набор. Проверяет ответы и граничные случаи; не воспроизводит все скрытые тесты и ограничения исходной платформы."
+  },
+  "cases": [
+    {
+      "id": "source-example-1",
+      "input": "4 8 1 1 4 8\n....WWWW\n.######.\n.#..W...\n...WWWW.",
+      "output": "13",
+      "origin": "statement-example"
+    },
+    {
+      "id": "source-example-2",
+      "input": "4 7 2 2 3 6\n#######\n#WW#..#\n#WW#..#\n#######",
+      "output": "-1",
+      "origin": "statement-example"
+    },
+    {
+      "id": "boundary-1",
+      "input": "1 2\n1 1\n1 2\n.W\n",
+      "output": "2\n",
+      "origin": "generated-boundary"
+    },
+    {
+      "id": "boundary-2",
+      "input": "1 3\n1 1\n1 3\n.#.\n",
+      "output": "-1\n",
+      "origin": "generated-boundary"
+    },
+    {
+      "id": "boundary-3",
+      "input": "1 1\n1 1\n1 1\nW\n",
+      "output": "0\n",
+      "origin": "generated-boundary"
+    },
+    {
+      "id": "generated-6",
+      "input": "8 7\n8 1\n4 3\n....W.W\n.#.#.W.\n....W..\n#W..W#W\nWWW..W.\n.#...W.\n.WW...W\n.....W.\n",
+      "output": "8\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-7",
+      "input": "10 2\n3 2\n2 2\n.W\nW.\n..\nW.\nW.\nW.\nWW\n.W\n#W\n..\n",
+      "output": "1\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-8",
+      "input": "4 5\n2 5\n4 3\nWW.#W\n.....\n..W#.\nW..WW\n",
+      "output": "5\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-9",
+      "input": "10 5\n9 2\n9 5\n..##.\n#.#.W\n.##..\n..#..\n#.WWW\n.WW.W\n.WWWW\n..#..\n.....\nW##W.\n",
+      "output": "3\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-10",
+      "input": "6 4\n4 4\n3 2\n.#.#\nWW.W\n...W\nWW..\nWW.W\n...#\n",
+      "output": "3\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-11",
+      "input": "11 2\n4 2\n3 1\n#.\n..\n.#\nW.\n.#\n..\n#.\nWW\nWW\nW.\n#.\n",
+      "output": "3\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-12",
+      "input": "8 6\n2 1\n3 6\n.W#W..\n......\nWWW.W.\nW..WW.\n#WW#W.\n#.....\nWW.#.#\nW..W..\n",
+      "output": "6\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-13",
+      "input": "7 3\n7 1\n1 2\nW..\nWW.\nWW#\nWW.\nW.W\n.W.\n..#\n",
+      "output": "11\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-14",
+      "input": "12 2\n12 1\n6 1\n.W\n..\n..\nWW\n.#\n.W\n##\nW.\n.W\n.W\nW.\n.W\n",
+      "output": "-1\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-15",
+      "input": "2 3\n2 1\n1 1\n.#.\n..W\n",
+      "output": "1\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-16",
+      "input": "4 3\n4 2\n1 1\n..#\nW..\n...\n...\n",
+      "output": "4\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-17",
+      "input": "12 5\n6 5\n12 4\n#WWW.\n.#W.W\nWW...\nW..W.\n.W..W\n...W.\nW#..#\nW..W#\n...W.\n.....\nW#..W\n##W..\n",
+      "output": "10\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-18",
+      "input": "6 9\n3 8\n2 5\n.WWW##.#.\n#.WW.....\nW..W..#..\n..#.#.W#.\n.WW.W....\n...W...W#\n",
+      "output": "4\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-19",
+      "input": "10 4\n2 1\n2 3\n..W.\n.#.W\nWWW#\n.W##\n..W#\nWW..\n.W.W\n.W..\n...#\nW...\n",
+      "output": "5\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-20",
+      "input": "6 6\n1 3\n3 3\n...WW.\n...WWW\n#..WW#\n#WWWW.\n#WW...\n...W..\n",
+      "output": "2\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-21",
+      "input": "1 10\n1 6\n1 3\n#W.#W.WWW#\n",
+      "output": "-1\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-22",
+      "input": "9 2\n7 1\n3 2\n#.\n.#\nW.\n..\n..\nW.\n..\n..\nW.\n",
+      "output": "5\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-23",
+      "input": "11 9\n8 2\n6 4\n..W.W.W#.\n.W#W.##W.\n.W..W.W##\nW#W.W.WW#\nW.WW.W#.#\nW...#...#\nWW#W#.W.W\n...WWW#WW\nWW...W..W\n..WWW..W#\n.W.W....#\n",
+      "output": "5\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-24",
+      "input": "4 9\n3 6\n1 8\n...W.WW..\n.#..#..W.\n.#W....##\n.##.W....\n",
+      "output": "5\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-25",
+      "input": "11 11\n4 7\n4 8\n.#.#.W.W##.\n#W.W....#WW\n.W..#.W.#WW\n#W.#W#...W.\n....W...#WW\n.W.....W.##\nW.##W.##.WW\n.#..W.W.#.W\nWW..#.WW..W\n.WWW...W#.W\n.#.#W.WW#.#\n",
+      "output": "1\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-26",
+      "input": "9 12\n8 11\n7 8\nW#..#.......\n.##W.#WW....\n.#.WW.WWW.WW\nW#W..#.W..W.\nW.WWW.....W.\nW.WW..#.W.#W\n.W..#W.....W\n#...W...W..W\n.W.W..#WW#WW\n",
+      "output": "4\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-27",
+      "input": "10 11\n9 8\n6 10\n.W.W..W...W\nWWWW..#.W.W\n##..WW.WW.W\nW.WW.#W.#.W\n##WW###W..W\n#..W..W.#..\n...W.W..W..\n#WW.W..#..W\nWWW...W...W\n...W.WW#.W.\n",
+      "output": "5\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-28",
+      "input": "7 2\n6 1\n3 1\n.#\n..\n..\n..\nW.\n.#\n..\n",
+      "output": "4\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-29",
+      "input": "10 11\n1 5\n7 1\n.....#W..W.\n..WWWWW.WWW\n...W..W##W.\n#...W#.#.W.\nW..#.....W.\n.WW#..W....\n..WW.W.WWW.\n.#WW.#..WW.\nW...W.WW.W.\nW.#..WWW.WW\n",
+      "output": "11\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-30",
+      "input": "10 5\n5 2\n10 2\n..WW#\nWWW#W\n.WW..\nWW...\n..#.W\n.WW..\n.W...\nWWW.#\n.WW.W\nW.WW.\n",
+      "output": "9\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-31",
+      "input": "7 6\n3 6\n4 1\nW..W.W\n.WW#..\nW...W.\n..W..#\nW.WWW.\n.WW.WW\n.W.W.W\n",
+      "output": "7\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-32",
+      "input": "10 2\n7 1\n3 1\n..\n..\n.W\nWW\n..\n.#\n.W\n#W\n..\n#.\n",
+      "output": "5\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-33",
+      "input": "8 8\n4 7\n4 8\n.#W.WW#W\n.W.WWW#.\nWW.W.#W.\n#..WW...\n...WWW#.\n#...W...\nWW....WW\nW.#.#.WW\n",
+      "output": "1\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-34",
+      "input": "3 2\n3 1\n2 1\n#.\n.W\n.W\n",
+      "output": "1\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-35",
+      "input": "10 10\n1 10\n4 4\n.W.##...W.\n.#WWW.#W##\n..WWW.WW.W\n.##..#....\n....WW.WW#\n.#.W...#.W\n....W.#.#W\n#W...W....\n....W.W.#.\nW...W...#W\n",
+      "output": "11\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-36",
+      "input": "5 7\n2 3\n5 7\n##W..WW\nW...WW.\nW....#.\n.#.....\n...W...\n",
+      "output": "7\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-37",
+      "input": "4 12\n4 10\n4 1\nW.W#..W.W#.#\nWW.###W.....\n......##W..W\n..#W.WWW..#.\n",
+      "output": "14\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-38",
+      "input": "3 9\n3 3\n1 2\n..#W....W\nW.##.#W..\nWW.W#..W.\n",
+      "output": "4\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-39",
+      "input": "4 6\n3 6\n2 3\n##WW.#\n##.W.W\n..W#..\nW....W\n",
+      "output": "5\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-40",
+      "input": "3 11\n2 1\n1 7\n..W##..W.W#\n..WWW..#..#\n...#..W##.W\n",
+      "output": "10\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-41",
+      "input": "6 11\n1 9\n3 9\n....##W....\nW.WWW..WW.#\n.W.W...W...\nW#W....###W\n.W.WW.WW.W.\n...#W.#W.W#\n",
+      "output": "3\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-42",
+      "input": "1 6\n1 2\n1 3\nW...WW\n",
+      "output": "1\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-43",
+      "input": "1 12\n1 4\n1 11\n....WW..W..W\n",
+      "output": "10\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-44",
+      "input": "11 8\n6 8\n11 3\nW..W.##.\nWW...W..\nW.#W.W.W\n##...WW.\n.WW...W.\n.....W#.\n..##.##W\n#WW.WWW.\n#W#W..W.\n.W#..W..\n.....#W#\n",
+      "output": "12\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-45",
+      "input": "2 5\n2 4\n2 1\n..#..\n..W.W\n",
+      "output": "4\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-46",
+      "input": "3 9\n3 6\n1 1\n..#W#.W.#\n#.WWWW...\nW..W.....\n",
+      "output": "8\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-47",
+      "input": "2 5\n2 4\n2 5\n#W...\nW#...\n",
+      "output": "1\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-48",
+      "input": "2 9\n2 5\n2 9\n#WW#W.W#.\nW..W..#W.\n",
+      "output": "-1\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-49",
+      "input": "5 5\n4 3\n5 3\n.WW.W\n#..W#\n.W...\nWW.W#\nW..W.\n",
+      "output": "1\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-50",
+      "input": "6 6\n2 5\n5 6\n##.W..\n#W....\nW#W#.#\n..WW.W\n.WW...\nW.WWWW\n",
+      "output": "4\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-51",
+      "input": "11 4\n7 1\n10 2\nW#.W\nWW.W\nW..W\nWW..\n..##\n.WWW\n.#.W\nW.#W\nW...\nW...\nW.W.\n",
+      "output": "5\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-52",
+      "input": "3 9\n3 9\n3 4\n.W.W#.W#W\nW....#.#.\n.W..#..W.\n",
+      "output": "-1\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-53",
+      "input": "7 8\n2 8\n7 1\nW.W....W\n......W.\nWWWWWW..\n..W....W\n#..W#..W\nW....W.W\n...W....\n",
+      "output": "13\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-54",
+      "input": "11 7\n8 5\n1 7\n#....W.\n.WW.#.#\n##.#W..\nWWWW.W.\n.W#W..W\nWW...W.\nW....#W\n.WWW.W#\n..#....\nWW....W\n.WW..##\n",
+      "output": "11\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-55",
+      "input": "12 5\n8 1\n7 3\n#.W#W\n##WW#\nW#W.W\n.WW.#\n#.WW.\n#..W#\n.W.#W\n..W#.\n.W#.#\n.W#W#\nW.W#W\n.#.WW\n",
+      "output": "4\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-56",
+      "input": "6 6\n4 1\n2 6\n...#W.\nW..W..\n..W...\n.W...#\nW.W#.#\n#..W..\n",
+      "output": "8\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-57",
+      "input": "8 5\n7 2\n3 4\nW#W.#\nW...W\nW#..#\n.W...\nWW.W.\n.#W..\n.....\nW.##.\n",
+      "output": "7\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-58",
+      "input": "12 11\n1 7\n4 10\n#.W.W#..W..\nW#.#W#W#.#.\n..WW##....W\n.WWW......#\n.W..#W#.W..\n.W...##..#.\nWW#......#W\n#W.W..W....\n.#.W##.W#.#\n.W#.W#.W...\n...##....#.\n..W.W.WW#W.\n",
+      "output": "7\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-59",
+      "input": "7 6\n5 6\n2 2\nWW.#..\n..#..W\n.#.W..\n###..#\nWWW...\n.W.WWW\n.W..W.\n",
+      "output": "-1\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-60",
+      "input": "1 2\n1 1\n1 2\n..\n",
+      "output": "1\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-61",
+      "input": "7 4\n1 4\n7 3\nWWW.\n....\nWW..\n.#.#\n.WW.\n....\nW...\n",
+      "output": "8\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-62",
+      "input": "8 6\n3 4\n1 4\n.W..##\nW#..WW\nW.....\nW.W.W#\n....##\nW...W.\nWWWW#.\n.....#\n",
+      "output": "2\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-63",
+      "input": "4 6\n3 5\n1 5\n#.#W..\n#WW..W\n..W...\n#.#.W.\n",
+      "output": "2\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-64",
+      "input": "1 12\n1 1\n1 12\n.W#W.WW#....\n",
+      "output": "-1\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-65",
+      "input": "2 7\n2 1\n2 7\nW..W.WW\n.#.WW..\n",
+      "output": "11\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-66",
+      "input": "12 9\n10 1\n11 9\n##.W#WW#W\n.#WW.W..W\n.#WW...W.\n.W..W.#.W\n#WWWW#W..\n.W....W#.\nWW#....#W\nW#WWWWW.W\n.W...WWW.\n.W#.WW#WW\n.WWW.....\n.WW.W.W..\n",
+      "output": "12\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-67",
+      "input": "2 9\n1 2\n2 9\nW.WW#.#.W\n#W.W.W.W.\n",
+      "output": "12\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-68",
+      "input": "4 7\n2 6\n3 3\nW..W..#\n#.#.W..\n.W...#.\nWW#..WW\n",
+      "output": "5\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-69",
+      "input": "3 8\n1 2\n2 3\nW.W..#.W\n#W.WWWW.\n#.#.##.W\n",
+      "output": "3\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-70",
+      "input": "7 4\n3 2\n5 3\nWW..\n.WW#\n#..#\n..WW\n#..W\n#.#.\nW.#W\n",
+      "output": "3\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-71",
+      "input": "10 12\n10 9\n2 9\n...WWWW.#W..\nW.#..W.W..#.\n.#.W..##W..W\n..WW.......W\n..W...WWW...\n.W.WWW.W.W..\n.W.####WW##W\n..#..#W#.WW.\n..#.#.WW..W.\n.W....#W..WW\n",
+      "output": "11\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-72",
+      "input": "2 12\n2 8\n1 8\nW#.#.....W.#\n#.#..WW..W.W\n",
+      "output": "1\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-73",
+      "input": "11 9\n9 4\n3 9\n...#.#.W.\nW.W#WWW..\n#W....#..\nW...W#W.W\n.W##W.W#W\n..W.#....\nW..W.#.W#\nW.WWWWWWW\nW....#W.W\n..W....#W\n#...WW...\n",
+      "output": "16\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-74",
+      "input": "1 10\n1 9\n1 8\n##..W....W\n",
+      "output": "1\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-75",
+      "input": "1 4\n1 3\n1 2\nW..W\n",
+      "output": "1\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-76",
+      "input": "4 12\n4 9\n4 2\n.WW....WW.W.\n.WW..W..W.WW\n....WW#...W.\nW.W##..W.WW.\n",
+      "output": "12\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-77",
+      "input": "6 3\n2 2\n5 1\n#..\n..#\n...\nWW.\n...\n...\n",
+      "output": "5\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-78",
+      "input": "7 6\n5 1\n4 3\n.WW#..\n#.#W.W\n..#WW.\n.W...W\n..W.W.\n#..WW.\nWWW...\n",
+      "output": "4\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-79",
+      "input": "6 10\n3 3\n3 8\n.##.#WW...\nWW.....W..\nW#.#W.....\n.W..W.WWW.\n.#....W#..\nW.WW.WW...\n",
+      "output": "7\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-80",
+      "input": "6 2\n6 1\n5 2\nW#\nW.\nWW\n#W\n..\n..\n",
+      "output": "2\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-81",
+      "input": "3 8\n2 5\n2 3\n#.....WW\n......#.\nW##..W#W\n",
+      "output": "2\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-82",
+      "input": "11 5\n7 5\n6 4\n....W\n#W#.#\n..#W.\n.....\n...W.\n.W..W\nW..#.\n.WW..\nWW.W#\n#..W.\n.W#W.\n",
+      "output": "3\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-83",
+      "input": "8 6\n5 2\n1 4\nW##...\n..##.W\n.####.\nW.W.##\n..W#.W\n.W.##W\n.#.WW.\n.W.W..\n",
+      "output": "-1\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-84",
+      "input": "2 7\n2 4\n1 6\n.WW...#\nW...#W.\n",
+      "output": "3\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-85",
+      "input": "10 9\n9 9\n7 1\n...W#.W..\nW#W.#W#W.\n..#.W.W..\n.WWW....#\n.##..W.WW\nWWWW.WW.W\n.W##W..WW\n.WW.#W#W.\n.WW.#....\n..WWW#W.W\n",
+      "output": "18\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-86",
+      "input": "7 6\n1 2\n3 6\n..WWWW\nW...W.\n.W.W#.\n.W.WW.\n#.....\n.#..WW\nW..W##\n",
+      "output": "7\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-87",
+      "input": "2 9\n2 5\n2 3\n....W#W..\nW....W#..\n",
+      "output": "2\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-88",
+      "input": "9 9\n8 2\n1 2\nW...#W...\nW..#.#...\n.........\n.W..WWWW.\n.WWW...W.\nWW...#..W\n.W#W#....\n......#.W\n.W##...W.\n",
+      "output": "10\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-89",
+      "input": "2 4\n2 4\n1 1\n..W.\nWW..\n",
+      "output": "5\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-90",
+      "input": "9 2\n6 2\n5 2\nW#\nW.\nWW\nWW\n..\n..\n..\n.W\n#.\n",
+      "output": "1\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-91",
+      "input": "2 11\n2 1\n2 5\n.WWWWWWWW#.\n........W..\n",
+      "output": "4\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-92",
+      "input": "1 3\n1 2\n1 1\n...\n",
+      "output": "1\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-93",
+      "input": "5 9\n3 4\n1 7\n....W..WW\n.WWW#W.W.\n....W.#..\n....W..W.\n.#..W#.#W\n",
+      "output": "7\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-94",
+      "input": "6 3\n3 1\n1 1\n.W#\nWWW\n...\nW.W\nW.W\n...\n",
+      "output": "3\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-95",
+      "input": "10 9\n6 8\n2 7\n##..#W#..\nW..W.....\nW.##..WW.\n#W.#W.#.#\nWWWW.WW.W\nW..W.#W..\n....W....\n.#....WWW\n.WWWW.W.W\n.....W..#\n",
+      "output": "6\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-96",
+      "input": "1 7\n1 6\n1 2\n...#W..\n",
+      "output": "-1\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-97",
+      "input": "9 8\n6 7\n2 3\n.WWW.WW#\nWW...#W.\n.#.#.W..\n.W.WW.W.\n..#.WWW.\n#.W.W...\n..WW..##\n...W..W.\n#.W##.#.\n",
+      "output": "10\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-98",
+      "input": "7 6\n5 1\n4 5\n#..WW.\n#..W..\nWWW..W\nW..W..\n.W.W..\n.WW..#\n.W..WW\n",
+      "output": "7\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-99",
+      "input": "8 10\n8 6\n5 3\n#.#W#W...#\n#WW...W.W.\n...W...W..\nW...W.#..W\n.....W.W.#\nWW.....#.W\n.....W.W#.\n..W...W.#W\n",
+      "output": "6\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-100",
+      "input": "5 2\n3 2\n1 2\n..\n..\n..\nW.\n.W\n",
+      "output": "2\n",
+      "origin": "generated"
+    }
+  ]
+}

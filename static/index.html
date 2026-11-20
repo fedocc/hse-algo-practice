@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark light">
+  <title>Algo Practice — ФКН / Python</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' rx='10' fill='%23222222'/%3E%3Ctext x='5' y='28' fill='%23f4b14a' font-size='27' font-family='monospace'%3E%26lt;/%3C/text%3E%3C/svg%3E">
+  <link rel="stylesheet" href="/app.css">
+  <script src="/vendor/monaco/vs/loader.js" defer></script>
+  <script src="/app.js" defer></script>
+</head>
+<body>
+  <svg class="icon-sprite" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><defs>
+    <symbol id="i-list" viewBox="0 0 24 24"><path d="M4 5h16M4 19h16M10 10h10M10 14h10M4 9l3 3-3 3"/></symbol>
+    <symbol id="i-left" viewBox="0 0 24 24"><path d="m15 5-7 7 7 7"/></symbol>
+    <symbol id="i-right" viewBox="0 0 24 24"><path d="m9 5 7 7-7 7"/></symbol>
+    <symbol id="i-up" viewBox="0 0 24 24"><path d="m5 15 7-7 7 7"/></symbol>
+    <symbol id="i-down" viewBox="0 0 24 24"><path d="m5 9 7 7 7-7"/></symbol>
+    <symbol id="i-play" viewBox="0 0 24 24"><path d="m8 5 11 7-11 7Z" fill="currentColor" stroke="none"/></symbol>
+    <symbol id="i-cloud" viewBox="0 0 24 24"><path d="M7 18H5a4 4 0 0 1-.5-8A7 7 0 0 1 18 8a5 5 0 0 1 1 10h-2M12 20V10m-4 4 4-4 4 4"/></symbol>
+    <symbol id="i-bug" viewBox="0 0 24 24"><path d="M8 9h8v8a4 4 0 0 1-8 0Zm1-4 3 3 3-3M8 12H4m16 0h-4M8 16H4m16 0h-4M8 9 5 6m11 3 3-3M8 20l-3 2m11-2 3 2M12 9v11"/></symbol>
+    <symbol id="i-document" viewBox="0 0 24 24"><path d="M6 3h12v18H6Zm3 5h6m-6 4h6m-6 4h4"/></symbol>
+    <symbol id="i-book" viewBox="0 0 24 24"><path d="M12 5c-4-2-7-2-10-1v15c4-1 7-1 10 1m0-15c4-2 7-2 10-1v15c-4-1-7-1-10 1Zm0 0v15"/></symbol>
+    <symbol id="i-flask" viewBox="0 0 24 24"><path d="M9 3h6m-5 0v6l-6 11h16L14 9V3M8 13h8"/></symbol>
+    <symbol id="i-history" viewBox="0 0 24 24"><path d="M3 4v5h5M3 9a9 9 0 1 1 0 7m9-10v6l4 2"/></symbol>
+    <symbol id="i-code" viewBox="0 0 24 24"><path d="m7 6-5 6 5 6m10-12 5 6-5 6M14 3 10 21"/></symbol>
+    <symbol id="i-check-square" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="m8 11 3 3 6-6"/></symbol>
+    <symbol id="i-terminal" viewBox="0 0 24 24"><path d="m4 5 7 7-7 7m9 0h7"/></symbol>
+    <symbol id="i-timer" viewBox="0 0 24 24"><circle cx="12" cy="14" r="8"/><path d="M12 2v4M9 2h6m2 4 2-2M12 9v5l3 2"/></symbol>
+    <symbol id="i-map" viewBox="0 0 24 24"><rect x="3" y="3" width="6" height="6" rx="1"/><rect x="15" y="15" width="6" height="6" rx="1"/><rect x="3" y="15" width="6" height="6" rx="1"/><path d="M6 9v6m3-9h9v9M9 18h6"/></symbol>
+    <symbol id="i-layout" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></symbol>
+    <symbol id="i-bookmark" viewBox="0 0 24 24"><path d="M6 3h12v18l-6-4-6 4Z"/></symbol>
+    <symbol id="i-reset" viewBox="0 0 24 24"><path d="M5 3v6h6M5 9a8 8 0 1 1-1 7"/></symbol>
+    <symbol id="i-expand" viewBox="0 0 24 24"><path d="M14 3h7v7M21 3l-7 7M3 14v7h7m-7 0 7-7"/></symbol>
+    <symbol id="i-type" viewBox="0 0 24 24"><path d="m3 19 6-15 6 15M5 14h8m4-2c4-3 6 2 3 3-5 0-4 5 0 4l2-1m0-6v7"/></symbol>
+    <symbol id="i-close" viewBox="0 0 24 24"><path d="m6 6 12 12M6 18 18 6"/></symbol>
+    <symbol id="i-step" viewBox="0 0 24 24"><path d="M5 6h8a5 5 0 0 1 0 10H9m3-3-3 3 3 3M4 19h1"/></symbol>
+    <symbol id="i-enter" viewBox="0 0 24 24"><path d="M12 3v13m-4-4 4 4 4-4M4 21h16"/></symbol>
+    <symbol id="i-stop" viewBox="0 0 24 24"><rect x="6" y="6" width="12" height="12" rx="1"/></symbol>
+    <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 4v16M4 12h16"/></symbol>
+    <symbol id="i-link" viewBox="0 0 24 24"><path d="M14 3h7v7m0-7L10 14M9 4H4v16h16v-5"/></symbol>
+    <symbol id="i-tag" viewBox="0 0 24 24"><path d="M3 3h9l10 10-9 9L3 12Z"/><circle cx="8" cy="8" r="1.5"/></symbol>
+    <symbol id="i-hint" viewBox="0 0 24 24"><path d="M8 15a7 7 0 1 1 8 0v4H8Zm1 7h6M12 9v8"/></symbol>
+    <symbol id="i-note" viewBox="0 0 24 24"><path d="M5 3h14a2 2 0 0 1 2 2v10l-6 6H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2Zm10 18v-6h6"/></symbol>
+    <symbol id="i-sparkles" viewBox="0 0 24 24"><path d="m13 3 2.7 6.3L22 12l-6.3 2.7L13 21l-2.7-6.3L4 12l6.3-2.7ZM4 2v5M1.5 4.5h5M21 19v4m-2-2h4"/></symbol>
+    <symbol id="i-shuffle" viewBox="0 0 24 24"><path d="m17 3 4 4-4 4m0 2 4 4-4 4M3 6h3c5 0 7 11 12 11h3M3 18h3c5 0 7-11 12-11h3"/></symbol>
+  </defs></svg>
+  <header class="app-header">
+    <div class="header-left">
+      <a class="brand" href="#workspace" data-view="workspace" aria-label="Algo Practice, редактор" title="Algo Practice · локально"><svg viewBox="0 0 24 28" width="21" height="25" aria-hidden="true"><path d="M17.3 21.1c.6-.6 1.7-.6 2.3 0 .6.7.6 1.7 0 2.3l-2.8 2.8c-2.6 2.6-6.8 2.7-9.5.1l-5-5C-.3 18.8-.5 14.8 1.9 12.2l4.5-4.8c2.4-2.6 6.8-2.9 9.6-.6l4.1 3.3a1.6 1.6 0 0 1-2.1 2.5l-4.1-3.3c-1.4-1.2-3.9-1-5.2.3l-4.5 4.8c-1.2 1.3-1 3.3.3 4.7l5 4.9c1.4 1.3 3.6 1.3 4.9 0Z" fill="#ffa116"/><path d="M10.5 18.3a1.6 1.6 0 0 1 0-3.2h11.9a1.6 1.6 0 0 1 0 3.2Z" fill="#b3b3b3"/><path d="M12.7.5a1.6 1.6 0 1 1 2.4 2.2L4.2 14.4c-1.2 1.3-1.1 3.3.3 4.6l5 4.9a1.6 1.6 0 1 1-2.2 2.3l-5-4.9C-.3 18.8-.5 14.7 1.9 12.1Z" fill="currentColor"/></svg></a>
+      <span class="header-rule"></span><button id="open-catalog" class="problem-list-button"><svg class="icon"><use href="#i-list"/></svg><span>Problem List</span></button><button id="previous-problem" class="icon-button" title="Предыдущая задача" aria-label="Предыдущая задача"><svg class="icon"><use href="#i-left"/></svg></button><button id="next-problem" class="icon-button" title="Следующая задача" aria-label="Следующая задача"><svg class="icon"><use href="#i-right"/></svg></button><button id="random-problem" class="icon-button" title="Случайная задача" aria-label="Случайная задача"><svg class="icon"><use href="#i-shuffle"/></svg></button>
+    </div>
+    <div class="run-actions"><button id="debug-button" class="button debug-button" title="Debug" aria-label="Debug"><svg class="icon"><use href="#i-bug"/></svg></button><button id="run-button" class="button run-button" title="Run · ⌘ / Ctrl + Enter" aria-label="Run"><svg class="icon"><use href="#i-play"/></svg></button><div class="submit-control" id="submit-control"><button id="submit-button" class="button submit-button" aria-label="Submit"><svg class="icon"><use id="submit-icon" href="#i-cloud"/></svg><span>Submit</span></button><button id="submit-mode-button" class="button submit-mode-button" title="Выбрать способ проверки" aria-label="Выбрать способ проверки" aria-haspopup="menu" aria-expanded="false" aria-controls="submit-mode-menu"><svg class="icon"><use href="#i-down"/></svg></button><div id="submit-mode-menu" class="submit-mode-menu" role="menu" aria-label="Способ проверки" hidden><button id="submit-local-option" class="submit-mode-option" data-submit-mode="local" role="menuitemradio" aria-checked="false"><svg class="icon"><use href="#i-check-square"/></svg><span><strong id="submit-local-label">Локально</strong><small id="submit-local-note">Проверочный набор</small></span></button><button id="submit-official-option" class="submit-mode-option" data-submit-mode="official" role="menuitemradio" aria-checked="true"><svg class="icon"><use href="#i-cloud"/></svg><span><strong>Dia · официально</strong><small id="submit-official-note">Проверка в источнике задачи</small></span></button><div id="submit-provenance"></div></div></div><button class="button assistant-notes" data-view="workspace" data-description="notes" title="Мои заметки" aria-label="Мои заметки"><svg class="icon"><use href="#i-note"/></svg></button><button class="button assistant-theory" data-view="workspace" data-description="theory" title="Разобрать теорию с GPT" aria-label="Разобрать теорию с GPT"><svg class="icon"><use href="#i-sparkles"/></svg></button></div>
+    <div class="header-right">
+      <nav class="main-nav" aria-label="Разделы"><button class="nav-button active" data-view="workspace" aria-label="Редактор" title="Редактор"><svg class="icon"><use href="#i-code"/></svg></button><button class="nav-button" data-view="catalog" aria-label="Задачи" title="Каталог задач"><svg class="icon"><use href="#i-layout"/></svg></button><button class="nav-button" data-view="map" aria-label="Карта тем" title="Карта тем"><svg class="icon"><use href="#i-map"/></svg></button><button class="nav-button" data-view="interview" aria-label="Интервью" title="Две задачи за час"><svg class="icon"><use href="#i-timer"/></svg><span class="nav-timer" id="nav-timer" hidden>60:00</span></button></nav>
+      <button class="goal-button" id="goal-button" title="Цель к 16 марта 2027"><span id="goal-count">— / 200</span></button><button class="bridge-button" id="bridge-button" title="Связь с Dia" aria-label="Связь с Dia"><span class="connection-dot" id="connection-dot"></span><span id="connection-label">Dia</span></button>
+    </div>
+  </header>
+
+  <main>
+    <section id="workspace-view" class="view workspace-view" aria-label="Рабочее место">
+      <span id="toolbar-problem" hidden></span>
+      <div id="interview-strip" class="interview-strip" hidden><svg class="icon timer-icon" aria-hidden="true"><use href="#i-timer"/></svg><strong id="strip-time">60:00</strong><span id="strip-pair-label">Две задачи за час</span><div id="strip-problems"></div><button class="text-button" data-view="interview">Тренировка</button></div>
+      <div class="workbench" id="workbench">
+        <section class="panel description-panel">
+          <div class="panel-tabbar" role="tablist" aria-label="Материалы задачи"><button class="panel-tab active" data-description="description" role="tab" aria-selected="true"><svg class="icon description-icon"><use href="#i-document"/></svg><span>Description</span></button><button class="panel-tab" data-description="theory" role="tab" aria-selected="false"><svg class="icon theory-icon"><use href="#i-book"/></svg><span>Editorial</span></button><button class="panel-tab" data-description="notes" role="tab" aria-selected="false"><svg class="icon notes-icon"><use href="#i-flask"/></svg><span>Solutions</span></button><button class="panel-tab" data-description="submissions" role="tab" aria-selected="false"><svg class="icon submissions-icon"><use href="#i-history"/></svg><span>Submissions</span></button></div>
+          <div class="description-scroll">
+            <div id="problem-heading"></div>
+            <div id="description-content" class="description-content"></div>
+            <div id="theory-content" hidden></div>
+            <div id="submissions-content" hidden></div>
+            <div id="notes-content" hidden><label class="field-label" for="problem-notes">Мой подход, ошибки и что повторить</label><textarea id="problem-notes" class="notes-editor" placeholder="Оставь ход мысли. После решения сюда удобно вернуться."></textarea><label class="checkbox-label"><input type="checkbox" id="assisted-checkbox"> Решал с подсказкой</label><p class="muted small">Код и заметки сохраняются на этом Mac.</p></div>
+          </div>
+          <footer class="description-footer"><a id="source-link" href="#" target="_blank" rel="noopener noreferrer">Источник <svg class="icon"><use href="#i-link"/></svg></a><label><span class="sr-only">Статус задачи</span><select id="problem-status"><option value="todo">Не решена</option><option value="solved">✓ Решена</option><option value="review">↺ Повторить</option></select></label></footer>
+        </section>
+        <div id="vertical-split" class="splitter vertical-split" role="separator" aria-orientation="vertical" aria-label="Ширина условия" tabindex="0"></div>
+        <section class="coding-column" id="coding-column">
+          <section class="panel editor-panel">
+            <div class="code-title"><svg class="icon code-icon"><use href="#i-code"/></svg><span>Code</span></div>
+            <header class="editor-header"><span class="language-name">Python3 <svg class="icon"><use href="#i-down"/></svg><span class="auto-save-dot">•</span> Auto</span><div class="editor-meta"><button id="bookmark-problem" class="icon-button" title="Пометить для повторения" aria-label="Пометить для повторения"><svg class="icon"><use href="#i-bookmark"/></svg></button><button id="editor-settings" class="icon-button" title="Размер шрифта редактора" aria-label="Размер шрифта редактора"><svg class="icon"><use href="#i-type"/></svg></button><button id="reset-code" class="icon-button" title="Вернуть начальный код" aria-label="Вернуть начальный код"><svg class="icon"><use href="#i-reset"/></svg></button><button id="maximize-editor" class="icon-button" title="Развернуть редактор" aria-label="Развернуть редактор"><svg class="icon"><use href="#i-expand"/></svg></button></div></header>
+            <div id="debug-toolbar" class="debug-toolbar" hidden><span class="debug-state" id="debug-state">Пауза</span><button class="button tiny" data-debug="continue" title="Продолжить до точки остановки"><svg class="icon"><use href="#i-play"/></svg>Продолжить</button><button class="button tiny" data-debug="next" title="Следующая строка без входа в функцию"><svg class="icon"><use href="#i-step"/></svg>Шаг</button><button class="button tiny" data-debug="step" title="Шаг с входом в функцию"><svg class="icon"><use href="#i-enter"/></svg>Войти</button><button class="button tiny" data-debug="stop"><svg class="icon"><use href="#i-stop"/></svg>Стоп</button></div>
+            <div id="editor-host"><textarea id="fallback-editor" spellcheck="false" aria-label="Код Python" placeholder="# Напиши решение на Python"></textarea></div>
+            <footer class="editor-footer"><span id="save-status">Saved</span><span id="breakpoint-status" class="sr-only">Точки остановки: клик слева от номера строки</span><span id="editor-position">Ln 1, Col 1</span></footer>
+          </section>
+          <div id="horizontal-split" class="splitter horizontal-split" role="separator" aria-orientation="horizontal" aria-label="Высота тестовой панели" tabindex="0"></div>
+          <section class="panel console-panel">
+            <div class="panel-tabbar console-tabbar" role="tablist" aria-label="Запуск решения"><button class="panel-tab active" data-console="tests" role="tab" aria-selected="true"><svg class="icon green"><use href="#i-check-square"/></svg>Testcase</button><button class="panel-tab" data-console="result" role="tab" aria-selected="false"><svg class="icon green"><use href="#i-terminal"/></svg>Test Result <span id="result-dot" class="result-dot" hidden></span></button><button class="panel-tab" data-console="debug" role="tab" aria-selected="false"><svg class="icon"><use href="#i-bug"/></svg>Debug</button><span id="execution-label" class="execution-label muted small"></span><button id="toggle-console" class="console-toggle icon-button" aria-label="Развернуть тестовую панель" title="Развернуть тестовую панель"><svg class="icon"><use href="#i-up"/></svg></button></div>
+            <div id="tests-content" class="console-content"><div class="test-cases" id="test-cases" role="tablist" aria-label="Примеры для Run и Debug"></div><div class="test-fields"><div id="argument-fields"></div><label id="stdin-wrapper" class="field-label" for="stdin-input"><span id="input-label">stdin =</span><textarea id="stdin-input" class="code-input" spellcheck="false" placeholder="Входные данные"></textarea></label></div><details class="expected-detail"><summary>Expected output <span class="muted">optional</span></summary><textarea id="expected-output" class="code-input" spellcheck="false" aria-label="Ожидаемый вывод" placeholder="Для сравнения результата"></textarea></details><p id="test-note" class="muted small">Run проверяет все добавленные примеры. Debug — выбранный пример.</p></div>
+            <div id="result-content" class="console-content" hidden><div id="result-summary" class="result-summary muted" role="status" aria-live="polite">Запусти код, чтобы увидеть результат.</div><div id="result-body"></div></div>
+            <div id="debug-content" class="console-content" hidden><div class="debug-grid"><div><h3>Переменные</h3><div id="debug-variables" class="muted small">Появятся на остановке.</div></div><div><h3>Стек вызовов</h3><div id="debug-stack" class="muted small">Запусти Debug.</div></div></div><div class="debug-output"><h3>Вывод</h3><pre id="debug-output"></pre></div></div>
+          </section>
+        </section>
+      </div>
+    </section>
+
+    <section id="catalog-view" class="view page-view" hidden>
+      <div class="page-heading"><div><div class="eyebrow">ТВОЙ КАТАЛОГ</div><h1>Задачи</h1><p id="catalog-summary" class="muted">Загрузка каталога…</p></div><button class="button" id="import-button">↓ Импорт из Dia</button></div>
+      <div id="import-notice" class="import-notice" hidden></div>
+      <div class="catalog-filters"><label class="search-field"><span aria-hidden="true">⌕</span><input id="search-input" type="search" placeholder="Поиск задачи…" aria-label="Поиск задачи"></label><select id="source-filter" aria-label="Источник"><option value="">Все источники</option><option value="yandex">Курсы ФКН</option><option value="leetcode">LeetCode</option></select><select id="topic-filter" aria-label="Тема"><option value="">Все темы</option></select><select id="difficulty-filter" aria-label="Сложность"><option value="">Любая сложность</option><option>Easy</option><option>Medium</option><option>Hard</option><option value="Unknown">Не указана</option></select><select id="status-filter" aria-label="Статус"><option value="">Все статусы</option><option value="todo">Не решены</option><option value="solved">Решены</option><option value="review">Повторить</option></select></div>
+      <div class="table-wrap"><table class="problem-table"><thead><tr><th class="status-col">Статус</th><th>Название</th><th>Тема</th><th>Сложность</th><th>Источник</th></tr></thead><tbody id="problem-table-body"></tbody></table></div><p class="muted small catalog-bottom" id="catalog-shown"></p>
+      <details class="contests-details"><summary id="contests-summary">Домашние контесты</summary><div id="contests-list"></div></details>
+    </section>
+
+    <section id="map-view" class="view page-view" hidden>
+      <div class="page-heading"><div><div class="eyebrow">УЧИТЬ → РЕШАТЬ → ВОЗВРАЩАТЬСЯ</div><h1>Карта тем</h1><p class="muted">Выбирай тему, вспоминай основу и продолжай с нужной задачи.</p></div><div class="map-legend"><span><i class="legend-dot solved"></i>Решено</span><span><i class="legend-dot review"></i>Повторить</span></div></div>
+      <div class="map-layout"><div class="topic-map" id="topic-map"></div><aside class="topic-detail panel" id="topic-detail"></aside></div>
+    </section>
+
+    <section id="interview-view" class="view page-view" hidden>
+      <div class="page-heading"><div><div class="eyebrow">ПОДГОТОВКА К СТАЖИРОВКЕ</div><h1>Две задачи. Один час.</h1><p class="muted">Разные темы и сложности. Время включает обдумывание, код и проверку.</p></div></div>
+      <div class="interview-layout"><div class="interview-main"><div class="interview-clock" id="interview-clock">60<span>:</span>00</div><div id="interview-state-label" class="muted">Готов к следующей тренировке</div><div class="interview-actions"><button id="start-interview" class="button submit-button">▷ Начать час</button><button id="pause-interview" class="button" hidden>Пауза</button><button id="finish-interview" class="button" hidden>Завершить</button><button id="new-pair" class="button ghost">↻ Другая пара</button></div><div id="interview-pair" class="interview-pair"></div><p class="muted small">Подсказки и теорию удобно разобрать после тренировки. Результаты локальных тестов не считаются официальным принятием.</p></div><aside class="interview-plan"><h2>Маршрут к 200</h2><div class="large-progress" id="interview-progress">— <span>/ 200</span></div><div class="progress-track"><div id="goal-bar"></div></div><div id="interview-plan-text" class="muted"></div><div class="weekly-pace"><strong>11 задач в неделю</strong><span class="muted">Пять дней по две, один день одна, один — на отдых и повторение.</span></div></aside></div>
+    </section>
+  </main>
+
+  <dialog id="connection-dialog"><div class="dialog-heading"><h2>Связь с Dia</h2><button id="close-connection" class="icon-button" aria-label="Закрыть">×</button></div><p id="bridge-description" class="muted">Расширение связывает локальный редактор с открытым аккаунтом Dia.</p><ol id="bridge-setup-steps" class="setup-steps" hidden><li>Открой управление расширениями Dia и включи режим разработчика.<button id="copy-extension-url" class="button tiny">Скопировать адрес страницы</button></li><li>Нажми «Загрузить распакованное» и выбери папку <code>extension/</code>.</li><li>Оставь локальный сервер запущенным. В Контесте и LeetCode нужно быть авторизованным.</li></ol><div class="connection-row"><span class="connection-dot" id="dialog-connection-dot"></span><span id="dialog-connection-label">Проверяем подключение…</span></div><p class="muted small">Submit → Dia отправляет код в источник задачи и возвращает официальный вердикт.</p><div class="dialog-actions"><button id="import-courses" class="button submit-button" disabled>Импортировать оба курса</button><button id="import-leetcode" class="button" disabled>Импортировать LeetCode</button></div><div id="bridge-jobs" class="bridge-jobs"></div></dialog>
+  <div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
+</body>
+</html>

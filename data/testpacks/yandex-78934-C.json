@@ -1,0 +1,618 @@
+{
+  "schema_version": 1,
+  "problem_id": "yandex-78934-C",
+  "language": "python3",
+  "comparison": "tokens",
+  "timeout_seconds": 2,
+  "total_timeout_seconds": 30,
+  "provenance": {
+    "kind": "generated",
+    "title": "100 локальных проверок, включая примеры условия",
+    "source_url": "https://official.contest.yandex.ru/contest/78934/problems/C/",
+    "generator": "testpacks/generate_firstyear.py; seed fedor-local-tests-v1:78934-C",
+    "oracle": "Независимый прямой перебор, обход графа или модель на обычных списках",
+    "notes": "Неофициальный тренировочный набор. Проверяет ответы и граничные случаи; не воспроизводит все скрытые тесты и ограничения исходной платформы."
+  },
+  "cases": [
+    {
+      "id": "source-example-1",
+      "input": "1",
+      "output": "1",
+      "origin": "statement-example"
+    },
+    {
+      "id": "source-example-2",
+      "input": "5",
+      "output": "21",
+      "origin": "statement-example"
+    },
+    {
+      "id": "source-example-3",
+      "input": "100",
+      "output": "211212",
+      "origin": "statement-example"
+    },
+    {
+      "id": "boundary-1",
+      "input": "1\n",
+      "output": "1\n",
+      "origin": "generated-boundary"
+    },
+    {
+      "id": "boundary-2",
+      "input": "10000000000\n",
+      "output": "112121211111121222221121111111112\n",
+      "origin": "generated-boundary"
+    },
+    {
+      "id": "generated-6",
+      "input": "7\n",
+      "output": "111\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-7",
+      "input": "4\n",
+      "output": "12\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-8",
+      "input": "15\n",
+      "output": "1111\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-9",
+      "input": "2\n",
+      "output": "2\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-10",
+      "input": "64280\n",
+      "output": "222212211122112\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-11",
+      "input": "16\n",
+      "output": "1112\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-12",
+      "input": "4930\n",
+      "output": "112212111122\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-13",
+      "input": "5\n",
+      "output": "21\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-14",
+      "input": "65694\n",
+      "output": "1111111121122222\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-15",
+      "input": "41553\n",
+      "output": "121112112121121\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-16",
+      "input": "8\n",
+      "output": "112\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-17",
+      "input": "26604\n",
+      "output": "21122222212212\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-18",
+      "input": "3\n",
+      "output": "11\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-19",
+      "input": "6\n",
+      "output": "22\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-20",
+      "input": "43247\n",
+      "output": "121211122221111\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-21",
+      "input": "88400\n",
+      "output": "1212211212121112\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-22",
+      "input": "95274\n",
+      "output": "1222121111212122\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-23",
+      "input": "9329\n",
+      "output": "1121112221121\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-24",
+      "input": "20349\n",
+      "output": "11222212222221\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-25",
+      "input": "90865\n",
+      "output": "1221112122221121\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-26",
+      "input": "43407\n",
+      "output": "121211221121111\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-27",
+      "input": "86304\n",
+      "output": "1212111211211112\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-28",
+      "input": "82448\n",
+      "output": "1211112111121112\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-29",
+      "input": "92764\n",
+      "output": "1221212112122212\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-30",
+      "input": "86493\n",
+      "output": "1212111222122221\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-31",
+      "input": "85354\n",
+      "output": "1211221212212122\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-32",
+      "input": "20502\n",
+      "output": "12111111121222\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-33",
+      "input": "5267\n",
+      "output": "121121121211\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-34",
+      "input": "26068\n",
+      "output": "21121222121212\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-35",
+      "input": "52720\n",
+      "output": "211221222221112\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-36",
+      "input": "61539\n",
+      "output": "222111112211211\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-37",
+      "input": "52567\n",
+      "output": "211221212122111\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-38",
+      "input": "63776\n",
+      "output": "222211211211112\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-39",
+      "input": "47886\n",
+      "output": "122212211112222\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-40",
+      "input": "49189\n",
+      "output": "211111111211221\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-41",
+      "input": "49044\n",
+      "output": "122222221121212\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-42",
+      "input": "30101\n",
+      "output": "22121221121221\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-43",
+      "input": "71795\n",
+      "output": "1112211112221211\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-44",
+      "input": "18959\n",
+      "output": "11212111121111\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-45",
+      "input": "11308\n",
+      "output": "1221111212212\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-46",
+      "input": "73431\n",
+      "output": "1112222122122111\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-47",
+      "input": "30041\n",
+      "output": "22121212122121\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-48",
+      "input": "8250\n",
+      "output": "1111111222122\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-49",
+      "input": "21139\n",
+      "output": "12112121121211\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-50",
+      "input": "79413\n",
+      "output": "1122122111221221\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-51",
+      "input": "65721\n",
+      "output": "1111111121222121\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-52",
+      "input": "51206\n",
+      "output": "211211111111222\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-53",
+      "input": "89396\n",
+      "output": "1212221211221212\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-54",
+      "input": "59272\n",
+      "output": "221122221112112\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-55",
+      "input": "46646\n",
+      "output": "122122111221222\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-56",
+      "input": "37277\n",
+      "output": "112111221122221\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-57",
+      "input": "22769\n",
+      "output": "12211122221121\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-58",
+      "input": "15346\n",
+      "output": "2212222221122\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-59",
+      "input": "57816\n",
+      "output": "221111222122112\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-60",
+      "input": "47066\n",
+      "output": "122122222122122\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-61",
+      "input": "45348\n",
+      "output": "122111211211212\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-62",
+      "input": "95923\n",
+      "output": "1222122121221211\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-63",
+      "input": "47885\n",
+      "output": "122212211112221\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-64",
+      "input": "41404\n",
+      "output": "121111221222212\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-65",
+      "input": "59706\n",
+      "output": "221211211222122\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-66",
+      "input": "29045\n",
+      "output": "22111212221221\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-67",
+      "input": "16823\n",
+      "output": "11111221222111\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-68",
+      "input": "60480\n",
+      "output": "221221112111112\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-69",
+      "input": "29961\n",
+      "output": "22121211112121\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-70",
+      "input": "35398\n",
+      "output": "111212112111222\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-71",
+      "input": "81515\n",
+      "output": "1122222112212211\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-72",
+      "input": "63227\n",
+      "output": "222122122222211\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-73",
+      "input": "40482\n",
+      "output": "112222111211122\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-74",
+      "input": "28337\n",
+      "output": "21222121221121\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-75",
+      "input": "86093\n",
+      "output": "1212111112112221\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-76",
+      "input": "12883\n",
+      "output": "2112112121211\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-77",
+      "input": "62408\n",
+      "output": "222112222112112\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-78",
+      "input": "57173\n",
+      "output": "212222212121221\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-79",
+      "input": "13635\n",
+      "output": "2121212111211\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-80",
+      "input": "36291\n",
+      "output": "111221222111211\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-81",
+      "input": "98647\n",
+      "output": "2111111212122111\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-82",
+      "input": "5375\n",
+      "output": "121211111111\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-83",
+      "input": "49140\n",
+      "output": "122222222221212\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-84",
+      "input": "70202\n",
+      "output": "1112112111222122\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-85",
+      "input": "58707\n",
+      "output": "221121212121211\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-86",
+      "input": "43888\n",
+      "output": "121212212221112\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-87",
+      "input": "43566\n",
+      "output": "121212111212222\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-88",
+      "input": "27935\n",
+      "output": "21221211211111\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-89",
+      "input": "87306\n",
+      "output": "1212121211112122\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-90",
+      "input": "63290\n",
+      "output": "222122211222122\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-91",
+      "input": "5607\n",
+      "output": "121222212111\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-92",
+      "input": "13471\n",
+      "output": "2121121211111\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-93",
+      "input": "37245\n",
+      "output": "112111212222221\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-94",
+      "input": "93134\n",
+      "output": "1221212222112222\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-95",
+      "input": "65511\n",
+      "output": "222222222212111\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-96",
+      "input": "66142\n",
+      "output": "1111112112122222\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-97",
+      "input": "7676128078\n",
+      "output": "22112112211121111221212212112222\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-98",
+      "input": "9777939776\n",
+      "output": "112111221221122222111121212111112\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-99",
+      "input": "2731455868\n",
+      "output": "1211121221122212122121212222212\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-100",
+      "input": "9179453007\n",
+      "output": "111211122112111221212122112121111\n",
+      "origin": "generated"
+    }
+  ]
+}

@@ -1,0 +1,633 @@
+{
+  "schema_version": 1,
+  "problem_id": "yandex-78984-D",
+  "language": "python3",
+  "comparison": "tokens",
+  "timeout_seconds": 2,
+  "total_timeout_seconds": 30,
+  "provenance": {
+    "kind": "mixed",
+    "title": "13 опубликованных тестов + 87 локальных проверок",
+    "source_url": "https://hsin.hr/coci/archive/2015_2016/contest2_testdata.zip",
+    "generator": "testpacks/generate_firstyear.py; seed fedor-local-tests-v1:78984-D",
+    "oracle": "Независимый прямой перебор, обход графа или модель на обычных списках",
+    "notes": "13 тестов из официального открытого архива организаторов; остальные 87 сгенерированы локально. Условие и примеры совпадают с ФКН.",
+    "published_count": 13,
+    "generated_count": 87
+  },
+  "cases": [
+    {
+      "id": "geppetto.dummy.in.1",
+      "input": "3 2\r\n1 2\r\n2 3\r\n",
+      "output": "5\r\n",
+      "origin": "published-official",
+      "source_url": "https://hsin.hr/coci/archive/2015_2016/contest2_testdata.zip"
+    },
+    {
+      "id": "geppetto.dummy.in.2",
+      "input": "3 0\r\n",
+      "output": "8\r\n",
+      "origin": "published-official",
+      "source_url": "https://hsin.hr/coci/archive/2015_2016/contest2_testdata.zip"
+    },
+    {
+      "id": "geppetto.dummy.in.3",
+      "input": "3 3\r\n1 2\r\n1 3\r\n2 3\r\n",
+      "output": "4\r\n",
+      "origin": "published-official",
+      "source_url": "https://hsin.hr/coci/archive/2015_2016/contest2_testdata.zip"
+    },
+    {
+      "id": "geppetto.in.1",
+      "input": "10 270\r\n5 10\r\n1 3\r\n10 6\r\n4 1\r\n5 9\r\n4 1\r\n3 10\r\n8 7\r\n2 1\r\n5 4\r\n6 2\r\n2 5\r\n10 8\r\n8 7\r\n6 2\r\n3 7\r\n6 4\r\n4 8\r\n1 8\r\n10 1\r\n7 2\r\n10 5\r\n7 8\r\n2 8\r\n6 2\r\n1 7\r\n10 6\r\n2 8\r\n9 5\r\n4 9\r\n3 2\r\n7 9\r\n3 6\r\n6 1\r\n3 8\r\n7 2\r\n6 7\r\n5 10\r\n1 10\r\n4 1\r\n2 7\r\n7 6\r\n9 10\r\n7 2\r\n10 6\r\n4 7\r\n4 5\r\n5 8\r\n3 1\r\n5 1\r\n1 2\r\n9 2\r\n7 3\r\n6 5\r\n9 1\r\n4 9\r\n7 8\r\n3 1\r\n2 9\r\n8 5\r\n3 5\r\n9 4\r\n2 3\r\n5 1\r\n8 10\r\n3 1\r\n4 5\r\n5 2\r\n5 3\r\n10 7\r\n2 5\r\n3 7\r\n7 1\r\n3 8\r\n4 8\r\n7 2\r\n6 7\r\n4 10\r\n1 2\r\n10 9\r\n3 1\r\n5 4\r\n7 1\r\n3 9\r\n7 2\r\n3 5\r\n6 10\r\n1 9\r\n2 1\r\n7 4\r\n4 3\r\n5 8\r\n5 4\r\n5 1\r\n4 3\r\n7 4\r\n2 3\r\n9 3\r\n10 7\r\n2 4\r\n1 10\r\n2 5\r\n9 2\r\n8 9\r\n3 10\r\n3 5\r\n8 3\r\n10 1\r\n3 7\r\n7 1\r\n6 3\r\n10 4\r\n1 2\r\n1 7\r\n6 3\r\n7 9\r\n6 1\r\n1 4\r\n8 10\r\n6 8\r\n3 5\r\n6 3\r\n7 4\r\n6 7\r\n10 8\r\n9 8\r\n4 2\r\n5 2\r\n8 9\r\n6 5\r\n10 6\r\n6 8\r\n3 8\r\n1 10\r\n9 7\r\n9 8\r\n9 8\r\n1 2\r\n5 4\r\n5 10\r\n9 3\r\n3 10\r\n6 2\r\n1 7\r\n9 1\r\n3 9\r\n1 7\r\n7 8\r\n3 6\r\n1 4\r\n8 10\r\n2 5\r\n5 7\r\n3 8\r\n10 3\r\n10 8\r\n7 10\r\n2 9\r\n9 3\r\n8 4\r\n8 9\r\n3 9\r\n3 9\r\n8 7\r\n2 4\r\n10 9\r\n5 2\r\n9 3\r\n5 3\r\n9 2\r\n4 3\r\n5 10\r\n8 9\r\n8 10\r\n3 1\r\n5 8\r\n2 9\r\n9 8\r\n9 8\r\n9 1\r\n3 9\r\n8 3\r\n1 5\r\n1 6\r\n1 9\r\n8 10\r\n8 6\r\n6 2\r\n4 8\r\n6 8\r\n3 10\r\n8 3\r\n9 7\r\n10 3\r\n8 2\r\n7 1\r\n8 10\r\n2 8\r\n2 3\r\n10 5\r\n4 1\r\n9 3\r\n6 7\r\n8 5\r\n9 10\r\n4 7\r\n3 6\r\n2 4\r\n10 2\r\n5 2\r\n3 2\r\n6 8\r\n10 8\r\n1 4\r\n7 4\r\n9 1\r\n6 9\r\n6 8\r\n3 6\r\n4 7\r\n4 2\r\n2 8\r\n7 2\r\n10 4\r\n10 3\r\n6 5\r\n7 10\r\n1 6\r\n6 10\r\n3 7\r\n2 9\r\n5 2\r\n10 4\r\n4 1\r\n8 4\r\n5 4\r\n10 2\r\n9 8\r\n2 4\r\n7 1\r\n2 4\r\n7 3\r\n10 5\r\n5 2\r\n8 1\r\n7 3\r\n3 5\r\n4 1\r\n9 6\r\n5 3\r\n7 10\r\n5 1\r\n9 7\r\n5 6\r\n2 5\r\n1 4\r\n6 4\r\n8 1\r\n6 4\r\n3 1\r\n9 10\r\n4 8\r\n9 7\r\n1 10\r\n2 10\r\n4 3\r\n8 3\r\n4 2\r\n1 8\r\n7 8\r\n",
+      "output": "11\r\n",
+      "origin": "published-official",
+      "source_url": "https://hsin.hr/coci/archive/2015_2016/contest2_testdata.zip"
+    },
+    {
+      "id": "geppetto.in.10",
+      "input": "20 3\r\n18 11\r\n4 16\r\n15 14\r\n",
+      "output": "442368\r\n",
+      "origin": "published-official",
+      "source_url": "https://hsin.hr/coci/archive/2015_2016/contest2_testdata.zip"
+    },
+    {
+      "id": "geppetto.in.2",
+      "input": "10 56\r\n3 5\r\n6 8\r\n6 9\r\n7 3\r\n7 8\r\n10 4\r\n4 9\r\n1 4\r\n8 3\r\n2 6\r\n4 7\r\n8 2\r\n5 6\r\n2 9\r\n1 8\r\n8 5\r\n7 3\r\n8 3\r\n6 10\r\n8 4\r\n1 7\r\n10 7\r\n10 9\r\n3 8\r\n5 7\r\n2 5\r\n6 7\r\n8 9\r\n3 1\r\n4 9\r\n7 1\r\n2 5\r\n3 2\r\n1 5\r\n1 8\r\n10 4\r\n9 10\r\n3 4\r\n9 8\r\n2 3\r\n6 3\r\n3 9\r\n5 2\r\n7 3\r\n3 6\r\n8 9\r\n8 9\r\n10 6\r\n2 3\r\n9 5\r\n3 10\r\n9 6\r\n9 6\r\n3 5\r\n9 3\r\n7 1\r\n",
+      "output": "24\r\n",
+      "origin": "published-official",
+      "source_url": "https://hsin.hr/coci/archive/2015_2016/contest2_testdata.zip"
+    },
+    {
+      "id": "geppetto.in.3",
+      "input": "20 359\r\n4 1\r\n2 17\r\n10 16\r\n9 6\r\n13 20\r\n4 3\r\n8 7\r\n18 17\r\n16 2\r\n7 15\r\n2 3\r\n15 17\r\n11 3\r\n17 19\r\n17 13\r\n19 10\r\n3 19\r\n18 16\r\n2 16\r\n3 16\r\n6 3\r\n11 13\r\n18 4\r\n15 5\r\n2 16\r\n19 16\r\n10 5\r\n4 11\r\n9 18\r\n2 6\r\n7 16\r\n2 14\r\n2 18\r\n9 11\r\n1 18\r\n3 20\r\n4 1\r\n17 1\r\n1 8\r\n7 18\r\n9 10\r\n3 2\r\n9 11\r\n2 11\r\n6 3\r\n2 15\r\n8 7\r\n7 6\r\n5 10\r\n15 9\r\n15 6\r\n17 16\r\n13 2\r\n2 13\r\n4 6\r\n15 18\r\n5 1\r\n16 12\r\n12 19\r\n15 3\r\n3 10\r\n9 15\r\n8 2\r\n6 9\r\n8 15\r\n20 9\r\n19 10\r\n8 15\r\n20 15\r\n5 6\r\n20 13\r\n12 18\r\n4 12\r\n9 20\r\n14 6\r\n19 11\r\n5 16\r\n19 3\r\n12 8\r\n15 1\r\n18 13\r\n13 7\r\n18 7\r\n20 15\r\n14 3\r\n6 12\r\n18 7\r\n5 15\r\n18 13\r\n13 16\r\n5 18\r\n12 7\r\n4 17\r\n10 2\r\n1 8\r\n9 13\r\n14 18\r\n7 18\r\n20 8\r\n4 12\r\n1 7\r\n19 18\r\n6 7\r\n15 2\r\n2 7\r\n11 7\r\n19 15\r\n8 17\r\n12 17\r\n18 3\r\n4 9\r\n16 5\r\n18 2\r\n9 6\r\n10 16\r\n20 4\r\n14 2\r\n5 15\r\n9 1\r\n13 4\r\n6 20\r\n13 9\r\n2 18\r\n7 12\r\n19 14\r\n5 7\r\n7 1\r\n11 3\r\n12 8\r\n19 20\r\n7 13\r\n3 1\r\n19 8\r\n16 19\r\n13 17\r\n1 2\r\n10 20\r\n8 4\r\n7 2\r\n2 16\r\n13 12\r\n10 11\r\n6 12\r\n15 17\r\n4 3\r\n10 6\r\n15 3\r\n5 17\r\n18 11\r\n6 13\r\n19 10\r\n1 10\r\n17 14\r\n11 13\r\n7 4\r\n4 7\r\n18 12\r\n5 16\r\n19 8\r\n20 16\r\n13 12\r\n2 14\r\n6 11\r\n3 10\r\n18 12\r\n14 10\r\n3 17\r\n2 18\r\n17 2\r\n11 2\r\n19 11\r\n9 16\r\n2 8\r\n11 7\r\n6 3\r\n2 11\r\n18 15\r\n9 16\r\n5 14\r\n17 6\r\n7 16\r\n5 3\r\n1 4\r\n9 8\r\n4 19\r\n2 14\r\n7 9\r\n8 15\r\n17 7\r\n19 18\r\n15 7\r\n19 1\r\n3 17\r\n16 1\r\n6 16\r\n13 16\r\n14 19\r\n6 17\r\n6 19\r\n1 20\r\n14 5\r\n5 16\r\n4 19\r\n5 19\r\n15 19\r\n5 1\r\n16 12\r\n15 3\r\n9 20\r\n7 20\r\n9 12\r\n8 17\r\n1 5\r\n9 11\r\n2 19\r\n9 14\r\n1 17\r\n2 11\r\n19 3\r\n8 14\r\n11 17\r\n1 9\r\n6 15\r\n15 10\r\n16 19\r\n3 16\r\n12 8\r\n2 20\r\n20 4\r\n15 1\r\n7 13\r\n14 16\r\n9 1\r\n12 3\r\n11 1\r\n4 15\r\n15 7\r\n9 5\r\n2 1\r\n2 9\r\n13 3\r\n5 2\r\n4 16\r\n11 9\r\n14 11\r\n20 12\r\n4 7\r\n10 15\r\n19 1\r\n20 1\r\n19 10\r\n13 12\r\n3 15\r\n7 11\r\n14 10\r\n4 18\r\n16 3\r\n19 20\r\n4 3\r\n9 17\r\n10 5\r\n6 18\r\n2 15\r\n1 4\r\n19 12\r\n5 4\r\n12 1\r\n15 6\r\n9 16\r\n6 2\r\n4 19\r\n17 18\r\n17 10\r\n2 8\r\n14 5\r\n4 17\r\n4 10\r\n18 19\r\n13 14\r\n16 20\r\n7 12\r\n7 15\r\n1 17\r\n19 6\r\n7 1\r\n16 1\r\n18 3\r\n8 16\r\n10 14\r\n9 18\r\n15 5\r\n15 20\r\n5 4\r\n6 7\r\n2 17\r\n20 11\r\n9 1\r\n10 8\r\n5 1\r\n10 5\r\n15 20\r\n13 18\r\n9 18\r\n20 9\r\n7 9\r\n17 20\r\n8 18\r\n10 2\r\n20 15\r\n2 17\r\n14 16\r\n14 10\r\n20 11\r\n10 4\r\n6 12\r\n16 6\r\n3 1\r\n9 4\r\n2 1\r\n15 14\r\n17 6\r\n14 2\r\n12 9\r\n7 4\r\n13 14\r\n12 2\r\n16 14\r\n13 16\r\n1 19\r\n6 17\r\n9 4\r\n12 6\r\n17 7\r\n2 18\r\n15 1\r\n9 5\r\n20 17\r\n2 11\r\n7 4\r\n20 13\r\n9 4\r\n1 14\r\n18 11\r\n3 20\r\n17 6\r\n11 16\r\n18 10\r\n6 18\r\n3 6\r\n3 9\r\n8 14\r\n16 6\r\n14 2\r\n20 11\r\n5 4\r\n18 16\r\n13 11\r\n11 13\r\n2 7\r\n",
+      "output": "54\r\n",
+      "origin": "published-official",
+      "source_url": "https://hsin.hr/coci/archive/2015_2016/contest2_testdata.zip"
+    },
+    {
+      "id": "geppetto.in.4",
+      "input": "20 224\r\n11 18\r\n3 11\r\n15 8\r\n17 9\r\n13 10\r\n20 19\r\n5 15\r\n1 3\r\n11 10\r\n17 2\r\n16 11\r\n18 7\r\n5 6\r\n18 17\r\n15 7\r\n16 13\r\n19 4\r\n9 7\r\n2 18\r\n15 5\r\n6 5\r\n11 6\r\n6 9\r\n19 16\r\n2 12\r\n19 2\r\n8 17\r\n18 14\r\n12 15\r\n11 19\r\n2 8\r\n20 2\r\n12 1\r\n9 1\r\n6 15\r\n12 19\r\n1 16\r\n19 4\r\n18 13\r\n12 20\r\n18 15\r\n14 6\r\n1 11\r\n19 1\r\n15 16\r\n2 14\r\n11 4\r\n18 13\r\n16 13\r\n15 4\r\n4 14\r\n5 19\r\n14 12\r\n18 6\r\n15 3\r\n16 5\r\n12 4\r\n12 17\r\n11 9\r\n17 20\r\n17 9\r\n16 8\r\n14 19\r\n10 13\r\n19 4\r\n10 19\r\n19 5\r\n2 10\r\n4 2\r\n9 8\r\n18 7\r\n2 5\r\n9 14\r\n2 9\r\n19 1\r\n9 8\r\n3 13\r\n2 11\r\n9 2\r\n8 19\r\n11 20\r\n15 7\r\n6 18\r\n17 19\r\n16 15\r\n3 4\r\n8 20\r\n12 6\r\n6 2\r\n9 18\r\n2 14\r\n12 13\r\n8 4\r\n16 12\r\n10 4\r\n14 16\r\n6 4\r\n15 14\r\n5 8\r\n5 14\r\n2 19\r\n17 7\r\n5 2\r\n4 5\r\n12 14\r\n5 19\r\n2 8\r\n2 3\r\n13 9\r\n17 8\r\n1 6\r\n17 9\r\n2 10\r\n19 20\r\n14 11\r\n19 11\r\n3 4\r\n9 2\r\n4 19\r\n14 7\r\n1 12\r\n8 20\r\n14 12\r\n7 10\r\n2 13\r\n4 7\r\n3 13\r\n20 5\r\n3 10\r\n15 10\r\n19 6\r\n19 3\r\n10 8\r\n18 17\r\n13 9\r\n6 3\r\n16 11\r\n15 11\r\n7 4\r\n12 7\r\n9 8\r\n13 2\r\n1 14\r\n20 14\r\n19 5\r\n10 2\r\n1 8\r\n13 14\r\n17 19\r\n18 2\r\n6 8\r\n12 6\r\n9 6\r\n5 19\r\n14 11\r\n18 4\r\n16 18\r\n10 14\r\n2 8\r\n17 2\r\n17 4\r\n12 9\r\n8 5\r\n14 10\r\n11 13\r\n10 12\r\n12 14\r\n16 12\r\n19 7\r\n17 13\r\n10 19\r\n5 1\r\n17 20\r\n15 4\r\n6 20\r\n15 14\r\n18 19\r\n5 8\r\n7 19\r\n14 9\r\n11 16\r\n16 15\r\n16 6\r\n16 20\r\n18 10\r\n12 10\r\n15 10\r\n12 16\r\n4 20\r\n3 10\r\n16 15\r\n12 9\r\n19 16\r\n3 7\r\n6 12\r\n8 1\r\n11 15\r\n18 13\r\n18 6\r\n16 18\r\n6 5\r\n6 11\r\n1 17\r\n14 2\r\n2 3\r\n20 17\r\n10 18\r\n7 10\r\n16 2\r\n9 18\r\n1 17\r\n11 17\r\n19 3\r\n13 6\r\n16 8\r\n20 12\r\n13 16\r\n2 9\r\n16 2\r\n3 6\r\n16 4\r\n8 14\r\n3 10\r\n13 9\r\n",
+      "output": "126\r\n",
+      "origin": "published-official",
+      "source_url": "https://hsin.hr/coci/archive/2015_2016/contest2_testdata.zip"
+    },
+    {
+      "id": "geppetto.in.5",
+      "input": "20 168\r\n6 10\r\n18 15\r\n4 17\r\n11 7\r\n10 16\r\n4 12\r\n19 16\r\n13 1\r\n12 4\r\n11 7\r\n4 18\r\n11 12\r\n17 6\r\n10 9\r\n18 7\r\n3 7\r\n20 1\r\n15 13\r\n18 1\r\n14 6\r\n15 7\r\n3 5\r\n8 20\r\n3 12\r\n16 6\r\n7 12\r\n13 7\r\n9 20\r\n2 1\r\n1 13\r\n4 5\r\n18 19\r\n4 16\r\n9 18\r\n19 14\r\n18 15\r\n18 12\r\n2 8\r\n15 10\r\n14 12\r\n20 17\r\n15 7\r\n18 11\r\n15 9\r\n15 19\r\n8 13\r\n19 13\r\n8 16\r\n2 17\r\n2 4\r\n13 6\r\n18 14\r\n4 17\r\n15 2\r\n10 2\r\n9 15\r\n1 19\r\n4 15\r\n11 10\r\n6 12\r\n12 13\r\n10 19\r\n3 11\r\n7 9\r\n17 4\r\n9 11\r\n14 16\r\n10 16\r\n4 5\r\n19 15\r\n13 16\r\n20 19\r\n6 5\r\n11 9\r\n13 16\r\n16 20\r\n18 7\r\n11 15\r\n3 15\r\n9 4\r\n18 9\r\n9 2\r\n8 18\r\n2 1\r\n6 15\r\n15 4\r\n3 11\r\n16 3\r\n8 10\r\n6 7\r\n20 1\r\n20 1\r\n6 15\r\n17 12\r\n12 16\r\n2 17\r\n9 19\r\n13 9\r\n1 8\r\n20 14\r\n14 4\r\n11 15\r\n8 18\r\n12 9\r\n4 18\r\n4 18\r\n4 19\r\n2 17\r\n5 1\r\n19 14\r\n19 2\r\n16 19\r\n6 9\r\n4 14\r\n11 20\r\n17 12\r\n17 5\r\n1 17\r\n18 17\r\n9 14\r\n11 2\r\n15 17\r\n9 11\r\n11 17\r\n16 7\r\n7 20\r\n15 19\r\n19 17\r\n18 17\r\n2 11\r\n9 4\r\n18 9\r\n11 5\r\n16 15\r\n19 11\r\n16 20\r\n11 8\r\n18 4\r\n16 8\r\n1 19\r\n4 17\r\n7 12\r\n13 14\r\n19 9\r\n20 2\r\n20 9\r\n17 18\r\n6 9\r\n8 20\r\n16 8\r\n17 20\r\n4 16\r\n13 14\r\n1 7\r\n6 9\r\n20 15\r\n17 7\r\n8 2\r\n12 3\r\n16 15\r\n11 20\r\n13 5\r\n1 12\r\n16 11\r\n3 8\r\n2 1\r\n18 11\r\n19 13\r\n",
+      "output": "225\r\n",
+      "origin": "published-official",
+      "source_url": "https://hsin.hr/coci/archive/2015_2016/contest2_testdata.zip"
+    },
+    {
+      "id": "geppetto.in.6",
+      "input": "20 59\r\n1 6\r\n12 3\r\n4 15\r\n7 6\r\n20 2\r\n8 18\r\n5 14\r\n11 8\r\n10 20\r\n16 20\r\n18 10\r\n14 16\r\n6 20\r\n16 18\r\n16 3\r\n16 12\r\n3 19\r\n1 18\r\n11 7\r\n1 9\r\n8 15\r\n12 3\r\n4 18\r\n2 8\r\n15 7\r\n9 8\r\n5 15\r\n14 9\r\n5 14\r\n3 8\r\n11 5\r\n19 14\r\n9 11\r\n2 3\r\n3 20\r\n15 17\r\n8 3\r\n12 1\r\n12 20\r\n3 10\r\n9 19\r\n11 7\r\n5 12\r\n12 16\r\n3 5\r\n4 5\r\n17 1\r\n13 15\r\n6 20\r\n6 12\r\n15 5\r\n17 5\r\n9 6\r\n4 8\r\n12 17\r\n5 13\r\n1 8\r\n1 18\r\n13 17\r\n",
+      "output": "2051\r\n",
+      "origin": "published-official",
+      "source_url": "https://hsin.hr/coci/archive/2015_2016/contest2_testdata.zip"
+    },
+    {
+      "id": "geppetto.in.7",
+      "input": "20 46\r\n9 18\r\n19 15\r\n11 9\r\n8 12\r\n14 1\r\n4 6\r\n19 17\r\n18 19\r\n3 5\r\n2 10\r\n5 2\r\n6 8\r\n15 2\r\n1 6\r\n1 8\r\n6 2\r\n9 6\r\n10 3\r\n14 6\r\n10 2\r\n17 19\r\n18 10\r\n9 17\r\n11 16\r\n2 9\r\n8 9\r\n12 14\r\n17 18\r\n9 14\r\n11 12\r\n7 6\r\n8 17\r\n14 13\r\n20 16\r\n20 10\r\n4 15\r\n19 14\r\n19 13\r\n9 8\r\n8 12\r\n3 2\r\n5 16\r\n11 7\r\n19 4\r\n11 14\r\n13 11\r\n",
+      "output": "3664\r\n",
+      "origin": "published-official",
+      "source_url": "https://hsin.hr/coci/archive/2015_2016/contest2_testdata.zip"
+    },
+    {
+      "id": "geppetto.in.8",
+      "input": "20 46\r\n17 1\r\n17 5\r\n16 7\r\n13 17\r\n1 19\r\n9 3\r\n11 3\r\n17 8\r\n8 2\r\n3 11\r\n19 11\r\n8 10\r\n20 2\r\n17 8\r\n14 3\r\n10 4\r\n15 19\r\n5 10\r\n1 17\r\n17 7\r\n1 13\r\n9 10\r\n6 11\r\n6 13\r\n18 6\r\n6 5\r\n10 5\r\n13 5\r\n10 1\r\n7 3\r\n12 5\r\n5 13\r\n2 18\r\n5 20\r\n1 14\r\n6 8\r\n5 3\r\n6 10\r\n9 20\r\n14 7\r\n18 20\r\n14 16\r\n11 9\r\n10 9\r\n18 19\r\n4 6\r\n",
+      "output": "4140\r\n",
+      "origin": "published-official",
+      "source_url": "https://hsin.hr/coci/archive/2015_2016/contest2_testdata.zip"
+    },
+    {
+      "id": "geppetto.in.9",
+      "input": "20 13\r\n4 17\r\n10 20\r\n11 15\r\n8 15\r\n20 11\r\n19 8\r\n2 6\r\n2 10\r\n16 19\r\n12 19\r\n7 4\r\n12 5\r\n6 20\r\n",
+      "output": "71680\r\n",
+      "origin": "published-official",
+      "source_url": "https://hsin.hr/coci/archive/2015_2016/contest2_testdata.zip"
+    },
+    {
+      "id": "generated-14",
+      "input": "6 14\n1 2\n1 3\n1 5\n1 6\n2 3\n2 4\n2 5\n2 6\n3 4\n3 5\n3 6\n4 5\n4 6\n5 6\n",
+      "output": "8\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-15",
+      "input": "5 6\n1 2\n1 3\n1 5\n2 3\n2 4\n2 5\n",
+      "output": "11\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-16",
+      "input": "7 0\n\n",
+      "output": "128\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-17",
+      "input": "6 9\n1 2\n1 4\n1 5\n1 6\n2 3\n2 5\n3 4\n4 5\n5 6\n",
+      "output": "14\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-18",
+      "input": "8 21\n1 2\n1 3\n1 4\n1 5\n1 7\n2 4\n2 5\n2 6\n2 7\n3 4\n3 5\n3 6\n3 7\n3 8\n4 5\n4 8\n5 6\n5 7\n5 8\n6 7\n6 8\n",
+      "output": "16\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-19",
+      "input": "5 4\n1 2\n1 5\n2 3\n3 4\n",
+      "output": "13\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-20",
+      "input": "8 19\n1 2\n1 4\n1 5\n1 8\n2 3\n2 4\n2 5\n2 6\n2 7\n2 8\n3 4\n3 7\n4 8\n5 6\n5 7\n5 8\n6 7\n6 8\n7 8\n",
+      "output": "19\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-21",
+      "input": "3 1\n1 3\n",
+      "output": "6\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-22",
+      "input": "6 3\n1 6\n2 6\n3 6\n",
+      "output": "36\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-23",
+      "input": "3 0\n\n",
+      "output": "8\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-24",
+      "input": "8 26\n1 2\n1 3\n1 4\n1 5\n1 6\n1 7\n1 8\n2 3\n2 4\n2 5\n2 6\n2 7\n3 4\n3 5\n3 6\n3 7\n3 8\n4 5\n4 7\n4 8\n5 6\n5 7\n5 8\n6 7\n6 8\n7 8\n",
+      "output": "11\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-25",
+      "input": "6 7\n1 2\n1 3\n1 6\n2 3\n3 5\n3 6\n4 6\n",
+      "output": "18\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-26",
+      "input": "2 1\n1 2\n",
+      "output": "3\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-27",
+      "input": "10 37\n1 2\n1 3\n1 4\n1 5\n1 6\n1 7\n1 8\n1 9\n1 10\n2 3\n2 4\n2 5\n2 6\n2 8\n2 9\n2 10\n3 4\n3 5\n3 6\n3 7\n3 8\n4 5\n4 6\n4 7\n4 9\n4 10\n5 6\n5 7\n5 9\n5 10\n6 7\n6 9\n6 10\n7 10\n8 9\n8 10\n9 10\n",
+      "output": "19\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-28",
+      "input": "5 1\n2 3\n",
+      "output": "24\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-29",
+      "input": "2 0\n\n",
+      "output": "4\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-30",
+      "input": "5 9\n1 2\n1 3\n1 4\n1 5\n2 4\n2 5\n3 4\n3 5\n4 5\n",
+      "output": "7\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-31",
+      "input": "1 0\n\n",
+      "output": "2\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-32",
+      "input": "5 3\n1 2\n1 4\n1 5\n",
+      "output": "18\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-33",
+      "input": "5 0\n\n",
+      "output": "32\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-34",
+      "input": "5 7\n1 2\n1 4\n1 5\n2 3\n3 4\n3 5\n4 5\n",
+      "output": "9\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-35",
+      "input": "10 10\n1 4\n1 6\n1 7\n1 8\n1 10\n5 7\n6 7\n6 8\n7 9\n7 10\n",
+      "output": "224\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-36",
+      "input": "7 16\n1 2\n1 3\n1 4\n1 5\n2 3\n2 4\n2 6\n2 7\n3 4\n3 5\n3 6\n3 7\n4 6\n4 7\n5 6\n6 7\n",
+      "output": "13\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-37",
+      "input": "5 3\n1 2\n2 5\n3 4\n",
+      "output": "15\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-38",
+      "input": "9 9\n1 3\n1 5\n2 3\n2 5\n3 7\n4 7\n5 8\n5 9\n7 8\n",
+      "output": "106\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-39",
+      "input": "7 9\n1 4\n1 5\n3 4\n3 5\n3 7\n4 6\n5 6\n5 7\n6 7\n",
+      "output": "28\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-40",
+      "input": "6 6\n1 5\n2 3\n3 4\n3 5\n3 6\n5 6\n",
+      "output": "22\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-41",
+      "input": "6 2\n2 3\n2 6\n",
+      "output": "40\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-42",
+      "input": "5 5\n1 3\n1 5\n2 3\n2 5\n3 4\n",
+      "output": "12\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-43",
+      "input": "3 1\n2 3\n",
+      "output": "6\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-44",
+      "input": "6 8\n1 4\n2 3\n2 5\n2 6\n3 4\n4 5\n4 6\n5 6\n",
+      "output": "16\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-45",
+      "input": "8 16\n1 4\n1 5\n1 6\n2 3\n2 4\n2 5\n2 7\n3 6\n3 7\n4 7\n4 8\n5 6\n5 7\n5 8\n6 7\n7 8\n",
+      "output": "25\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-46",
+      "input": "8 12\n1 2\n1 3\n1 4\n1 5\n1 7\n1 8\n4 5\n4 6\n4 8\n5 7\n6 8\n7 8\n",
+      "output": "42\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-47",
+      "input": "7 19\n1 2\n1 4\n1 5\n1 6\n1 7\n2 3\n2 5\n2 6\n2 7\n3 4\n3 5\n3 6\n3 7\n4 5\n4 6\n4 7\n5 6\n5 7\n6 7\n",
+      "output": "10\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-48",
+      "input": "10 9\n1 2\n1 4\n1 8\n2 5\n3 5\n3 7\n5 7\n7 8\n7 10\n",
+      "output": "204\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-49",
+      "input": "7 16\n1 3\n1 4\n1 5\n1 6\n1 7\n2 4\n2 5\n2 6\n3 4\n3 5\n3 7\n4 5\n4 7\n5 6\n5 7\n6 7\n",
+      "output": "13\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-50",
+      "input": "5 10\n1 2\n1 3\n1 4\n1 5\n2 3\n2 4\n2 5\n3 4\n3 5\n4 5\n",
+      "output": "6\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-51",
+      "input": "10 16\n1 6\n1 8\n1 9\n1 10\n2 6\n3 6\n3 8\n3 9\n4 5\n4 6\n5 6\n5 7\n5 8\n5 9\n6 10\n7 10\n",
+      "output": "96\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-52",
+      "input": "8 18\n1 2\n1 4\n1 6\n1 7\n1 8\n2 5\n2 7\n2 8\n3 4\n3 5\n3 6\n3 8\n4 5\n4 6\n4 7\n4 8\n5 7\n5 8\n",
+      "output": "20\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-53",
+      "input": "6 15\n1 2\n1 3\n1 4\n1 5\n1 6\n2 3\n2 4\n2 5\n2 6\n3 4\n3 5\n3 6\n4 5\n4 6\n5 6\n",
+      "output": "7\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-54",
+      "input": "5 6\n1 2\n1 3\n1 4\n1 5\n2 5\n4 5\n",
+      "output": "11\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-55",
+      "input": "5 4\n1 4\n1 5\n2 5\n4 5\n",
+      "output": "14\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-56",
+      "input": "9 28\n1 2\n1 4\n1 5\n1 6\n1 8\n1 9\n2 4\n2 5\n2 6\n2 7\n2 8\n2 9\n3 4\n3 6\n3 7\n3 8\n3 9\n4 5\n4 6\n4 7\n4 8\n4 9\n5 9\n6 7\n6 8\n7 8\n7 9\n8 9\n",
+      "output": "18\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-57",
+      "input": "10 44\n1 2\n1 3\n1 4\n1 5\n1 6\n1 7\n1 8\n1 9\n1 10\n2 3\n2 4\n2 5\n2 6\n2 7\n2 8\n2 9\n2 10\n3 4\n3 5\n3 6\n3 7\n3 8\n3 9\n3 10\n4 5\n4 6\n4 7\n4 8\n4 9\n4 10\n5 6\n5 7\n5 8\n5 9\n5 10\n6 7\n6 8\n6 9\n6 10\n7 8\n7 10\n8 9\n8 10\n9 10\n",
+      "output": "12\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-58",
+      "input": "7 10\n1 4\n1 6\n2 4\n2 5\n2 6\n2 7\n4 5\n4 6\n5 6\n6 7\n",
+      "output": "26\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-59",
+      "input": "4 1\n1 2\n",
+      "output": "12\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-60",
+      "input": "4 4\n1 3\n1 4\n2 3\n2 4\n",
+      "output": "7\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-61",
+      "input": "6 11\n1 2\n1 3\n1 5\n1 6\n2 4\n2 6\n3 5\n3 6\n4 5\n4 6\n5 6\n",
+      "output": "11\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-62",
+      "input": "7 7\n1 4\n2 6\n3 7\n4 5\n4 6\n4 7\n6 7\n",
+      "output": "36\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-63",
+      "input": "8 25\n1 2\n1 3\n1 5\n1 6\n1 7\n1 8\n2 3\n2 4\n2 5\n2 7\n2 8\n3 4\n3 5\n3 7\n3 8\n4 5\n4 6\n4 7\n4 8\n5 6\n5 7\n5 8\n6 7\n6 8\n7 8\n",
+      "output": "12\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-64",
+      "input": "8 16\n1 2\n1 3\n1 7\n2 4\n2 6\n2 7\n2 8\n3 4\n3 6\n3 7\n5 6\n5 7\n5 8\n6 7\n6 8\n7 8\n",
+      "output": "25\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-65",
+      "input": "10 10\n1 3\n1 9\n2 7\n3 4\n3 6\n3 8\n4 5\n6 10\n7 8\n8 9\n",
+      "output": "141\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-66",
+      "input": "3 2\n1 3\n2 3\n",
+      "output": "5\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-67",
+      "input": "4 2\n1 3\n2 3\n",
+      "output": "10\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-68",
+      "input": "10 15\n1 2\n1 4\n2 7\n2 8\n2 9\n3 4\n3 5\n3 9\n4 8\n5 6\n5 7\n6 10\n7 8\n7 10\n8 9\n",
+      "output": "81\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-69",
+      "input": "8 13\n1 2\n1 4\n1 5\n1 7\n2 4\n2 5\n3 5\n3 8\n4 5\n4 6\n4 7\n5 7\n6 8\n",
+      "output": "31\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-70",
+      "input": "6 13\n1 2\n1 3\n1 4\n1 5\n2 3\n2 4\n2 5\n2 6\n3 5\n3 6\n4 5\n4 6\n5 6\n",
+      "output": "9\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-71",
+      "input": "7 20\n1 2\n1 3\n1 4\n1 5\n1 6\n1 7\n2 3\n2 4\n2 5\n2 6\n2 7\n3 4\n3 6\n3 7\n4 5\n4 6\n4 7\n5 6\n5 7\n6 7\n",
+      "output": "9\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-72",
+      "input": "6 9\n1 2\n1 3\n1 5\n2 3\n2 4\n2 5\n2 6\n3 6\n5 6\n",
+      "output": "15\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-73",
+      "input": "5 2\n2 3\n3 4\n",
+      "output": "20\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-74",
+      "input": "8 25\n1 2\n1 3\n1 4\n1 5\n1 6\n1 7\n1 8\n2 3\n2 4\n2 5\n2 6\n2 7\n2 8\n3 5\n3 6\n3 7\n3 8\n4 5\n4 7\n4 8\n5 6\n5 7\n5 8\n6 7\n7 8\n",
+      "output": "12\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-75",
+      "input": "8 4\n4 6\n4 8\n5 6\n7 8\n",
+      "output": "104\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-76",
+      "input": "8 23\n1 2\n1 3\n1 4\n1 7\n1 8\n2 3\n2 4\n2 6\n2 7\n2 8\n3 4\n3 6\n3 7\n3 8\n4 5\n4 6\n4 7\n4 8\n5 6\n5 7\n6 7\n6 8\n7 8\n",
+      "output": "14\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-77",
+      "input": "8 15\n1 2\n1 7\n2 4\n2 6\n2 7\n3 4\n3 5\n3 6\n3 7\n3 8\n4 6\n4 7\n5 7\n6 7\n7 8\n",
+      "output": "32\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-78",
+      "input": "3 2\n1 2\n1 3\n",
+      "output": "5\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-79",
+      "input": "9 19\n1 3\n1 4\n1 5\n1 6\n1 7\n1 8\n1 9\n2 6\n2 7\n2 9\n3 4\n3 5\n3 9\n4 5\n5 9\n6 7\n6 9\n7 8\n7 9\n",
+      "output": "34\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-80",
+      "input": "7 18\n1 2\n1 3\n1 4\n1 5\n1 6\n1 7\n2 3\n2 4\n2 5\n2 7\n3 4\n3 5\n3 6\n3 7\n4 5\n4 6\n5 7\n6 7\n",
+      "output": "11\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-81",
+      "input": "9 24\n1 2\n1 3\n1 5\n1 6\n1 7\n1 9\n2 3\n2 4\n2 6\n2 8\n3 4\n3 5\n3 6\n3 7\n4 5\n4 6\n4 9\n5 6\n5 7\n5 8\n6 8\n6 9\n7 8\n7 9\n",
+      "output": "25\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-82",
+      "input": "6 2\n3 6\n4 5\n",
+      "output": "36\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-83",
+      "input": "4 4\n1 2\n1 4\n2 3\n2 4\n",
+      "output": "7\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-84",
+      "input": "9 15\n1 2\n1 4\n2 3\n2 5\n2 8\n2 9\n3 5\n3 7\n3 8\n3 9\n4 6\n4 7\n4 8\n4 9\n5 6\n",
+      "output": "60\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-85",
+      "input": "10 34\n1 2\n1 4\n1 5\n1 7\n1 8\n1 9\n2 3\n2 4\n2 5\n2 6\n2 7\n2 8\n2 9\n2 10\n3 4\n3 5\n3 8\n3 9\n4 5\n4 6\n4 7\n4 8\n4 9\n4 10\n5 7\n5 8\n6 7\n6 8\n6 10\n7 8\n7 9\n7 10\n8 9\n9 10\n",
+      "output": "25\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-86",
+      "input": "9 20\n1 3\n1 4\n1 5\n1 7\n1 9\n2 3\n2 4\n2 8\n2 9\n3 5\n3 8\n4 5\n4 9\n5 7\n6 7\n6 8\n6 9\n7 8\n7 9\n8 9\n",
+      "output": "30\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-87",
+      "input": "9 34\n1 2\n1 3\n1 4\n1 5\n1 6\n1 7\n1 8\n1 9\n2 3\n2 4\n2 5\n2 7\n2 8\n3 4\n3 5\n3 6\n3 7\n3 8\n3 9\n4 5\n4 6\n4 7\n4 8\n4 9\n5 6\n5 7\n5 8\n5 9\n6 7\n6 8\n6 9\n7 8\n7 9\n8 9\n",
+      "output": "12\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-88",
+      "input": "10 7\n1 5\n2 5\n2 6\n3 6\n4 6\n4 10\n5 9\n",
+      "output": "256\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-89",
+      "input": "4 3\n1 4\n2 4\n3 4\n",
+      "output": "9\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-90",
+      "input": "7 14\n1 2\n1 3\n1 7\n2 4\n2 5\n2 6\n2 7\n3 5\n3 7\n4 5\n4 7\n5 6\n5 7\n6 7\n",
+      "output": "17\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-91",
+      "input": "9 0\n\n",
+      "output": "512\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-92",
+      "input": "8 11\n1 2\n1 7\n1 8\n2 3\n2 6\n3 7\n4 5\n4 7\n4 8\n6 8\n7 8\n",
+      "output": "39\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-93",
+      "input": "9 21\n1 4\n1 5\n1 6\n1 7\n1 8\n2 3\n2 4\n2 5\n2 8\n3 4\n3 5\n3 9\n4 7\n4 8\n5 8\n5 9\n6 7\n6 8\n6 9\n7 8\n7 9\n",
+      "output": "27\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-94",
+      "input": "9 29\n1 2\n1 3\n1 6\n1 7\n1 8\n2 3\n2 4\n2 5\n2 6\n2 7\n2 8\n2 9\n3 4\n3 5\n3 6\n3 7\n3 8\n3 9\n4 7\n4 8\n4 9\n5 6\n5 8\n5 9\n6 8\n6 9\n7 8\n7 9\n8 9\n",
+      "output": "18\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-95",
+      "input": "6 13\n1 2\n1 3\n1 4\n1 5\n1 6\n2 4\n2 5\n2 6\n3 4\n3 5\n3 6\n4 5\n4 6\n",
+      "output": "9\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-96",
+      "input": "9 34\n1 2\n1 3\n1 4\n1 5\n1 6\n1 7\n1 8\n1 9\n2 3\n2 4\n2 5\n2 6\n2 7\n2 8\n2 9\n3 4\n3 5\n3 6\n3 7\n3 8\n3 9\n4 5\n4 6\n4 8\n4 9\n5 6\n5 7\n5 8\n6 7\n6 8\n6 9\n7 8\n7 9\n8 9\n",
+      "output": "12\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-97",
+      "input": "14 82\n1 2\n1 3\n1 4\n1 5\n1 6\n1 7\n1 8\n1 9\n1 10\n1 12\n1 13\n1 14\n2 3\n2 4\n2 5\n2 6\n2 7\n2 9\n2 10\n2 12\n2 13\n2 14\n3 4\n3 5\n3 6\n3 7\n3 8\n3 9\n3 10\n3 11\n3 12\n3 13\n3 14\n4 5\n4 6\n4 7\n4 8\n4 9\n4 10\n4 11\n4 12\n4 13\n4 14\n5 6\n5 7\n5 8\n5 9\n5 10\n5 11\n5 12\n5 13\n5 14\n6 7\n6 8\n6 9\n6 10\n6 11\n6 13\n6 14\n7 10\n7 11\n7 12\n7 13\n7 14\n8 10\n8 11\n8 12\n8 14\n9 10\n9 11\n9 12\n9 13\n9 14\n10 11\n10 13\n10 14\n11 12\n11 13\n11 14\n12 13\n12 14\n13 14\n",
+      "output": "25\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-98",
+      "input": "16 34\n1 2\n1 3\n1 14\n2 3\n2 8\n2 9\n2 16\n3 4\n3 7\n3 14\n3 15\n3 16\n4 8\n4 15\n5 8\n5 13\n5 15\n6 8\n6 12\n7 8\n7 10\n7 11\n7 12\n7 15\n8 13\n9 13\n9 14\n10 14\n10 15\n11 13\n11 16\n12 13\n12 14\n12 15\n",
+      "output": "744\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-99",
+      "input": "9 15\n1 3\n1 4\n1 7\n1 8\n2 4\n2 8\n2 9\n3 4\n3 6\n3 7\n3 9\n4 7\n5 9\n7 9\n8 9\n",
+      "output": "52\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-100",
+      "input": "10 41\n1 2\n1 3\n1 4\n1 5\n1 6\n1 7\n1 8\n1 9\n1 10\n2 3\n2 4\n2 5\n2 6\n2 7\n2 8\n2 10\n3 5\n3 6\n3 7\n3 8\n3 9\n3 10\n4 5\n4 6\n4 9\n4 10\n5 6\n5 7\n5 8\n5 9\n5 10\n6 7\n6 8\n6 9\n6 10\n7 8\n7 9\n7 10\n8 9\n8 10\n9 10\n",
+      "output": "15\n",
+      "origin": "generated"
+    }
+  ]
+}

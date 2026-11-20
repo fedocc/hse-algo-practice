@@ -1,0 +1,618 @@
+{
+  "schema_version": 1,
+  "problem_id": "yandex-78772-C",
+  "language": "python3",
+  "comparison": "tokens",
+  "timeout_seconds": 2,
+  "total_timeout_seconds": 30,
+  "provenance": {
+    "kind": "generated",
+    "title": "100 локальных проверок, включая примеры условия",
+    "source_url": "https://official.contest.yandex.ru/contest/78772/problems/C/",
+    "generator": "testpacks/generate_firstyear.py; seed fedor-local-tests-v1:78772-C",
+    "oracle": "Независимый прямой перебор, обход графа или модель на обычных списках",
+    "notes": "Неофициальный тренировочный набор. Проверяет ответы и граничные случаи; не воспроизводит все скрытые тесты и ограничения исходной платформы."
+  },
+  "cases": [
+    {
+      "id": "source-example-1",
+      "input": "4 4\nF.PS\n.PP.\n.PP.\n....",
+      "output": "3",
+      "origin": "statement-example"
+    },
+    {
+      "id": "source-example-2",
+      "input": "4 4\nF.PS\n.PP.\n.PP.\n.P..",
+      "output": "-1",
+      "origin": "statement-example"
+    },
+    {
+      "id": "boundary-1",
+      "input": "1 2\nSF\n",
+      "output": "1\n",
+      "origin": "generated-boundary"
+    },
+    {
+      "id": "boundary-2",
+      "input": "1 3\nSPF\n",
+      "output": "-1\n",
+      "origin": "generated-boundary"
+    },
+    {
+      "id": "generated-5",
+      "input": "9 2\n..\n.P\n..\nP.\n..\n.P\nS.\n.F\n..\n",
+      "output": "2\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-6",
+      "input": "10 9\nP....P...\nP.P.P..P.\n...PPP...\nP.PPP....\n.P....P..\nP........\n.....PPF.\n.........\nP.P..S..P\n..PP.PP.P\n",
+      "output": "2\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-7",
+      "input": "12 11\n...P......P\n.P.........\n......P.P..\nP...P.P.P..\n.........PP\nP..P..P.P..\n........P..\nPP....P....\n.....P...P.\n.SPPP.P....\nP...PP.P.PF\n...P.P.....\n",
+      "output": "7\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-8",
+      "input": "10 2\n..\nFS\n..\n.P\n..\nP.\nPP\n..\n..\nPP\n",
+      "output": "1\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-9",
+      "input": "10 3\n.FP\n...\nP..\n...\n..S\n...\n...\n...\n.P.\n...\n",
+      "output": "2\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-10",
+      "input": "5 8\nS..P..PP\nP..P....\n......PP\nP.P.PF..\nP.PPP.PP\n",
+      "output": "4\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-11",
+      "input": "2 2\nF.\nSP\n",
+      "output": "1\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-12",
+      "input": "10 9\nPP..PPPP.\n...P..P..\n...P.....\nPPPP.P...\n..P...P..\nP...P....\nP.P.S..P.\n........P\n...P.P...\nPFPP..PP.\n",
+      "output": "3\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-13",
+      "input": "12 5\n.FP.P\nPP...\nPP...\n....P\n.....\n.....\n.PP..\n.....\nP..P.\nS..P.\n.....\n.....\n",
+      "output": "-1\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-14",
+      "input": "12 8\n...P....\n........\nP.PP....\nP..P..P.\n......P.\nP.P.....\nP..S....\n......PP\n.P.P.P..\nF.P...P.\n.P..PP..\nP.....PP\n",
+      "output": "3\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-15",
+      "input": "6 11\n.PP........\n.P.PS.P....\n..FP.......\nP.P...P...P\n..........P\n.......P.P.\n",
+      "output": "4\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-16",
+      "input": "4 3\n.FP\n..P\nS.P\n...\n",
+      "output": "2\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-17",
+      "input": "7 8\n..P..P..\n.P......\n..S..P..\n....P..P\nF..PP...\n.......P\nP.....PP\n",
+      "output": "2\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-18",
+      "input": "9 2\nP.\n..\n..\n.S\n.F\n..\n..\nPP\n..\n",
+      "output": "1\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-19",
+      "input": "5 4\n....\n.PS.\nF...\n....\n...P\n",
+      "output": "2\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-20",
+      "input": "5 6\nP..PP.\nS...FP\n..PPP.\n...P..\nPPP.PP\n",
+      "output": "1\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-21",
+      "input": "4 8\nPP..P.PP\n....S.PP\n....P...\n......F.\n",
+      "output": "3\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-22",
+      "input": "3 9\n.PS.....P\nP....PP..\n...F.....\n",
+      "output": "2\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-23",
+      "input": "9 11\n.P.........\nPP........P\n........S..\n.PP........\n......PP...\n..P.....P..\n..P.PP.....\n.P.....P.P.\n.......F..P\n",
+      "output": "3\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-24",
+      "input": "10 5\n..P.P\n.....\n.P.P.\nP....\n.....\n....P\n...F.\nP...S\n.....\n..P..\n",
+      "output": "2\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-25",
+      "input": "10 7\n....PPS\n....P.P\n.P.....\n.P...P.\n.PP..P.\n..PPP..\n.P.....\n....P..\n.FP..PP\n.P.....\n",
+      "output": "-1\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-26",
+      "input": "8 7\n..P....\n.S....P\n......P\n.P.P.P.\n...F...\n.P...P.\n..P..P.\n....P..\n",
+      "output": "3\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-27",
+      "input": "4 8\nP.P.P...\n.P...PPP\n...P..F.\n.P..P.S.\n",
+      "output": "1\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-28",
+      "input": "1 11\nS....F.P.PP\n",
+      "output": "1\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-29",
+      "input": "6 3\n..S\nP.P\nP.P\nP..\nPPP\nF..\n",
+      "output": "-1\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-30",
+      "input": "12 2\nSP\n..\n..\n..\nP.\nP.\n..\nP.\nP.\nF.\n.P\n..\n",
+      "output": "4\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-31",
+      "input": "7 3\n..F\n...\n...\n...\nPP.\nS..\nPP.\n",
+      "output": "2\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-32",
+      "input": "5 3\nS..\nP..\n.P.\nF.P\n..P\n",
+      "output": "-1\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-33",
+      "input": "4 3\n...\nS..\nF..\nP..\n",
+      "output": "1\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-34",
+      "input": "7 3\n..S\nPP.\n.F.\n...\nP..\n...\nP..\n",
+      "output": "2\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-35",
+      "input": "4 9\n..P..P.P.\nF....P...\n........P\n.P.....S.\n",
+      "output": "3\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-36",
+      "input": "8 5\n.....\nP.P..\n.....\n.....\n...F.\n.....\n....S\n....P\n",
+      "output": "2\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-37",
+      "input": "12 2\n..\n.F\n.P\n..\n..\n..\n..\n..\n.P\nP.\nP.\n.S\n",
+      "output": "-1\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-38",
+      "input": "10 12\n........P...\nP..P.......P\n.PP...P..F.P\n..PPP.....P.\n..PPP...P.P.\n..PPP...S..P\nP..P........\nP.......PP..\n.P..........\n..P..PP...P.\n",
+      "output": "2\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-39",
+      "input": "5 11\n.PP....PP.P\nP....P.PP..\n.PP........\n.PF...P...P\n....S.....P\n",
+      "output": "2\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-40",
+      "input": "1 4\n.SPF\n",
+      "output": "-1\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-41",
+      "input": "11 7\n.P.....\n.P.P..P\n......P\n.......\n.SF.P..\n.P.....\n...PP..\n..P...P\n......P\n..PP...\nP......\n",
+      "output": "1\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-42",
+      "input": "5 8\n.P...PP.\n...S..P.\n.FP.P.P.\n.P.....P\n...P....\n",
+      "output": "2\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-43",
+      "input": "9 8\n........\nPP.P....\n.......P\n.P....P.\n.....P.P\nP......P\n...S.P..\n...P....\nPF......\n",
+      "output": "2\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-44",
+      "input": "10 2\n.P\n..\n.P\n.P\n..\n.P\n..\n.S\nF.\n..\n",
+      "output": "2\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-45",
+      "input": "7 2\n..\nP.\nFS\n.P\n..\n.P\n..\n",
+      "output": "1\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-46",
+      "input": "1 6\n..S..F\n",
+      "output": "1\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-47",
+      "input": "9 6\n.PP...\n..P...\n...P.P\nP.....\n..P..P\nP.PF..\n.S.PP.\n.P....\n....P.\n",
+      "output": "3\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-48",
+      "input": "2 10\n....FP....\n....SP..P.\n",
+      "output": "1\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-49",
+      "input": "6 11\n.PPSP......\n....PPP...P\nP......F..P\n.......P..P\nP..P.PP....\n.......P...\n",
+      "output": "2\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-50",
+      "input": "3 5\n.PP.F\nPS..P\n.....\n",
+      "output": "3\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-51",
+      "input": "10 2\n.F\nP.\nSP\n..\n..\n..\n..\n.P\n..\n..\n",
+      "output": "-1\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-52",
+      "input": "6 3\n.F.\n.PP\n.P.\n..P\nP..\nS..\n",
+      "output": "5\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-53",
+      "input": "10 8\nP....P.P\n..P.....\nS...P.P.\n........\n..P.....\n.PP...PP\n..P..P..\nF...P...\n...P....\n....PP..\n",
+      "output": "1\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-54",
+      "input": "4 12\n..P..FP.PP.S\nP.......PP..\n..P...P..P..\n.P.....PP...\n",
+      "output": "-1\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-55",
+      "input": "10 8\n.PPP...F\n.......P\n..P.....\n......P.\n...P.P..\nP..P....\n....P...\nP.P..PS.\n.......P\nPPP.P..P\n",
+      "output": "4\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-56",
+      "input": "6 12\nP...P.......\n....P.P.PP..\n......PS....\n.PP.....P..P\nP....P.....P\n...PPP.F.P..\n",
+      "output": "1\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-57",
+      "input": "8 10\n......P..P\nP..P.P.P.P\n..S.......\nF........P\nPP..P.....\n...PPP....\n..........\n.PP...PP..\n",
+      "output": "2\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-58",
+      "input": "8 4\nF...\n....\n....\n...P\n..P.\nPS.P\n.PP.\n..P.\n",
+      "output": "2\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-59",
+      "input": "9 2\nPP\n.P\nF.\n..\n.P\n.P\n.P\n.S\n..\n",
+      "output": "2\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-60",
+      "input": "2 7\n.PP.PFP\nP..S...\n",
+      "output": "2\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-61",
+      "input": "3 9\nPP.S.P...\n...P.....\n...F..P.P\n",
+      "output": "3\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-62",
+      "input": "9 5\n..P.P\n...S.\n....P\n...P.\n..F..\n...P.\n.....\n...P.\n....P\n",
+      "output": "2\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-63",
+      "input": "10 6\nP..PP.\n....P.\n.....P\n.....P\n.PS.P.\n.....P\n...P..\nPP.P..\n.P....\nP.F...\n",
+      "output": "1\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-64",
+      "input": "7 7\n.....P.\nPP..P..\n..FP...\nPP.PP..\nS....P.\n....P..\n....P..\n",
+      "output": "2\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-65",
+      "input": "11 2\nP.\n..\n..\nP.\n..\n..\n.F\nPS\n..\n..\n.P\n",
+      "output": "1\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-66",
+      "input": "4 10\n.P.PP.P...\n..P..P..PF\n.PP...P...\n..P..PPS..\n",
+      "output": "2\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-67",
+      "input": "4 8\n..S.....\n....PP..\n....PFP.\n.......P\n",
+      "output": "3\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-68",
+      "input": "5 4\nS...\n....\n..P.\nF..P\n....\n",
+      "output": "1\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-69",
+      "input": "6 10\n.......P..\n.P........\nP....S.P..\nPPFP..PP..\n.P.P.....P\n.P.......P\n",
+      "output": "2\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-70",
+      "input": "2 7\n.F.PPP.\n.....S.\n",
+      "output": "2\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-71",
+      "input": "10 3\nP..\n...\n.P.\n...\n...\nPF.\n.P.\n..P\n.P.\nS..\n",
+      "output": "-1\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-72",
+      "input": "9 4\n..F.\nP.P.\nPS.P\n....\n.P..\nPP..\nP...\n....\n...P\n",
+      "output": "2\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-73",
+      "input": "6 7\nP...FPP\n..S..P.\n.......\n...PP..\n.P...PP\nP.P.P..\n",
+      "output": "2\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-74",
+      "input": "3 7\n.......\n..PP..P\n..S.F.P\n",
+      "output": "1\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-75",
+      "input": "11 8\n........\n......PP\n.P.P.PF.\n...P....\nP...P...\nP......P\n..P..P..\n..P....P\n.PSP.PP.\n..PP....\n........\n",
+      "output": "-1\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-76",
+      "input": "12 7\n..PPPP.\n....P.P\n...P...\nP.P....\nP..S.P.\n..PP.P.\nP...P..\n.......\n......P\nP.P...F\n.....PP\n.....P.\n",
+      "output": "5\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-77",
+      "input": "6 9\n........P\n....PP...\n..P..PF..\nP....P.S.\n...PPP..P\n...PP....\n",
+      "output": "2\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-78",
+      "input": "11 7\nP..P..S\n.......\n......P\n..P...P\n.PP....\n...P.P.\nP....PP\nP......\n.......\n..P....\nP....FP\n",
+      "output": "3\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-79",
+      "input": "3 3\nPP.\nF..\nP.S\n",
+      "output": "2\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-80",
+      "input": "7 5\nP..P.\n.....\n....P\nS...P\n.....\n..FP.\n...PP\n",
+      "output": "2\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-81",
+      "input": "10 9\n.PP..P...\nP..P..P..\n.........\n.P...PP.P\n....P...P\n....P..P.\nPP.F...P.\nPP..P..S.\n....P..P.\n..PP...P.\n",
+      "output": "3\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-82",
+      "input": "3 5\n.S..P\n.....\nF..P.\n",
+      "output": "2\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-83",
+      "input": "2 5\nPPP.P\n...FS\n",
+      "output": "1\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-84",
+      "input": "9 12\nP...PS......\n..P.P.PPPP..\n......P...PP\n.P...P......\n.....P...FP.\nP...P...P..P\n.P.P......PP\n.P.P...PP.P.\nP.....P...P.\n",
+      "output": "7\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-85",
+      "input": "12 7\n....P..\nS......\n.....P.\n.....P.\n...P.P.\n....FPP\nP.....P\n.P.....\n...P.P.\n.PP.P..\n..PP...\n....P..\n",
+      "output": "2\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-86",
+      "input": "8 4\n....\n....\nP..P\nP.P.\nP..P\nP.P.\nPF..\n..S.\n",
+      "output": "2\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-87",
+      "input": "6 7\n..P....\nPPP....\n....P..\n......P\n.F.SP..\nP.P....\n",
+      "output": "1\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-88",
+      "input": "1 6\nF.P.SP\n",
+      "output": "-1\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-89",
+      "input": "8 4\n....\n....\n.F..\n....\n..P.\nP.S.\n.P.P\n.P.P\n",
+      "output": "2\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-90",
+      "input": "2 4\nPFP.\nS...\n",
+      "output": "2\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-91",
+      "input": "4 12\n.P..........\n..PFPP.....P\n......PS.P.P\n.PP.....PP..\n",
+      "output": "3\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-92",
+      "input": "9 9\nP......P.\n.P.......\n.PPSP....\n...P..PP.\nPP.......\n...P.PPF.\nP.PP...P.\nP..P....P\n..P......\n",
+      "output": "4\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-93",
+      "input": "11 2\n..\n..\nP.\n..\nS.\n.F\n.P\n..\n..\n..\n..\n",
+      "output": "2\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-94",
+      "input": "10 2\n.P\n.S\nP.\n..\n.F\nP.\nP.\n.P\n..\nP.\n",
+      "output": "1\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-95",
+      "input": "5 11\n..PPF...P..\n.P.........\nP....P...S.\n.P...P.....\n.....P..P..\n",
+      "output": "3\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-96",
+      "input": "6 11\n.S....P..P.\n.P...P.P...\nFP......PP.\n.P.....P...\nP....P...PP\n.P.........\n",
+      "output": "2\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-97",
+      "input": "11 6\n...P..\n...S.P\n.PP...\n.P..PP\n...P.P\nP.P...\n....P.\n......\n......\n...P..\nF.....\n",
+      "output": "5\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-98",
+      "input": "1 3\nPFS\n",
+      "output": "1\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-99",
+      "input": "1 8\n.F.....S\n",
+      "output": "1\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-100",
+      "input": "9 3\n..P\n.F.\n.P.\n...\n.P.\nS..\n...\n...\n...\n",
+      "output": "2\n",
+      "origin": "generated"
+    }
+  ]
+}

@@ -1,0 +1,618 @@
+{
+  "schema_version": 1,
+  "problem_id": "yandex-83811-A",
+  "language": "python3",
+  "comparison": "tokens",
+  "timeout_seconds": 2,
+  "total_timeout_seconds": 30,
+  "provenance": {
+    "kind": "generated",
+    "title": "100 локальных проверок, включая примеры условия",
+    "source_url": "https://official.contest.yandex.ru/contest/83811/problems/A/",
+    "generator": "testpacks/generate_firstyear.py; seed fedor-local-tests-v1:83811-A",
+    "oracle": "Независимый прямой перебор, обход графа или модель на обычных списках",
+    "notes": "Неофициальный тренировочный набор. Проверяет ответы и граничные случаи; не воспроизводит все скрытые тесты и ограничения исходной платформы."
+  },
+  "cases": [
+    {
+      "id": "source-example-1",
+      "input": "10\npush 0 10\npush 1 20\npop 1\npush 3 30\npush 2 40\npop 1\npush 6 50\npop 5\npush 5 60\npop 2",
+      "output": "6",
+      "origin": "statement-example"
+    },
+    {
+      "id": "source-example-2",
+      "input": "10\npush 0 10\npush 0 20\npush 0 30\npush 0 40\npush 0 50\npop 1\npop 2\npop 3\npop 4\npop 5",
+      "output": "5",
+      "origin": "statement-example"
+    },
+    {
+      "id": "boundary-1",
+      "input": "0\n",
+      "output": "0\n",
+      "origin": "generated-boundary"
+    },
+    {
+      "id": "boundary-2",
+      "input": "2\npush 0 1\npop 1\n",
+      "output": "1\n",
+      "origin": "generated-boundary"
+    },
+    {
+      "id": "generated-5",
+      "input": "23\npush 0 90252\npop 1\npush 2 44662\npop 1\npush 0 97913\npush 4 12643\npop 5\npop 5\npush 0 93551\npush 4 43950\npush 7 75513\npop 1\npush 4 22305\npop 9\npush 11 27596\npush 5 40473\npush 12 91231\npush 1 40060\npush 7 21732\npush 8 63082\npop 5\npush 10 32529\npop 1\n",
+      "output": "15\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-6",
+      "input": "78\npush 0 40694\npush 0 5065\npush 2 55178\npop 3\npop 2\npop 2\npush 0 6648\npush 1 112\npop 3\npush 9 66548\npop 1\npush 7 56527\npush 2 59249\npush 2 56503\npush 4 53413\npush 5 13230\npop 4\npush 4 35138\npush 3 44813\npush 15 10846\npush 6 84541\npush 17 38800\npush 5 86424\npush 9 35256\npop 3\npush 7 38439\npush 17 91889\npush 8 11588\npush 12 88031\npush 0 31684\npush 14 7258\npush 14 90154\npush 21 96621\npop 19\npop 9\npush 31 50709\npush 12 67695\npop 2\npush 31 13553\npush 19 40018\npush 7 25067\npush 12 43066\npush 0 84116\npop 21\npush 0 7781\npop 8\npush 23 89656\npush 19 84910\npush 2 17635\npush 15 81983\npush 15 55338\npop 23\npush 38 69481\npush 42 20611\npush 24 37378\npush 50 81752\npush 17 73316\npush 2 51798\npush 9 33771\npush 19 56562\npush 18 25478\npop 55\npush 15 27150\npush 37 72360\npop 41\npop 24\npush 57 41576\npop 39\npop 45\npush 56 29136\npush 69 13273\npush 61 96071\npush 57 92219\npop 10\npush 7 7578\npush 12 19925\npop 1\npop 73\n",
+      "output": "57\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-7",
+      "input": "12\npush 0 89748\npop 1\npop 1\npush 3 82785\npush 0 28423\npush 1 91810\npush 0 72886\npush 5 98955\npush 1 14016\npop 1\npush 0 48257\npush 1 74437\n",
+      "output": "9\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-8",
+      "input": "25\npush 0 443\npop 1\npush 2 79160\npush 1 19733\npush 2 97006\npush 5 54754\npop 1\npush 1 23206\npush 2 36201\npop 4\npush 7 95120\npush 2 39355\npop 4\npush 8 19859\npush 8 38385\npush 6 96087\npush 14 19389\npush 14 59994\npush 4 61715\npush 0 76468\npush 16 17909\npush 2 39088\npush 19 84922\npush 11 33993\npush 21 23406\n",
+      "output": "21\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-9",
+      "input": "96\npush 0 39657\npush 1 9093\npop 2\npush 3 32489\npop 2\npush 0 87327\npop 4\npush 0 15296\npush 3 36646\npop 7\npush 1 1667\npop 7\npush 11 62887\npush 0 34375\npop 1\npop 14\npop 13\npush 5 76889\npop 5\npop 2\npush 16 31542\npop 18\npush 17 39758\npush 16 62875\npop 14\npop 17\npop 14\npush 25 93175\npop 13\npush 9 19801\npush 2 76300\npush 28 3818\npush 30 88438\npush 21 95909\npush 1 90901\npush 15 79154\npush 12 66771\npop 9\npush 16 1086\npush 11 19227\npush 31 4963\npush 0 2694\npop 23\npush 27 41010\npush 1 9\npop 3\npush 39 91248\npush 44 38867\npush 26 15119\npush 48 56492\npush 23 40675\npush 13 90003\npush 13 58342\npop 44\npop 50\npush 52 65249\npop 4\npush 14 15979\npush 27 11283\npush 29 61534\npush 53 61770\npush 54 51925\npush 44 37561\npush 39 38949\npush 6 78568\npush 28 796\npush 12 27621\npush 22 46678\npush 8 59614\npop 5\npop 29\npop 24\npop 28\npush 35 54939\npop 2\npop 62\npush 16 22781\npush 71 93251\npush 41 18401\npush 25 65018\npush 19 84711\npush 7 75906\npush 4 10955\npush 29 8167\npush 61 93246\npush 59 52139\npop 86\npush 1 8568\npush 34 65001\npush 29 24028\npush 25 22133\npop 1\npush 49 5370\npush 32 84692\npop 8\npop 17\n",
+      "output": "65\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-10",
+      "input": "16\npush 0 8799\npush 0 62092\npush 2 50390\npush 3 11946\npush 2 24039\npush 1 21371\npop 4\npush 7 62313\npush 4 51623\npush 7 2577\npop 5\npush 11 78054\npush 7 41622\npush 9 62427\npop 4\npop 2\n",
+      "output": "12\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-11",
+      "input": "37\npush 0 13043\npush 0 7151\npush 2 79218\npop 1\npop 1\npush 5 79801\npop 1\npop 6\npush 5 350\npush 7 37419\npush 0 47079\npush 2 55885\npush 1 84678\npop 12\npush 0 15290\npush 8 24632\npop 3\npush 17 8214\npush 10 89385\npush 13 31712\npush 7 30350\npush 7 16319\npush 1 43697\npop 2\npush 24 60669\npush 13 12712\npush 11 57426\npop 14\npop 27\npop 20\npush 26 9172\npush 21 90958\npop 16\npush 15 35293\npush 25 38897\npop 35\npush 30 2172\n",
+      "output": "25\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-12",
+      "input": "6\npush 0 46793\npush 0 39398\npush 1 86316\npush 1 21277\npop 2\npush 0 42019\n",
+      "output": "5\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-13",
+      "input": "9\npush 0 67788\npush 0 13403\npush 0 74483\npush 2 75892\npop 3\npop 2\npop 3\npush 2 95805\npush 2 87820\n",
+      "output": "6\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-14",
+      "input": "36\npush 0 17237\npush 1 82264\npush 2 97668\npush 1 21501\npush 2 89947\npop 3\npop 2\npush 6 95984\npush 8 17428\npush 6 40732\npush 5 95644\npop 10\npush 4 692\npush 9 8669\npush 14 14287\npop 8\npop 4\npush 12 77201\npush 10 13256\npush 12 85864\npush 0 42114\npop 19\npush 18 52710\npop 3\npush 4 54985\npush 0 26476\npush 13 11077\npop 17\npush 23 54819\npush 7 75879\npush 9 58501\npop 13\npush 19 20126\npush 1 55179\npop 21\npush 19 64772\n",
+      "output": "26\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-15",
+      "input": "63\npush 0 79247\npush 0 98825\npush 1 67713\npop 3\npush 1 13230\npush 3 95287\npop 3\npop 4\npop 6\npush 4 49095\npush 7 46442\npop 11\npush 0 86148\npush 7 83779\npop 6\npush 6 29520\npush 16 82162\npop 10\npush 2 98189\npop 13\npop 5\npush 12 88228\npush 20 32045\npop 19\npop 22\npush 7 32384\npush 11 4944\npush 11 72631\npush 20 23267\npush 2 6271\npop 9\npush 29 53684\npop 12\npush 26 95165\npush 13 65922\npop 25\npop 5\npop 17\npush 28 36420\npush 11 50182\npop 13\npush 3 75026\npush 39 90842\npush 10 3722\npush 8 5695\npop 2\npush 36 15947\npush 20 23836\npush 46 75189\npop 7\npush 47 53004\npush 1 17411\npush 12 31473\npush 4 80966\npush 20 36592\npush 0 85334\npop 13\npop 29\npop 32\npush 55 89430\npop 47\npush 58 13826\npop 7\n",
+      "output": "39\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-16",
+      "input": "30\npush 0 67639\npop 1\npush 0 1720\npush 0 49795\npush 4 48182\npush 1 88156\npush 6 26661\npush 3 66733\npush 6 59429\npop 4\npop 8\npop 11\npop 6\npop 4\npush 14 67305\npush 8 50676\npop 8\npush 1 49355\npop 1\npush 8 35013\npush 6 43610\npush 2 95773\npush 8 76662\npop 11\npush 0 338\npush 18 28023\npop 1\npush 0 62596\npop 7\npop 16\n",
+      "output": "18\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-17",
+      "input": "93\npush 0 24309\npush 0 83342\npush 0 80190\npop 2\npush 0 77197\npush 0 62393\npush 4 71169\npop 5\npush 5 49269\npop 6\npush 6 75977\npush 1 3730\npush 5 48930\npush 9 58047\npush 3 55908\npop 3\npush 4 51324\npush 7 93259\npush 10 26074\npush 9 27665\npop 13\npush 17 88771\npop 13\npush 22 12014\npush 12 24169\npush 5 8144\npop 18\npush 5 14712\npop 25\npush 11 61147\npush 5 5715\npop 2\npush 7 17601\npush 11 58905\npop 29\npop 28\npop 18\npush 5 54944\npop 7\npop 28\npush 23 84449\npop 20\npush 19 33139\npush 28 62599\npop 21\npush 14 3678\npush 8 92266\npush 34 41693\npop 48\npop 24\npush 9 6192\npush 4 4162\npush 45 66402\npop 47\npop 24\npop 2\npush 2 74947\npush 26 38169\npush 12 67785\npop 49\npush 19 41210\npush 33 16877\npop 14\npop 6\npush 46 16443\npop 18\npop 47\npush 8 67347\npop 46\npush 45 79058\npush 62 72114\npop 66\npop 57\npop 46\npush 36 7968\npop 2\npop 26\npop 75\npop 59\npush 41 67109\npop 52\npush 27 27394\npop 38\npush 64 94595\npush 25 34120\npush 0 53874\npush 32 1524\npush 78 87281\npop 48\npop 49\npop 1\npush 11 83058\npop 73\n",
+      "output": "53\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-18",
+      "input": "45\npush 0 6333\npush 0 55847\npush 2 89564\npop 2\npop 2\npush 5 63357\npush 4 49895\npush 4 92872\npush 1 41105\npush 5 83527\npop 3\npop 9\npush 7 84382\npush 7 70734\npush 6 21418\npush 15 24170\npop 14\npush 4 90805\npush 10 41132\npush 7 10471\npop 14\npush 8 37089\npush 16 92922\npush 13 61783\npop 21\npush 4 25535\npush 11 78421\npop 15\npush 0 38615\npush 17 6502\npush 22 47324\npop 15\npush 14 60491\npush 10 99080\npop 7\npush 13 44694\npush 31 94505\npop 34\npop 19\npush 39 31696\npush 1 47978\npush 3 42782\npush 9 76344\npush 34 77080\npush 10 59471\n",
+      "output": "33\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-19",
+      "input": "38\npush 0 28781\npush 1 70308\npush 0 86991\npop 2\npush 3 7844\npop 1\npop 3\npush 7 56523\npush 7 69078\npop 3\npop 3\npush 6 39124\npush 7 85525\npop 1\npush 10 5902\npush 5 47360\npush 4 43210\npush 6 76656\npush 11 49117\npush 18 67661\npop 17\npop 5\npop 21\npop 22\npush 7 86374\npush 19 30674\npop 9\npush 11 32755\npush 5 13347\npush 22 10788\npop 19\npop 21\npop 16\npush 16 2668\npush 10 16095\npop 16\npush 23 41235\npush 14 61407\n",
+      "output": "23\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-20",
+      "input": "5\npush 0 60872\npush 0 5987\npush 2 74419\npush 0 10889\npush 1 10932\n",
+      "output": "5\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-21",
+      "input": "75\npush 0 42606\npush 1 63033\npush 0 76725\npush 0 56161\npush 3 44920\npop 4\npush 3 36922\npush 6 34456\npush 2 12622\npush 0 69636\npop 9\npush 5 77813\npush 6 82706\npush 2 42453\npop 8\npush 9 51462\npop 3\npush 0 11238\npush 4 57420\npush 10 55955\npush 5 92358\npush 9 1633\npop 1\npush 23 93382\npush 18 13561\npop 22\npush 2 61527\npop 26\npop 25\npush 21 73574\npop 21\npop 9\npop 10\npush 5 77518\npop 29\npush 11 72984\npush 12 84983\npush 6 7647\npush 36 21487\npush 33 83727\npush 35 68007\npush 7 24753\npush 23 76389\npop 31\npop 1\npop 26\npush 39 1470\npush 21 40889\npush 47 5665\npush 34 85796\npush 45 55541\npush 2 23570\npop 4\npush 0 84646\npush 33 93353\npop 14\npush 38 89970\npush 53 89837\npop 4\npush 32 62364\npop 43\npush 8 31571\npop 56\npop 25\npush 6 2905\npush 25 90289\npush 15 50516\npush 33 99143\npop 56\npush 61 80958\npop 57\npush 7 52678\npush 66 77966\npush 33 52476\npop 66\n",
+      "output": "51\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-22",
+      "input": "67\npush 0 57396\npop 1\npush 1 62772\npop 1\npush 3 22584\npush 0 79020\npush 2 56585\npush 1 67996\npush 6 10538\npop 6\npush 3 33212\npush 11 24849\npop 3\npush 0 12507\npop 6\npop 11\npush 12 43761\npush 2 69284\npop 1\npush 4 60043\npop 8\npush 17 23034\npush 0 83299\npush 10 25179\npush 0 32749\npush 23 32248\npush 22 5982\npush 2 2054\npush 7 35083\npush 23 14265\npush 17 3649\npop 30\npop 26\npush 20 74249\npush 2 27120\npush 17 57020\npop 23\npush 8 84804\npush 2 52629\npush 27 4838\npop 5\npop 21\npush 14 47852\npop 43\npush 15 69988\npush 3 24887\npop 40\npop 47\npush 33 88112\npop 38\npop 25\npush 13 82633\npush 26 44563\npush 10 87386\npush 8 43570\npush 48 19030\npop 28\npop 13\npush 49 63768\npop 36\npush 32 59255\npop 55\npush 46 21323\npop 63\npush 57 72817\npop 23\npush 51 9570\n",
+      "output": "43\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-23",
+      "input": "99\npush 0 65497\npush 1 82673\npush 0 5082\npush 0 6506\npush 3 66001\npop 3\npush 0 45997\npush 7 38753\npush 8 15640\npush 7 13722\npush 7 37185\npush 6 2391\npush 1 30981\npush 3 55988\npush 2 40463\npush 6 29286\npush 3 95890\npop 12\npush 18 14850\npop 7\npop 13\npush 8 72126\npush 5 53651\npop 4\npush 20 52036\npop 2\npush 11 36847\npush 25 90124\npush 3 14323\npush 26 22036\npush 30 91387\npop 15\npush 4 57917\npush 6 44125\npop 1\npush 19 14242\npop 32\npush 22 71383\npush 6 71434\npush 15 6851\npush 22 72602\npush 12 14644\npush 16 45254\npush 28 39566\npop 16\npush 6 30766\npop 16\npush 10 14323\npush 13 19024\npop 7\npush 4 74649\npush 0 12198\npush 45 59737\npop 36\npush 30 12991\npop 3\npush 42 67137\npush 18 32321\npop 46\npush 24 95412\npop 25\npop 14\npop 12\npush 53 32724\npush 56 13521\npush 19 17649\npush 35 49362\npop 38\npush 7 61636\npop 36\npush 49 26312\npush 3 2631\npush 61 4446\npush 0 22028\npush 39 66387\npush 14 16327\npush 46 61918\npush 40 43264\npop 66\npush 20 34357\npop 78\npop 44\npush 48 59086\npush 34 86372\npush 18 76724\npop 10\npush 47 92521\npush 56 97743\npush 60 73584\npush 6 45794\npush 17 93815\npop 43\npush 34 57871\npop 33\npush 67 6474\npush 7 65062\npop 38\npop 17\npush 78 84979\n",
+      "output": "71\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-24",
+      "input": "23\npush 0 54971\npop 1\npush 1 98517\npush 0 25117\npush 1 91964\npush 0 61714\npop 1\npop 5\npop 1\npush 9 89006\npush 9 61625\npop 10\npop 11\npush 12 75461\npush 10 95764\npush 13 30420\npop 11\npush 13 36650\npop 4\npop 6\npush 9 8025\npush 12 43419\npush 11 44055\n",
+      "output": "14\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-25",
+      "input": "59\npush 0 37169\npush 0 18938\npop 2\npop 1\npush 4 99135\npush 1 77176\npush 1 61733\npush 2 61404\npush 7 36393\npush 0 33798\npop 9\npop 9\npop 5\npush 2 7091\npush 1 93613\npush 14 29258\npush 16 93084\npush 2 72185\npush 9 24628\npop 2\npush 20 34423\npush 4 23867\npush 8 47130\npush 19 22513\npop 2\npop 23\npop 2\npush 8 85762\npop 6\npush 13 10979\npush 21 60183\npush 3 4884\npush 17 37861\npop 24\npush 19 62522\npush 24 98556\npush 22 71994\npush 34 36362\npop 24\npush 6 30808\npush 2 48169\npush 30 61145\npush 27 66000\npop 8\npop 6\npop 2\npush 46 14162\npop 23\npop 23\npop 49\npop 35\npush 4 7578\npush 28 37518\npop 6\npush 28 65951\npush 35 59870\npush 25 28045\npush 53 11649\npop 42\n",
+      "output": "38\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-26",
+      "input": "91\npush 0 31107\npush 0 62689\npush 0 70814\npush 2 38141\npush 3 41097\npush 2 56537\npop 1\npush 7 22115\npush 2 53514\npop 1\npush 10 21740\npush 4 52710\npush 3 64340\npush 0 27425\npush 5 3137\npop 2\npush 3 59882\npush 16 62463\npush 13 20201\npop 19\npush 15 1486\npush 20 23608\npush 20 44138\npop 17\npop 8\npush 12 246\npush 20 4938\npush 21 83013\npush 27 80601\npush 7 2671\npop 20\npop 18\npop 19\npop 23\npush 17 75074\npush 24 48809\npush 28 58220\npush 9 46623\npop 9\npop 20\npush 34 62271\npop 13\npop 20\npush 12 11131\npop 29\npop 35\npush 1 40561\npush 16 39066\npop 11\npush 27 97996\npush 1 26540\npush 50 76622\npush 26 89692\npush 11 93353\npush 12 89564\npush 16 74398\npush 52 94729\npush 9 83337\npush 23 89823\npush 56 70079\npop 14\npop 24\npush 62 50914\npush 4 78668\npush 16 40308\npush 53 53146\npop 24\npush 61 16556\npush 42 64080\npop 29\npush 51 86752\npush 65 43572\npush 24 29897\npush 66 67717\npush 16 57125\npush 62 72287\npop 36\npush 58 55327\npush 27 63542\npush 61 1481\npop 52\npush 48 35388\npop 71\npop 82\npush 55 94136\npush 38 55478\npush 66 1004\npush 5 65009\npush 77 29016\npush 10 79269\npush 65 823\n",
+      "output": "66\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-27",
+      "input": "42\npush 0 59198\npush 1 81734\npop 1\npush 0 90597\npush 2 94628\npop 1\npop 1\npush 0 26021\npush 2 44968\npush 9 15\npush 7 45980\npop 10\npop 9\npush 11 71845\npush 6 79986\npush 14 91179\npush 4 60713\npop 1\npush 16 66634\npop 10\npush 6 75388\npop 17\npush 19 26112\npush 8 93329\npush 3 52466\npush 6 48119\npop 8\npush 6 58096\npop 5\npop 20\npush 3 75202\npush 0 96563\npop 13\npush 7 81380\npop 23\npush 27 97550\npush 14 58008\npush 36 73066\npush 18 70945\npush 29 2767\npush 29 93539\npush 19 66331\n",
+      "output": "29\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-28",
+      "input": "14\npush 0 68212\npop 1\npop 1\npush 2 27309\npush 2 30105\npush 2 17804\npush 6 71205\npush 1 80854\npush 2 87283\npush 9 12423\npush 2 92214\npush 4 34369\npush 2 11302\npush 13 89833\n",
+      "output": "12\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-29",
+      "input": "87\npush 0 85501\npush 1 65219\npush 1 61770\npush 0 28635\npop 2\npop 1\npop 2\npush 0 21057\npush 3 68843\npush 8 35375\npush 10 41346\npush 5 710\npush 4 86340\npush 0 42913\npop 3\npop 4\npop 8\npush 13 34660\npop 14\npush 11 8132\npop 15\npop 8\npush 22 57088\npush 16 22961\npush 3 70286\npop 10\npush 19 4200\npush 10 53287\npush 10 63277\npop 5\npush 9 19883\npop 31\npop 3\npop 12\npush 2 94452\npush 15 43222\npush 12 29140\npush 4 23394\npush 37 91488\npush 1 65397\npop 28\npop 7\npush 34 47262\npop 1\npop 23\npop 9\npush 40 8912\npush 35 33653\npush 23 73109\npush 22 55510\npush 30 67051\npop 27\npush 15 91576\npush 19 87648\npush 21 33941\npush 6 83418\npop 33\npush 34 10092\npush 32 39066\npop 37\npush 44 22374\npush 12 94386\npop 31\npush 52 68488\npush 14 70910\npush 9 51227\npush 32 46897\npush 34 26192\npush 38 90707\npush 49 55699\npush 43 78206\npush 30 72089\npush 43 41280\npush 23 10594\npush 18 108\npush 19 13845\npush 37 47456\npush 36 93787\npush 71 86314\npush 69 95080\npush 62 19295\npush 27 50725\npush 43 65701\npush 22 25809\npush 2 66532\npop 15\npop 68\n",
+      "output": "62\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-30",
+      "input": "31\npush 0 65300\npush 0 53026\npush 0 16307\npush 2 7932\npush 4 65118\npop 2\npush 4 38970\npop 7\npush 7 4554\npop 7\npush 0 97119\npush 0 52821\npush 0 3035\npush 6 4286\npush 11 83313\npush 7 13637\npush 6 76350\npop 13\npush 18 9627\npush 18 18634\npush 2 58547\npush 6 16612\npush 6 53602\npush 11 75407\npush 16 71657\npop 9\npop 13\npush 16 37447\npush 0 21158\npush 5 92401\npop 25\n",
+      "output": "24\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-31",
+      "input": "80\npush 0 31506\npush 0 86502\npush 1 39739\npush 3 95078\npush 2 22942\npush 0 60646\npop 1\npop 4\npop 6\npush 7 58306\npush 8 7680\npush 0 30601\npush 9 324\npush 3 57670\npop 4\npop 5\npop 16\npop 1\npop 6\npop 15\npush 18 17470\npush 19 77798\npush 17 14361\npush 6 33656\npush 15 18224\npush 4 70558\npush 0 12449\npush 16 42365\npop 22\npush 6 16649\npush 8 64821\npop 21\npop 2\npush 19 84259\npush 28 5745\npush 15 62700\npop 14\npop 2\npop 36\npush 23 28949\npush 4 79870\npop 34\npush 30 90669\npop 12\npush 18 71050\npush 17 33400\npop 23\npop 23\npush 20 59339\npop 11\npush 29 48979\npush 17 95373\npush 19 98654\npop 50\npush 47 1308\npop 41\npop 30\npop 24\npush 26 19191\npush 56 30712\npush 44 26842\npush 32 28534\npush 43 87632\npush 11 23509\npush 56 74047\npush 48 73537\npop 26\npush 63 47033\npop 23\npop 60\npush 9 72732\npop 66\npush 60 53727\npush 53 51999\npop 22\npop 30\npush 54 14531\npush 15 36098\npush 66 67364\npop 62\n",
+      "output": "49\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-32",
+      "input": "18\npush 0 71294\npush 0 85536\npush 0 99647\npop 3\npop 3\npush 0 20903\npush 4 98216\npop 1\npush 2 90490\npop 9\npush 1 73255\npop 9\npush 9 83350\npush 13 70236\npop 1\npush 4 36138\npush 16 25352\npop 2\n",
+      "output": "11\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-33",
+      "input": "56\npush 0 1480\npush 1 97738\npush 0 38707\npop 3\npush 1 34316\npop 3\npush 2 63762\npop 5\npush 0 51324\npop 1\npush 2 14048\npush 4 69194\npop 2\npush 2 31328\npop 5\npush 7 98926\npop 8\npush 1 36618\npush 7 76053\npop 13\npop 18\npop 1\npush 4 75477\npush 11 42298\npush 17 44602\npop 23\npush 9 91747\npush 1 84478\npush 22 78295\npush 0 7822\npush 9 30740\npush 17 32270\npush 26 30816\npush 12 87901\npush 7 93673\npush 3 3491\npush 27 46200\npop 16\npush 17 53623\npush 1 25916\npush 28 45269\npush 34 47899\npop 28\npop 35\npush 36 71204\npop 11\npush 7 67977\npush 28 36344\npop 12\npush 6 28304\npush 7 19279\npush 7 37916\npush 51 81480\npush 27 89988\npop 9\npush 31 67039\n",
+      "output": "39\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-34",
+      "input": "89\npush 0 1309\npush 0 71006\npop 1\npush 3 6292\npop 1\npush 5 50939\npush 1 96059\npush 7 86295\npush 5 36097\npush 7 14942\npush 6 45119\npush 5 57386\npush 4 92139\npush 2 40224\npush 12 21751\npop 15\npush 3 98716\npop 15\npop 16\npush 9 27120\npop 20\npush 5 81648\npop 16\npush 3 31083\npush 2 26537\npush 24 42152\npush 14 12169\npop 11\npush 22 999\npush 0 5364\npop 21\npush 16 13951\npush 31 66477\npush 21 88566\npop 6\npop 29\npush 27 68137\npop 30\npush 15 414\npush 37 41264\npush 8 89465\npop 27\npush 5 40157\npush 31 95246\npush 7 58645\npop 36\npush 10 73458\npush 13 23714\npush 35 70544\npush 12 58034\npush 16 53075\npush 8 71994\npush 27 36945\npush 4 41341\npop 18\npush 15 20987\npush 55 10380\npush 31 71650\npush 58 3172\npush 10 78778\npush 38 7680\npush 32 76744\npop 58\npush 63 69455\npush 53 30986\npop 59\npush 43 22293\npush 6 77579\npop 43\npush 58 17291\npush 39 24449\npush 71 65695\npush 19 4258\npop 71\npush 41 98659\npush 49 59160\npush 56 41673\npop 34\npush 41 93875\npop 1\npush 73 4775\npush 72 42425\npush 78 42249\npop 25\npop 52\npush 10 4537\npop 72\npush 18 83848\npop 13\n",
+      "output": "64\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-35",
+      "input": "66\npush 0 66844\npush 1 32353\npop 1\npop 1\npush 1 10607\npush 3 18184\npush 5 15605\npop 6\npush 8 72775\npush 3 64795\npush 0 18074\npush 8 50132\npop 1\npop 9\npush 0 92950\npush 0 63066\npush 1 99663\npush 15 72960\npush 14 13983\npop 12\npop 2\npush 21 48397\npop 21\npush 18 53174\npush 0 22224\npush 5 91084\npush 13 98572\npush 14 85767\npush 23 95575\npop 7\npush 7 82817\npop 9\npop 17\npush 31 24553\npop 31\npush 5 32753\npop 5\npush 8 15065\npush 29 42025\npush 0 77489\npush 20 86396\npush 26 302\npop 36\npush 24 27642\npop 15\npush 8 63045\npush 38 71416\npush 16 47872\npush 31 43918\npop 33\npush 41 98349\npush 45 97808\npush 14 23705\npop 26\npop 16\npush 48 96500\npush 29 37379\npop 46\npush 14 7760\npush 9 19165\npush 50 76695\npush 31 6211\npush 0 90564\npop 37\npush 52 40472\npop 44\n",
+      "output": "45\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-36",
+      "input": "21\npush 0 75474\npush 1 76319\npush 0 7329\npush 2 77623\npush 1 62905\npop 3\npush 1 8480\npop 7\npop 5\npop 8\npush 6 21097\npush 6 40739\npush 10 65162\npop 11\npush 0 21630\npush 3 94903\npush 0 63301\npop 12\npush 7 93938\npush 12 98289\npush 0 51984\n",
+      "output": "15\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-37",
+      "input": "58\npush 0 9686\npush 1 86817\npush 0 23020\npush 0 25312\npush 0 70561\npop 2\npop 6\npush 6 605\npop 6\npush 6 80565\npop 5\npush 0 85358\npush 8 88756\npop 2\npush 12 57630\npush 4 73176\npop 1\npush 15 84636\npush 17 24482\npush 8 6006\npush 7 70827\npush 7 7461\npop 12\npop 10\npush 17 7072\npop 2\npop 3\npush 11 23419\npush 2 10047\npush 2 54953\npush 15 37210\npush 30 46396\npush 20 77021\npush 7 55905\npush 0 69520\npop 5\npush 20 25500\npush 18 92448\npush 5 59728\npop 10\npop 14\npush 4 84541\npush 4 76515\npop 15\npush 12 69137\npush 41 20183\npush 34 22215\npush 23 61172\npush 39 1255\npop 18\npush 11 46605\npush 42 28064\npush 12 28453\npush 49 17350\npop 48\npush 50 25829\npop 47\npush 48 79135\n",
+      "output": "41\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-38",
+      "input": "16\npush 0 10882\npush 1 77075\npush 2 16329\npush 0 4272\npush 3 12787\npop 3\npush 5 30618\npop 2\npop 6\npush 0 4797\npush 3 45298\npush 2 13192\npush 2 60214\npush 12 24753\npop 6\npush 13 80527\n",
+      "output": "12\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-39",
+      "input": "44\npush 0 63806\npush 1 9565\npush 1 79695\npop 1\npush 0 98273\npush 1 93132\npush 2 73714\npush 4 35305\npush 8 2545\npop 6\npop 3\npush 8 86309\npop 2\npush 10 70276\npop 7\npush 14 64860\npop 1\npop 13\npush 10 24670\npush 17 2983\npush 18 4519\npush 15 59370\npop 7\npush 21 88475\npop 9\npush 25 34454\npop 10\npop 7\npush 12 74592\npush 16 23467\npush 2 73960\npush 29 49571\npush 21 83450\npush 12 24934\npush 18 50827\npush 35 60274\npush 2 1880\npush 27 33855\npop 1\npush 3 72393\npush 11 34097\npop 16\npop 14\npop 42\n",
+      "output": "29\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-40",
+      "input": "65\npush 0 4741\npop 1\npush 1 97729\npush 0 29208\npush 2 34541\npush 4 24035\npush 2 8433\npush 7 13525\npush 0 18339\npush 0 44091\npop 3\npop 7\npop 9\npush 12 68959\npush 2 33904\npop 14\npush 5 42392\npop 10\npush 7 29127\npush 5 53216\npush 9 46407\npop 5\npush 13 38971\npop 1\npush 13 60762\npush 21 4869\npush 2 98380\npop 26\npop 15\npop 9\npush 3 90251\npop 19\npop 14\npush 0 14138\npush 18 90630\npop 11\npush 12 81799\npop 10\npush 4 1110\npush 2 15711\npush 1 56793\npush 36 86208\npop 42\npush 28 2561\npush 12 34157\npush 24 9305\npush 29 24602\npush 31 28296\npush 21 66748\npop 39\npop 3\npush 37 74654\npush 21 27628\npush 38 36007\npush 2 11168\npush 8 16264\npush 6 43950\npush 44 80573\npush 30 49341\npush 9 37479\npush 44 15046\npop 5\npush 62 99355\npush 63 72017\npush 24 26416\n",
+      "output": "46\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-41",
+      "input": "9\npush 0 4198\npush 0 1272\npush 0 96772\npush 3 92922\npush 1 75632\npop 1\npush 0 37170\npop 7\npush 8 23171\n",
+      "output": "7\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-42",
+      "input": "11\npush 0 80423\npush 1 25137\npush 1 77721\npush 0 44290\npop 4\npop 1\npush 3 59153\npush 6 10356\npush 0 71299\npush 5 18157\npush 5 70687\n",
+      "output": "9\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-43",
+      "input": "3\npush 0 19228\npush 0 63674\npush 0 94457\n",
+      "output": "3\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-44",
+      "input": "44\npush 0 46277\npop 1\npush 0 70514\npush 2 40001\npush 4 76221\npush 1 70336\npop 5\npush 3 50845\npush 7 92318\npush 3 91840\npop 5\npush 10 48222\npush 7 13507\npush 2 2799\npop 1\npush 14 37255\npush 14 52345\npush 0 10912\npop 12\npush 12 10297\npush 1 88986\npop 4\npush 16 37654\npop 10\npush 16 90262\npop 8\npop 8\npop 19\npush 16 67358\npop 5\npush 20 73282\npush 4 39162\npop 20\npush 33 19895\npop 21\npush 12 30558\npop 14\npush 12 86868\npush 22 98912\npop 21\npush 22 86828\npush 14 91\npush 31 62598\npush 12 95627\n",
+      "output": "29\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-45",
+      "input": "37\npush 0 2081\npush 0 24453\npush 0 42949\npop 1\npush 4 26535\npush 0 70047\npush 5 82725\npush 1 22938\npush 1 3367\npush 4 45742\npop 9\npop 5\npop 10\npush 4 51455\npop 5\npush 7 88047\npush 0 75857\npush 15 72130\npop 3\npop 10\npush 11 73537\npush 1 92040\npop 3\npop 16\npush 10 86178\npop 14\npush 25 51521\npush 9 1557\npush 9 23888\npush 24 92109\npop 11\npush 10 78450\npush 31 13564\npush 12 24140\npush 33 59674\npush 32 60118\npush 13 73441\n",
+      "output": "26\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-46",
+      "input": "49\npush 0 66544\npush 0 92683\npush 2 32815\npush 0 2754\npush 4 50088\npush 3 49760\npush 6 45831\npop 2\npush 3 58301\npop 7\npush 9 73203\npush 5 18841\npush 11 13634\npop 5\npop 14\npush 1 36632\npush 8 31979\npop 4\npush 5 72727\npop 3\npush 20 67353\npush 20 72672\npush 4 99391\npush 11 24353\npush 5 96769\npop 21\npush 19 97826\npush 11 64280\npush 14 63957\npush 5 25419\npop 5\npush 27 75938\npush 27 23570\npush 1 44662\npop 30\npush 13 31790\npop 31\npush 18 67937\npush 4 12791\npush 37 95698\npop 4\npush 11 13244\npush 24 37089\npop 16\npush 16 83366\npop 20\npush 46 50224\npush 26 87477\npop 47\n",
+      "output": "35\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-47",
+      "input": "19\npush 0 10358\npush 1 69274\npop 2\npop 2\npush 0 89270\npush 5 57820\npop 2\npush 7 14384\npop 4\npop 8\npush 4 37842\npush 11 89607\npop 2\npush 7 94067\npush 12 45532\npush 15 30140\npush 11 37798\npush 0 70100\npush 0 82771\n",
+      "output": "13\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-48",
+      "input": "46\npush 0 5034\npush 1 75588\npush 0 49569\npush 0 1816\npush 2 34436\npush 1 43517\npop 2\npop 4\npop 1\npop 5\npush 6 65628\npop 6\npop 6\npop 11\npop 14\npop 7\npop 7\npush 7 93392\npop 1\npush 16 66214\npush 20 43780\npush 12 84081\npush 14 96435\npush 7 22623\npop 6\npush 13 30377\npop 23\npush 4 84393\npush 7 38436\npush 8 48094\npush 23 99492\npop 12\npush 17 65338\npop 22\npush 24 30893\npush 25 5880\npop 21\npop 29\npop 24\npush 7 88179\npush 32 67788\npush 30 71085\npush 2 81959\npush 36 46943\npop 36\npush 3 95173\n",
+      "output": "27\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-49",
+      "input": "25\npush 0 86520\npush 0 64882\npop 1\npush 2 84368\npop 1\npush 4 42159\npush 1 93741\npop 2\npush 8 39981\npush 9 15195\npush 3 33135\npush 9 16346\npush 1 30438\npush 3 99745\npush 12 10473\npush 0 60260\npush 5 94947\npush 11 68520\npush 2 78680\npop 13\npop 14\npush 14 98934\npop 11\npop 15\npush 8 35954\n",
+      "output": "18\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-50",
+      "input": "31\npush 0 9061\npush 0 6705\npop 1\npush 3 97614\npush 3 67146\npush 1 20648\npush 4 25180\npush 3 79567\npush 1 14362\npush 3 17597\npop 6\npop 8\npush 3 70228\npush 5 60050\npush 12 81896\npop 11\npush 3 15075\npush 1 2561\npush 6 920\npop 17\npop 5\npop 8\npush 15 41532\npush 6 44682\npush 15 13149\npush 0 23638\npop 9\npush 18 26765\npop 28\npush 7 16718\npush 17 23269\n",
+      "output": "22\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-51",
+      "input": "2\npush 0 24302\npush 0 71906\n",
+      "output": "2\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-52",
+      "input": "4\npush 0 59765\npush 0 95768\npush 1 77974\npush 3 23379\n",
+      "output": "4\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-53",
+      "input": "39\npush 0 5040\npush 0 61729\npush 1 12864\npop 3\npush 3 47982\npush 0 69297\npop 6\npush 4 49740\npush 0 85205\npush 7 35631\npush 5 97507\npush 6 50937\npush 8 61664\npush 0 68794\npush 14 42942\npush 4 24852\npop 13\npop 4\npush 9 41866\npush 7 56948\npop 9\npush 13 1238\npush 7 23894\npop 1\npush 7 33849\npush 1 59283\npush 22 97873\npop 4\npush 22 14621\npush 4 78602\npush 9 25796\npush 15 75033\npush 7 26317\npop 25\npush 31 13574\npop 16\npop 29\npush 21 35984\npush 6 47985\n",
+      "output": "29\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-54",
+      "input": "86\npush 0 29589\npush 1 21252\npush 1 87690\npop 3\npush 0 47271\npop 3\npush 4 33198\npop 6\npush 2 65678\npush 0 10326\npush 7 21452\npop 11\npop 3\npop 10\npop 7\npush 14 77526\npush 8 35082\npush 13 33487\npush 8 46544\npop 5\npop 5\npush 16 54518\npush 13 9464\npush 9 38114\npush 10 75818\npush 0 17288\npush 2 38097\npop 7\npush 28 21092\npush 2 93004\npush 10 89733\npush 26 96484\npush 15 77368\npush 2 3133\npush 25 77561\npush 11 87281\npop 32\npush 9 24707\npop 5\npush 3 29493\npush 24 71585\npush 4 11655\npush 37 10600\npush 11 93645\npush 43 38966\npop 3\npush 39 35739\npush 44 99504\npush 30 34436\npush 46 57295\npush 45 29689\npop 49\npush 14 49257\npop 36\npush 9 98829\npush 11 97185\npush 49 93304\npush 49 11136\npush 4 12300\npop 19\npush 48 33071\npush 41 7958\npush 41 44753\npop 63\npop 31\npop 15\npop 46\npop 49\npush 55 51084\npush 14 67164\npop 61\npush 10 84795\npush 40 11973\npop 61\npush 55 48630\npush 57 36371\npush 46 13357\npush 8 21015\npush 33 62623\npush 17 33793\npop 70\npush 23 66760\npush 77 65241\npush 53 51117\npop 79\npop 79\n",
+      "output": "60\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-55",
+      "input": "63\npush 0 43573\npop 1\npush 0 66033\npop 1\npush 0 57178\npush 1 66220\npush 2 4378\npush 6 76828\npush 0 84461\npush 8 37195\npush 8 2242\npush 3 12900\npush 4 5181\npop 8\npush 11 92956\npush 14 68895\npop 7\npush 14 85198\npop 7\npush 18 54436\npush 3 65570\npush 20 67275\npush 6 22238\npush 17 53726\npop 9\npush 18 19010\npop 10\npop 18\npush 13 76645\npush 14 94067\npush 0 49563\npush 19 83955\npush 32 23323\npush 9 40823\npush 10 23093\npop 13\npush 27 13081\npush 10 76981\npush 25 84501\npush 29 58184\npush 23 49306\npush 4 80618\npush 33 98837\npush 16 40452\npop 26\npop 31\npush 44 90579\npush 31 28030\npush 21 80975\npush 8 31215\npop 3\npush 42 61677\npush 4 73893\npush 50 42848\npush 36 19283\npush 7 68221\npush 32 82042\npush 2 13831\npop 26\npush 9 27118\npush 16 61052\npop 27\npush 55 90958\n",
+      "output": "49\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-56",
+      "input": "94\npush 0 23140\npop 1\npush 1 77264\npush 3 86514\npop 3\npush 1 65823\npop 1\npush 5 59680\npush 4 72518\npush 6 39543\npush 8 75971\npush 8 32515\npush 12 58184\npop 10\npush 0 44676\npush 7 10460\npop 3\npush 7 58946\npop 1\npush 0 38856\npush 18 16628\npop 15\npop 18\npop 6\npush 2 29313\npush 25 45876\npush 0 28249\npop 3\npush 4 5917\npush 27 43041\npush 16 36371\npush 10 17953\npush 32 16696\npop 28\npush 28 92871\npush 32 67447\npush 30 40662\npop 36\npush 19 53020\npush 2 12386\npush 22 99768\npush 31 65957\npop 4\npush 42 13111\npop 12\npush 23 52088\npush 0 79170\npush 27 27461\npush 20 26315\npush 18 10575\npush 44 35648\npush 51 6674\npush 26 88382\npush 0 39563\npush 9 22511\npush 51 36647\npush 48 59397\npop 5\npop 51\npush 11 76234\npush 41 2404\npush 0 71875\npush 22 36724\npush 31 69136\npush 2 12416\npush 62 38355\npush 5 74695\npush 31 37188\npop 30\npop 32\npush 40 41182\npop 65\npop 14\npush 33 13427\npush 58 87692\npush 44 86583\npush 26 54633\npush 76 1526\npop 37\npush 7 19117\npush 58 12571\npop 59\npop 16\npush 76 95555\npush 38 61848\npush 9 89911\npush 59 93993\npush 3 62901\npush 7 51026\npush 11 57264\npush 72 38524\npop 54\npush 18 24190\npop 36\n",
+      "output": "69\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-57",
+      "input": "67\npush 0 68130\npush 1 13627\npush 2 50248\npop 1\npush 4 90549\npush 2 15439\npush 2 34962\npop 1\npush 4 51732\npush 6 82538\npop 3\npush 4 35143\npush 8 7678\npush 7 98771\npop 9\npop 6\npush 15 70669\npush 1 86079\npop 1\npop 16\npush 12 48631\npush 21 31939\npush 4 11389\npop 14\npop 11\npop 7\npush 6 47287\npush 25 14472\npop 21\npush 11 48618\npop 27\npush 19 96932\npop 14\npush 15 92079\npop 34\npush 4 57248\npush 15 41833\npop 36\npush 33 70619\npop 25\npush 27 51180\npush 33 9687\npush 15 33450\npop 7\npush 34 64183\npush 36 11627\npop 36\npush 33 30820\npush 2 68584\npush 4 82949\npush 43 77075\npush 19 73715\npush 18 59108\npop 27\npop 7\npush 55 13638\npush 4 41968\npush 2 97717\npush 24 77811\npop 27\npush 21 34857\npush 45 57438\npush 47 32449\npop 13\npush 2 81975\npush 26 15504\npush 8 97058\n",
+      "output": "45\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-58",
+      "input": "51\npush 0 40493\npop 1\npush 1 18880\npush 2 15390\npop 4\npush 5 35293\npop 6\npush 4 55160\npush 4 93313\npush 2 68993\npush 4 19867\npush 5 57560\npop 8\npush 2 20590\npush 5 45952\npop 10\npush 8 11170\npush 5 94506\npop 18\npop 8\npush 19 91341\npush 6 24721\npop 21\npop 6\npush 24 40687\npop 20\npush 3 62168\npush 24 22365\npush 27 74596\npop 18\npush 23 74225\npush 1 35542\npush 11 98846\npop 6\npush 7 47841\npush 13 23599\npush 26 99491\npush 5 642\npop 18\npush 1 76717\npush 18 68666\npush 30 84537\npush 34 33716\npush 9 20832\npop 31\npush 23 99371\npop 35\npush 43 85466\npush 44 47327\npop 38\npush 27 83428\n",
+      "output": "35\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-59",
+      "input": "59\npush 0 11957\npush 1 13578\npush 1 79600\npush 2 44999\npop 4\npush 0 10415\npop 3\npop 6\npop 4\npush 2 30081\npush 1 83664\npush 2 27404\npop 2\npush 2 19017\npush 11 16938\npush 11 95846\npush 12 67544\npop 14\npush 2 92160\npush 4 26731\npush 12 79508\npush 16 77370\npop 1\npush 0 34944\npush 2 62718\npush 16 68860\npush 18 14901\npush 18 66165\npush 8 41240\npush 8 30973\npop 11\npop 7\npush 14 76704\npop 15\npop 29\npush 2 66901\npop 4\npop 17\npush 8 29778\npop 2\npop 29\npush 38 52147\npush 2 22642\npush 2 74256\npop 19\npop 3\npop 25\npush 20 69375\npop 17\npop 4\npush 0 4619\npop 29\npush 27 98930\npush 37 91054\npush 12 65052\npush 50 75309\npop 31\npop 38\npush 21 54582\n",
+      "output": "36\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-60",
+      "input": "22\npush 0 44043\npush 1 67620\npush 2 94115\npop 1\npush 0 59662\npush 3 38809\npop 5\npush 0 20549\npop 2\npush 4 82655\npop 9\npop 6\npop 2\npush 4 66181\npop 8\npush 8 6453\npush 4 74297\npush 14 68530\npush 1 61247\npop 14\npush 10 49957\npush 3 34551\n",
+      "output": "14\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-61",
+      "input": "26\npush 0 92012\npush 0 79938\npush 0 61720\npush 2 43061\npush 4 31902\npush 5 9061\npop 5\npush 6 42728\npush 4 68542\npush 6 18035\npush 7 96377\npush 0 73048\npop 4\npop 13\npush 2 64090\npush 3 41221\npush 14 3868\npop 3\npush 14 99079\npush 11 92605\npop 3\npush 14 35468\npush 14 99355\npush 0 23234\npush 21 79837\npush 3 52704\n",
+      "output": "21\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-62",
+      "input": "45\npush 0 6961\npush 0 55648\npush 0 63341\npush 0 54666\npush 0 77702\npush 1 63125\npush 6 72581\npop 6\npush 3 65545\npop 3\npush 10 59526\npush 0 24187\npush 7 55398\npush 10 70108\npop 3\npop 4\npush 14 47078\npush 4 96565\npush 16 61322\npush 2 9452\npop 8\npush 7 90121\npush 9 90562\npush 7 31735\npop 22\npop 4\npush 6 48926\npush 2 9211\npush 4 93228\npop 2\npush 7 11134\npop 14\npop 29\npush 30 58831\npop 11\npop 34\npop 18\npop 13\npush 14 26544\npush 11 54164\npop 24\npush 16 85709\npush 42 99004\npush 27 92620\npush 15 3895\n",
+      "output": "30\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-63",
+      "input": "16\npush 0 29862\npop 1\npush 2 15061\npop 3\npush 3 11091\npush 4 92872\npush 4 9756\npop 5\npop 7\npush 9 61805\npush 1 43417\npush 11 8898\npush 9 49672\npush 3 26635\npop 12\npop 3\n",
+      "output": "10\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-64",
+      "input": "75\npush 0 35313\npush 0 22869\npush 0 64665\npush 1 87055\npop 2\npush 0 74081\npush 0 36136\npush 3 59765\npush 6 58720\npush 4 15790\npop 10\npush 2 84872\npush 5 1861\npush 0 23418\npush 0 33605\npush 0 42548\npush 15 69641\npush 11 72134\npush 13 51507\npop 8\npush 1 9923\npush 20 58062\npush 9 46564\npop 9\npop 6\npush 5 13800\npush 0 18209\npush 25 82517\npush 19 93694\npush 21 1626\npop 30\npush 14 28656\npop 20\npop 12\npush 22 91478\npush 26 44040\npop 34\npush 16 93074\npush 25 52285\npop 24\npush 12 24192\npush 37 54480\npush 26 27925\npush 9 43348\npush 39 99814\npush 27 82419\npop 17\npush 32 10393\npush 14 48072\npop 6\npush 6 25769\npush 4 65923\npush 14 7049\npop 6\npush 52 85656\npush 9 295\npush 27 29230\npush 50 33688\npush 4 33360\npush 35 54915\npop 15\npush 14 85345\npush 27 61940\npush 50 25769\npush 1 21330\npush 11 63264\npush 4 72523\npush 24 99070\npush 7 94163\npop 20\npush 35 20700\npop 10\npop 16\npush 63 85947\npop 56\n",
+      "output": "57\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-65",
+      "input": "68\npush 0 34497\npop 1\npush 0 70731\npush 0 37397\npush 0 42645\npop 4\npush 3 78822\npush 0 32548\npush 4 39456\npush 1 11056\npush 4 46919\npop 3\npush 6 31613\npush 12 71606\npush 2 24182\npush 14 81135\npop 13\npop 5\npush 6 12365\npop 15\npop 8\npush 14 50726\npop 15\npush 17 3704\npush 23 7189\npop 25\npush 9 35320\npush 4 63082\npush 17 48419\npush 25 87587\npop 4\npush 4 39097\npush 31 16556\npush 27 1451\npop 15\npush 0 55194\npush 26 22403\npop 15\npush 22 5679\npop 34\npush 8 28882\npush 6 59886\npush 10 83727\npop 22\npop 42\npop 30\npop 43\npush 24 86763\npush 0 88284\npush 0 26109\npush 13 5142\npush 34 91013\npush 51 9471\npush 9 85872\npush 37 11765\npush 24 40447\npop 41\npush 13 30858\npush 23 72032\npush 17 83399\npush 6 73146\npush 54 14017\npop 33\npop 14\npop 39\npush 20 204\npush 61 36126\npush 31 76\n",
+      "output": "47\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-66",
+      "input": "71\npush 0 8057\npush 0 61177\npush 0 4309\npop 1\npush 3 36640\npush 0 4414\npush 2 56596\npush 1 9773\npush 4 12901\npop 1\npush 4 71683\npush 10 43060\npop 9\npush 0 6568\npop 2\npush 10 36469\npush 13 51372\npop 17\npush 9 75711\npush 10 38023\npush 9 87371\npush 15 67141\npop 20\npush 4 22445\npop 14\npush 10 35627\npush 0 26562\npush 7 41336\npop 9\npop 1\npush 12 81292\npush 30 53004\npop 12\npush 13 12084\npush 3 31220\npop 32\npop 7\npush 15 89069\npush 9 86630\npush 2 29761\npush 8 69760\npop 34\npop 21\npop 12\npop 24\npop 5\npop 8\npush 16 84870\npush 44 12979\npush 46 44829\npush 50 18558\npush 37 91752\npush 19 28725\npush 42 87205\npush 31 75566\npush 35 12704\npop 6\npush 47 26417\npush 8 53623\npush 21 34559\npop 56\npush 40 13140\npush 22 46652\npop 54\npush 21 50594\npop 24\npush 23 73448\npush 51 72558\npush 59 52063\npush 27 47158\npush 4 38693\n",
+      "output": "49\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-67",
+      "input": "62\npush 0 14297\npush 0 94294\npush 0 44601\npush 2 2231\npush 4 37937\npop 4\npop 1\npush 4 69588\npop 2\npush 3 78017\npush 4 36524\npush 2 28536\npop 10\npush 3 1046\npop 4\npush 2 8700\npush 14 21510\npush 7 2974\npush 5 69351\npush 12 59261\npush 1 30934\npush 8 22045\npush 10 85317\npush 0 7397\npop 15\npush 3 59354\npush 4 48389\npush 8 83655\npush 8 29949\npush 22 39897\npush 19 4437\npush 19 43584\npop 13\npush 29 96434\npush 11 41419\npush 12 12008\npop 30\npush 13 20825\npush 33 37409\npop 6\npop 34\npush 0 33061\npush 42 2270\npop 37\npush 26 55929\npop 16\npop 15\npop 31\npop 31\npush 12 73833\npush 37 23970\npush 36 75313\npop 2\npop 34\npush 54 5122\npush 48 10145\npush 53 43545\npush 11 58033\npush 54 33183\npop 1\npush 55 27496\npop 15\n",
+      "output": "43\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-68",
+      "input": "27\npush 0 8575\npop 1\npush 0 79242\npop 3\npush 0 75038\npush 0 21710\npush 0 77417\npush 6 50142\npush 1 52032\npop 7\npop 3\npop 8\npop 12\npop 1\npop 7\npush 11 5828\npop 8\npop 16\npush 5 26248\npush 19 2137\npush 5 99735\npush 7 88451\npush 18 14543\npush 10 99634\npop 7\npush 8 663\npush 19 94773\n",
+      "output": "16\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-69",
+      "input": "51\npush 0 64088\npush 1 70411\npush 2 584\npush 2 24316\npop 1\npush 2 18629\npush 0 69641\npop 2\npush 3 71411\npush 4 93996\npush 7 73912\npop 9\npush 5 24782\npush 0 87587\npop 3\npush 6 96702\npush 3 4019\npush 5 54541\npush 8 67298\npop 2\npop 15\npush 9 87891\npop 3\npush 16 16609\npush 17 47900\npush 24 59876\npush 26 45378\npop 22\npush 4 88599\npush 11 9967\npush 27 37910\npush 0 57905\npush 21 3031\npop 3\npush 31 82844\npush 28 91576\npop 8\npush 35 10809\npush 22 28060\npush 38 15018\npush 18 50381\npop 18\npush 39 73797\npush 20 40553\npush 13 78356\npush 16 7686\npush 27 4652\npop 6\npush 1 76396\npop 33\npush 48 21264\n",
+      "output": "38\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-70",
+      "input": "23\npush 0 82168\npush 1 86249\npop 1\npush 0 12954\npop 4\npush 3 74629\npop 6\npush 4 254\npop 8\npop 8\npush 4 55774\npush 4 69928\npop 12\npush 0 76534\npop 8\npush 1 23519\npush 11 35833\npush 3 64993\npush 9 68652\npush 1 46514\npop 4\npop 19\npush 8 20028\n",
+      "output": "14\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-71",
+      "input": "4\npush 0 55124\npush 0 84422\npush 0 30231\npush 0 38606\n",
+      "output": "4\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-72",
+      "input": "65\npush 0 85970\npop 1\npush 2 13650\npop 3\npush 0 2213\npush 0 6064\npush 5 51297\npush 0 23840\npush 0 63646\npop 5\npush 4 82731\npop 6\npop 6\npush 10 6648\npush 12 1351\npush 9 47446\npop 11\npush 0 32170\npush 0 68702\npush 12 92478\npush 2 47922\npop 21\npush 20 56595\npush 12 59776\npop 21\npush 18 13114\npush 8 10510\npush 24 27992\npop 14\npush 26 21777\npush 19 70702\npop 11\npop 27\npush 12 70773\npush 17 16591\npop 23\npush 14 64011\npop 7\npush 33 52190\npush 21 93104\npop 8\npop 14\npush 17 79184\npop 24\npush 11 23953\npush 41 54416\npush 31 85007\npush 42 56783\npop 37\npush 8 91728\npush 40 51729\npop 31\npush 5 56630\npop 5\npop 14\npush 44 99545\npop 30\npop 3\npush 21 13893\npop 43\npush 29 86925\npush 24 45483\npush 61 96249\npush 60 15132\npush 24 61448\n",
+      "output": "42\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-73",
+      "input": "25\npush 0 1632\npush 0 28920\npop 1\npush 2 2538\npush 0 58082\npush 0 42076\npush 1 82163\npush 7 69790\npop 7\npush 9 38652\npush 10 7269\npush 2 47408\npush 6 78874\npop 13\npush 1 540\npop 2\npush 0 88790\npop 6\npush 7 23096\npop 11\npush 18 84811\npush 3 47595\npop 12\npush 0 93162\npop 10\n",
+      "output": "17\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-74",
+      "input": "66\npush 0 76554\npush 0 78943\npop 2\npush 3 90226\npush 2 86059\npop 5\npush 2 75291\npush 2 38409\npush 7 27061\npop 2\npush 8 94644\npush 5 98669\npush 5 11429\npush 4 64384\npush 9 40726\npop 4\npop 13\npush 17 65972\npush 11 99291\npop 15\npush 4 6327\npush 13 9903\npush 0 47546\npush 6 94950\npush 23 56138\npop 20\npop 1\npop 20\npop 4\npush 0 52760\npush 24 9003\npush 3 13245\npop 11\npush 25 41498\npush 13 56669\npop 2\npush 0 97500\npush 34 96847\npop 24\npush 16 14058\npush 4 27513\npush 30 86460\npush 2 45323\npush 34 12330\npop 14\npush 0 11828\npop 31\npush 38 26334\npush 18 25065\npush 35 85367\npush 8 28077\npush 18 2848\npush 23 6423\npush 48 74030\npush 1 14540\npush 29 56018\npush 24 79973\npush 14 75303\npop 50\npush 40 55021\npush 39 92610\npop 45\npush 20 9388\npush 44 83333\npush 48 3040\npush 12 25574\n",
+      "output": "49\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-75",
+      "input": "72\npush 0 56749\npush 1 50895\npush 0 63719\npush 0 77997\npop 1\npop 2\npop 4\npush 3 22161\npop 2\npush 1 64768\npop 2\npop 2\npush 8 69694\npush 0 17964\npop 9\npush 3 76937\npush 0 16802\npush 15 74625\npush 7 21842\npush 5 56044\npush 15 63818\npop 1\npush 17 86837\npop 1\npush 24 64921\npop 6\npop 19\npop 13\npush 4 41405\npush 0 56898\npush 5 19595\npush 19 21071\npush 1 42578\npop 8\npop 21\npop 12\npop 6\npush 30 9572\npop 31\npop 9\npop 18\npush 36 36237\npush 26 1264\npush 41 29613\npush 1 49139\npush 31 64716\npop 33\npush 27 10526\npush 32 60547\npush 22 14568\npush 27 93301\npush 46 40088\npush 28 25333\npush 39 53562\npush 0 14700\npush 33 95100\npop 9\npop 29\npush 20 72720\npush 37 14917\npush 0 91185\npush 20 63386\npop 33\npush 63 12127\npush 27 62906\npush 33 15493\npush 13 93249\npop 50\npush 36 60226\npush 7 95068\npush 36 2190\npop 67\n",
+      "output": "47\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-76",
+      "input": "42\npush 0 38794\npush 0 28060\npush 0 17338\npush 0 38275\npush 4 23032\npush 2 20942\npop 2\npush 0 90053\npush 7 91918\npop 9\npush 6 94152\npush 4 24903\npop 8\npop 3\npush 7 34668\npop 9\npush 5 57667\npush 9 76918\npush 17 53582\npush 6 52985\npop 18\npop 12\npush 19 63581\npop 4\npush 7 13039\npush 11 76626\npush 0 91878\npush 1 95636\npop 21\npush 8 10074\npush 25 56836\npush 24 84845\npush 12 65709\npush 1 45875\npush 12 98899\npop 15\npush 0 77804\npop 3\npush 8 73073\npush 21 343\npop 21\npush 5 7660\n",
+      "output": "30\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-77",
+      "input": "70\npush 0 86810\npop 1\npush 2 2509\npush 2 58770\npush 3 75723\npush 0 78943\npop 5\npush 2 2603\npush 6 86264\npop 5\npush 7 85200\npop 3\npush 3 32875\npush 1 44019\npop 6\npop 6\npush 2 35860\npush 7 7561\npush 12 58855\npop 3\npop 7\npush 5 49093\npush 8 94944\npush 1 3913\npush 20 40699\npush 5 79822\npop 23\npop 14\npush 20 64985\npush 15 55894\npop 23\npush 30 55891\npop 18\npush 28 57961\npush 20 31568\npush 27 32429\npop 19\npop 35\npush 28 91157\npop 31\npush 25 22654\npush 34 49577\npop 34\npush 31 85320\npush 44 39974\npush 2 71491\npush 9 88748\npop 41\npop 8\npush 26 2294\npush 3 23227\npush 36 59175\npush 37 76898\npop 26\npop 29\npush 40 86187\npop 11\npush 34 63947\npop 6\npush 42 33361\npop 52\npush 38 30871\npush 21 46713\npush 41 40297\npush 21 71693\npush 23 88437\npush 0 68932\npush 15 39558\npush 23 20084\npush 47 35316\n",
+      "output": "47\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-78",
+      "input": "73\npush 0 33083\npush 0 49687\npush 0 89749\npop 1\npush 0 91423\npop 2\npush 6 60717\npush 2 59265\npop 2\npush 3 45115\npush 6 1159\npush 6 84621\npush 12 71223\npush 11 95347\npush 10 26816\npop 8\npop 11\npop 12\npush 3 44054\npush 12 86932\npop 10\npush 1 26304\npop 5\npush 23 10322\npush 24 10943\npush 0 14132\npush 9 55926\npush 20 38198\npop 25\npush 9 60123\npush 12 62803\npush 27 99950\npop 25\npop 31\npop 11\npop 13\npush 4 86241\npop 33\npop 5\npop 22\npop 19\npush 25 60271\npush 17 65170\npop 19\npush 43 66456\npush 24 21225\npush 31 89332\npush 41 83069\npush 48 71940\npop 5\npush 25 72444\npush 34 41595\npush 23 98029\npush 41 59693\npush 5 41274\npush 31 14540\npop 21\npush 30 67573\npush 6 11560\npush 12 21586\npush 18 44653\npush 51 42674\npush 34 90712\npush 39 8377\npop 5\npop 22\npush 11 55392\npush 23 92111\npush 66 68517\npush 65 14018\npush 38 38781\npush 69 43499\npop 70\n",
+      "output": "50\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-79",
+      "input": "32\npush 0 18816\npush 0 44409\npush 1 86584\npop 2\npop 2\npush 5 25603\npop 1\npush 5 97196\npush 6 36515\npush 0 60707\npush 10 87433\npush 10 59611\npush 10 78201\npush 4 72120\npush 5 58358\npush 10 36101\npop 12\npush 5 12478\npush 5 67759\npop 13\npop 16\npush 0 88296\npop 10\npush 16 9834\npop 22\npush 12 62578\npop 17\npush 22 58713\npush 21 69613\npush 27 51572\npop 26\npop 11\n",
+      "output": "21\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-80",
+      "input": "18\npush 0 53455\npush 0 83715\npop 1\npush 3 33217\npush 3 35183\npop 1\npush 4 81384\npop 1\npush 0 72542\npush 1 71774\npush 1 48167\npush 9 55783\npush 12 53680\npop 5\npush 8 374\npush 3 30238\npush 6 56199\npush 2 51751\n",
+      "output": "14\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-81",
+      "input": "58\npush 0 60044\npush 1 71808\npop 1\npush 3 54500\npush 3 34147\npush 3 74757\npush 3 10000\npush 2 64606\npush 4 76287\npush 0 38565\npush 4 71687\npop 6\npush 12 67943\npush 1 82528\npush 10 68160\npop 7\npop 8\npush 12 2045\npush 16 50053\npush 17 99412\npop 9\npop 13\npush 3 58303\npush 10 1484\npop 14\npush 23 24393\npush 18 76130\npush 14 34713\npush 25 18677\npush 9 10563\npush 30 29162\npush 12 43873\npush 1 73445\npop 24\npush 15 63663\npush 34 43754\npop 10\npop 33\npush 33 99673\npop 1\npush 4 64946\npush 10 66176\npush 4 91191\npush 38 43523\npush 22 77308\npush 15 6189\npush 20 8290\npush 1 41772\npush 38 98254\npop 18\npop 26\npush 23 97963\npop 52\npush 47 20743\npush 44 79971\npush 28 35347\npush 23 46813\npop 14\n",
+      "output": "43\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-82",
+      "input": "54\npush 0 16765\npush 0 28355\npush 2 84593\npop 3\npush 0 84346\npop 1\npush 2 99405\npush 0 19770\npop 8\npop 3\npush 2 95303\npop 2\npush 0 49787\npush 7 42086\npush 14 15589\npop 8\npop 1\npush 17 64861\npop 10\npush 10 4006\npush 1 81710\npop 8\npush 12 74496\npush 5 19001\npop 11\npush 22 88334\npush 18 95759\npush 13 16032\npush 17 7558\npop 28\npush 2 95757\npush 25 38042\npush 24 54008\npush 4 23320\npop 14\npop 8\npush 2 59395\npush 21 1098\npush 2 5706\npush 21 97131\npush 0 15882\npush 21 4989\npush 33 43652\npush 9 43340\npop 34\npush 3 54841\npush 0 78714\npush 41 68055\npop 42\npop 15\npush 28 98786\npush 22 90959\npop 42\npop 25\n",
+      "output": "36\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-83",
+      "input": "47\npush 0 32986\npush 1 65803\npop 2\npush 1 14018\npop 3\npush 2 46388\npush 0 39697\npush 1 45572\npop 3\npush 1 51482\npush 5 37004\npush 9 51700\npop 12\npush 1 48967\npush 4 20795\npush 4 82617\npop 15\npush 11 24003\npop 4\npush 5 38839\npop 10\npush 13 986\npush 11 14138\npush 15 4349\npush 12 81370\npush 0 46391\npop 18\npush 12 86212\npop 11\npop 15\npush 8 80631\npush 8 49211\npush 31 17421\npush 33 92051\npop 32\npush 24 98381\npush 26 99780\npop 22\npush 12 92427\npush 24 65394\npush 29 49704\npush 12 39312\npop 33\npush 4 39808\npop 37\npush 20 19625\npush 20 59684\n",
+      "output": "33\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-84",
+      "input": "18\npush 0 48762\npush 0 48910\npop 1\npush 0 69521\npop 2\npush 0 27256\npush 3 73654\npop 2\npush 4 66181\npush 0 75845\npop 2\npush 9 33705\npop 1\npush 11 88146\npush 3 40904\npush 3 47589\npush 4 43623\npop 6\n",
+      "output": "12\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-85",
+      "input": "82\npush 0 87051\npush 0 13444\npush 0 84295\npush 1 56295\npush 0 45697\npush 1 21544\npop 3\npush 7 41911\npush 6 23148\npush 5 55100\npush 7 4264\npush 0 1094\npush 8 12061\npop 10\npush 13 39665\npush 4 37827\npush 4 29090\npop 13\npush 16 5863\npush 13 13024\npush 3 6230\npop 21\npush 2 11253\npop 13\npush 15 31982\npop 1\npush 0 51358\npush 19 23035\npush 20 98643\npop 6\npush 10 73030\npop 15\npop 19\npop 25\npop 12\npush 28 84940\npush 12 48730\npush 37 48175\npop 5\npush 7 58964\npush 30 26751\npush 6 89066\npop 5\npush 27 25863\npush 1 63506\npush 5 51583\npush 26 51487\npop 10\npop 29\npush 41 89088\npush 36 12618\npop 34\npush 43 24793\npop 17\npop 25\npush 22 4024\npop 21\npush 24 18640\npop 11\npush 47 27506\npop 54\npop 40\npop 44\npush 29 33739\npush 43 53701\npush 7 22395\npop 9\npush 60 55255\npop 65\npush 5 78932\npush 64 61935\npush 19 14846\npop 10\npop 42\npush 12 96648\npush 55 74500\npush 45 49135\npush 9 31727\npush 42 76772\npush 62 51436\npush 20 88998\npop 53\n",
+      "output": "54\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-86",
+      "input": "62\npush 0 17654\npush 1 67070\npush 0 59980\npush 3 90697\npush 3 74100\npop 5\npush 1 48282\npush 5 52985\npush 1 37570\npush 7 35634\npop 10\npop 4\npop 2\npush 13 47352\npush 8 92983\npush 6 37669\npush 15 65542\npush 11 99937\npush 4 76021\npop 7\npop 12\npop 3\npush 22 89668\npop 17\npush 9 31438\npush 1 50576\npush 21 26104\npop 24\npush 9 31086\npop 11\npop 2\npush 19 34966\npop 30\npush 2 87346\npush 28 33716\npush 5 42948\npop 31\npush 20 80593\npush 17 4021\npush 24 809\npop 35\npush 19 50533\npush 30 98652\npush 27 28958\npush 14 7711\npush 33 13773\npop 9\npop 41\npop 39\npush 8 50366\npush 6 1033\npush 0 48971\npush 45 9970\npop 42\npop 45\npush 43 68460\npush 12 44806\npush 31 55572\npush 14 16506\npush 22 46284\npop 14\npop 50\n",
+      "output": "41\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-87",
+      "input": "34\npush 0 20554\npush 1 27389\npop 2\npop 3\npush 3 58948\npush 3 14306\npush 4 17775\npush 7 71584\npush 8 19820\npush 1 39346\npush 7 39374\npush 0 4898\npush 2 3958\npop 12\npush 10 78095\npop 15\npop 12\npop 16\npush 14 6914\npop 6\npush 18 95143\npush 2 15453\npush 0 58\npush 18 55387\npush 14 3470\npop 25\npop 20\npush 20 87588\npush 13 2454\npush 3 10692\npush 9 55407\npop 31\npop 13\npush 21 58837\n",
+      "output": "23\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-88",
+      "input": "83\npush 0 13334\npush 0 88758\npush 1 8697\npush 0 69124\npush 0 83944\npop 3\npush 1 33987\npush 7 82488\npop 7\npush 3 9090\npush 3 79105\npush 0 97273\npop 8\npush 12 19371\npush 12 34596\npush 6 79412\npop 5\npop 10\npush 0 22513\npush 4 19545\npop 9\npush 5 25757\npush 17 70485\npush 10 99576\npush 4 87934\npop 19\npop 1\npush 7 29396\npush 10 29572\npop 22\npop 11\npush 29 81225\npush 32 71363\npush 21 18580\npush 26 92256\npush 33 59636\npop 3\npop 25\npop 8\npush 4 49544\npush 40 35976\npop 10\npop 28\npush 2 56865\npush 15 71468\npush 27 38545\npop 4\npop 10\npush 47 72336\npop 9\npush 26 48420\npush 12 13973\npush 5 55950\npop 46\npush 53 52475\npush 16 57705\npop 3\npush 23 6204\npop 43\npush 44 5804\npop 41\npush 21 85140\npush 47 95582\npush 21 16534\npop 41\npush 26 21338\npush 31 70457\npush 7 12646\npop 16\npush 38 80410\npop 41\npush 36 88568\npop 4\npop 41\npush 37 81425\npush 13 12956\npop 13\npush 68 76693\npush 6 46931\npop 74\npop 42\npush 14 37376\npush 1 3686\n",
+      "output": "53\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-89",
+      "input": "12\npush 0 89127\npush 1 86350\npush 2 70060\npop 2\npush 4 15047\npop 2\npop 6\npush 1 70760\npush 6 49105\npush 0 60859\npush 7 43646\npush 7 73800\n",
+      "output": "9\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-90",
+      "input": "91\npush 0 99301\npush 0 58062\npush 0 79261\npop 3\npush 3 84407\npush 0 10900\npush 6 23940\npop 5\npop 2\npop 1\npop 1\npush 11 41180\npush 9 72345\npush 4 96919\npush 13 76137\npush 8 67300\npush 0 38180\npush 7 69405\npush 17 10581\npush 15 7519\npush 0 18930\npush 13 49040\npush 6 4187\npush 0 5782\npop 15\npop 20\npop 23\npush 21 595\npush 12 68936\npush 27 76365\npush 29 96338\npop 8\npop 6\npush 1 65543\npush 10 71978\npush 24 26845\npush 22 65660\npush 1 89463\npop 25\npop 30\npush 20 87654\npush 39 66914\npop 36\npush 1 57724\npush 43 89298\npush 1 13243\npush 1 52574\npop 8\npop 2\npush 20 26426\npush 0 23369\npush 45 85730\npop 30\npop 24\npush 31 11974\npush 1 26483\npush 4 75907\npop 51\npush 35 33243\npop 40\npop 59\npop 52\npush 52 26502\npop 31\npush 1 80338\npush 39 39353\npush 1 22453\npush 4 61880\npush 52 44801\npop 65\npush 60 81896\npop 44\npop 36\npush 72 19350\npush 40 31779\npush 64 94021\npush 50 44838\npush 23 47408\npop 6\npush 50 96965\npush 39 29387\npop 27\npush 33 28005\npush 29 63369\npush 10 4462\npush 11 87549\npop 57\npush 54 71345\npop 81\npush 77 40889\npush 48 72334\n",
+      "output": "62\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-91",
+      "input": "91\npush 0 65884\npop 1\npop 1\npush 0 55972\npush 3 92348\npop 1\npop 5\npop 1\npush 5 28390\npop 5\npush 6 69268\npush 2 9170\npush 10 23819\npush 6 29167\npush 8 41145\npush 12 54105\npop 14\npush 17 27562\npush 8 30210\npush 8 96195\npush 13 17685\npop 19\npush 4 3090\npush 0 14469\npush 24 71144\npush 1 23567\npush 22 76108\npush 6 66550\npush 3 4866\npop 24\npush 15 64054\npop 19\npush 28 4486\npush 17 17473\npush 29 77507\npop 29\npush 7 17321\npush 25 1158\npush 34 78144\npush 7 24807\npop 15\npush 38 24656\npush 12 51713\npop 13\npush 17 24505\npush 17 60418\npop 42\npush 26 89408\npush 6 71527\npush 28 50724\npush 0 45241\npush 10 51943\npush 29 55979\npop 46\npop 5\npop 31\npush 2 33855\npop 27\npop 37\npop 15\npush 10 89467\npop 48\npush 17 71900\npush 15 52941\npush 0 41023\npush 48 93180\npush 55 91423\npush 31 63798\npop 28\npop 50\npush 66 88712\npush 48 7984\npop 40\npush 26 58277\npop 51\npush 38 79260\npush 16 1419\npop 5\npush 36 76073\npush 29 82953\npush 15 9819\npush 51 89004\npush 32 5127\npop 61\npop 5\npop 9\npush 7 45025\npush 55 17451\npop 51\npush 40 79140\npush 61 11450\n",
+      "output": "61\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-92",
+      "input": "56\npush 0 80861\npush 1 53114\npush 1 91304\npop 3\npop 3\npop 1\npush 6 41616\npush 0 94937\npush 6 86151\npush 2 32106\npop 5\npop 1\npop 4\npush 2 81973\npush 14 15405\npush 5 78374\npush 11 78970\npop 14\npop 10\npush 19 3462\npop 10\npush 11 20608\npush 17 66327\npush 13 9774\npush 2 16914\npop 7\npop 16\npop 7\npop 17\npush 11 50090\npush 9 35965\npush 6 6486\npush 32 71640\npop 33\npop 32\npush 10 2472\npop 36\npush 35 13493\npush 13 82263\npush 20 99272\npop 7\npush 26 82276\npush 29 97739\npush 34 44500\npop 4\npop 20\npop 8\npush 27 17017\npush 48 51257\npush 47 69751\npush 18 63560\npush 8 29284\npush 12 1671\npop 36\npush 21 47832\npush 12 37498\n",
+      "output": "35\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-93",
+      "input": "67\npush 0 66672\npush 0 99985\npush 0 63100\npop 3\npush 4 3433\npush 0 1485\npush 0 60308\npush 0 47835\npush 8 50402\npush 3 15506\npush 4 6913\npush 11 64770\npush 1 68300\npush 3 98096\npush 3 68365\npop 9\npush 3 1901\npush 14 71568\npush 0 12125\npush 4 28408\npush 18 92445\npush 20 23179\npush 18 3283\npush 17 35268\npush 14 50631\npop 5\npush 25 47016\npop 17\npush 21 40170\npush 15 75213\npop 19\npush 15 85949\npush 3 30130\npush 28 84593\npush 18 812\npush 31 61589\npop 33\npush 18 86692\npush 3 58153\npush 25 28357\npop 8\npush 17 55737\npop 34\npush 10 98742\npop 19\npush 22 49210\npush 22 98588\npop 42\npop 2\npop 1\npush 4 47680\npush 16 2262\npush 50 68612\npop 30\npush 25 40190\npop 15\npush 48 74128\npush 38 80861\npush 44 57614\npop 34\npush 28 10735\npush 46 51415\npop 38\npush 31 99684\npop 55\npush 4 30521\npop 17\n",
+      "output": "49\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-94",
+      "input": "38\npush 0 83458\npush 0 89317\npush 0 35908\npush 0 38244\npop 4\npush 0 84302\npush 3 80966\npush 5 70551\npush 0 1676\npush 5 67252\npush 3 65977\npop 10\npush 0 93681\npush 7 44238\npush 2 17974\npop 2\npush 8 59737\npop 8\npush 16 76269\npush 11 70643\npush 17 26455\npush 10 36410\npush 9 70193\npush 18 75594\npush 7 68656\npush 3 62040\npush 26 10459\npop 20\npop 6\npush 21 41429\npush 30 70807\npush 7 43904\npush 6 41173\npop 10\npush 3 66932\npush 13 14460\npush 19 55232\npush 1 59867\n",
+      "output": "31\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-95",
+      "input": "14\npush 0 64805\npush 0 46605\npush 2 91978\npush 2 39794\npush 2 92585\npush 0 93822\npush 6 82765\npush 6 35695\npush 3 56881\npush 1 42208\npush 6 97346\npush 1 41639\npop 11\npush 12 86888\n",
+      "output": "13\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-96",
+      "input": "93\npush 0 30344\npush 1 64279\npop 2\npush 1 41596\npop 2\npush 4 71549\npop 2\npush 3 54419\npush 7 79244\npush 4 88025\npush 3 28821\npop 10\npush 3 96934\npush 2 62768\npop 2\npush 15 85584\npop 7\npush 17 99369\npush 12 35687\npush 7 62156\npush 3 22058\npush 19 91554\npush 8 40744\npop 15\npop 6\npop 12\npush 12 91487\npop 3\npop 6\npop 26\npush 1 1951\npop 18\npush 2 50106\npush 10 60070\npush 25 15766\npush 32 48094\npop 7\npop 11\npush 35 17242\npush 9 76559\npush 5 78241\npush 29 79579\npush 18 1605\npush 10 13945\npush 26 40583\npush 30 38930\npush 39 26407\npush 45 32439\npush 43 13826\npush 7 60426\npush 34 45741\npush 16 8325\npush 32 39266\npop 21\npush 45 21238\npush 32 40707\npop 41\npush 54 30978\npush 53 3641\npush 28 90526\npush 24 57206\npop 49\npush 62 18225\npop 35\npop 5\npush 19 16306\npop 49\npop 23\npush 60 74348\npop 5\npush 50 87191\npush 53 89521\npop 10\npop 25\npush 63 45398\npush 66 35956\npush 33 56072\npop 9\npop 34\npush 37 41645\npush 71 49979\npush 77 19386\npush 70 31274\npush 54 39999\npush 15 39695\npop 38\npush 9 61264\npush 44 76069\npush 77 32764\npop 11\npush 33 8841\npush 21 30238\npush 17 12982\n",
+      "output": "64\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-97",
+      "input": "73\npush 0 97560\npush 1 90079\npush 1 62976\npop 3\npush 2 31375\npush 5 71897\npush 0 75640\npush 7 83177\npush 3 67151\npush 8 44388\npop 2\npop 3\npush 8 84450\npop 7\npop 8\npop 10\npush 3 48875\npush 7 74565\npop 5\npush 5 65357\npop 7\npush 15 28700\npush 3 67313\npush 6 26005\npop 8\npush 13 3275\npush 2 3514\npush 11 85483\npush 19 67991\npush 12 69388\npop 17\npush 23 27724\npop 12\npop 16\npush 6 66490\npush 31 85250\npop 4\npush 31 48131\npush 9 29242\npush 23 78974\npush 11 65258\npush 10 76613\npop 3\npush 28 45498\npop 20\npush 39 86609\npop 16\npop 11\npop 25\npush 8 51560\npush 21 58970\npush 48 21147\npop 28\npush 18 13254\npush 46 31089\npush 43 55988\npop 36\npush 48 70252\npop 32\npush 11 7847\npush 38 90788\npush 54 65944\npush 20 82258\npush 62 99937\npush 33 13466\npop 28\npush 26 15880\npush 20 63312\npop 22\npop 17\npush 28 63012\npop 8\npush 10 43013\n",
+      "output": "48\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-98",
+      "input": "21\npush 0 41261\npush 0 90161\npop 2\npush 3 35015\npush 0 34482\npop 2\npush 4 91718\npush 0 2751\npop 8\npush 8 45957\npush 3 77121\npop 11\npush 6 9239\npush 7 14006\npush 2 73619\npush 13 9773\npop 8\npush 14 85208\npush 8 78596\npush 16 32551\npop 2\n",
+      "output": "15\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-99",
+      "input": "92\npush 0 55492\npop 1\npush 0 58653\npush 0 68404\npush 1 78582\npush 4 70292\npop 1\npush 7 74721\npush 6 91104\npush 7 9822\npop 1\npop 9\npush 2 24091\npush 0 58083\npush 0 63684\npop 3\npush 14 50515\npush 8 24171\npush 7 56579\npop 14\npop 10\npush 20 77545\npop 12\npop 22\npush 19 34391\npush 4 3897\npop 12\npop 1\npop 15\npush 14 55839\npop 12\npush 3 60137\npop 17\npop 32\npop 1\npush 23 14981\npop 12\npush 18 13441\npush 2 72073\npush 21 53002\npop 34\npush 32 27666\npush 27 35961\npush 41 33855\npush 16 83767\npop 15\npush 1 68354\npop 31\npush 7 92918\npush 46 59702\npush 7 76118\npush 26 39858\npush 7 21858\npush 24 33821\npush 23 33803\npush 14 55629\npush 3 19974\npush 0 37675\npop 18\npush 58 66806\npop 50\npush 37 78671\npush 7 5952\npop 25\npush 34 38406\npush 62 45482\npush 51 38255\npush 38 18050\npush 12 97523\npush 46 55512\npush 21 87558\npush 71 16262\npush 4 63333\npush 29 83879\npush 61 35012\npush 58 90305\npush 11 63957\npush 14 18267\npush 6 75878\npop 74\npop 69\npush 72 20724\npop 82\npush 67 71495\npush 58 48807\npop 65\npush 84 53220\npush 80 94246\npush 78 83530\npush 37 8468\npush 58 31379\npop 58\n",
+      "output": "64\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-100",
+      "input": "31\npush 0 78383\npush 0 41124\npush 0 66299\npush 1 4388\npop 2\npush 5 33635\npush 5 32847\npush 5 79485\npop 8\npush 2 92052\npush 8 2351\npush 5 22467\npush 1 16653\npush 0 25242\npush 7 97481\npush 12 68937\npush 9 70464\npop 2\npush 12 79486\npop 7\npush 10 84776\npush 0 14687\npush 18 33740\npush 19 59192\npush 9 58480\npush 24 21567\npush 24 68715\npush 23 44081\npush 3 53271\npush 20 32810\npush 2 39373\n",
+      "output": "27\n",
+      "origin": "generated"
+    }
+  ]
+}

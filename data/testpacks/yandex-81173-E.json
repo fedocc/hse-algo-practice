@@ -1,0 +1,618 @@
+{
+  "schema_version": 1,
+  "problem_id": "yandex-81173-E",
+  "language": "python3",
+  "comparison": "tokens",
+  "timeout_seconds": 2,
+  "total_timeout_seconds": 30,
+  "provenance": {
+    "kind": "generated",
+    "title": "100 локальных проверок, включая примеры условия",
+    "source_url": "https://official.contest.yandex.ru/contest/81173/problems/E/",
+    "generator": "testpacks/generate_strings.py; seed fedor-string-tests-v1:81173-E",
+    "oracle": "Полный перебор коротких строк; для длинных — DP по буквальным суффиксам, без бора и Ахо–Корасик",
+    "notes": "Неофициальные тренировочные тесты: опубликованные примеры и независимая локальная генерация. Это не скрытые тесты Яндекс.Контеста и не полная проверка предельной производительности. Большие случаи ограничены безопасным объёмом вывода локального Python-исполнителя."
+  },
+  "cases": [
+    {
+      "id": "source-example-1",
+      "input": "2 3 1\nab\nbb\n",
+      "output": "5\n",
+      "origin": "statement-example"
+    },
+    {
+      "id": "boundary-1",
+      "input": "1 1 0\na\n",
+      "output": "1\n",
+      "origin": "generated-boundary"
+    },
+    {
+      "id": "boundary-2",
+      "input": "1 1 1\na\na\n",
+      "output": "0\n",
+      "origin": "generated-boundary"
+    },
+    {
+      "id": "boundary-3",
+      "input": "1 100 1\na\naaaaaaaaaa\n",
+      "output": "0\n",
+      "origin": "generated-boundary"
+    },
+    {
+      "id": "boundary-4",
+      "input": "2 1 0\nab\n",
+      "output": "2\n",
+      "origin": "generated-boundary"
+    },
+    {
+      "id": "boundary-5",
+      "input": "2 1 1\nab\na\n",
+      "output": "1\n",
+      "origin": "generated-boundary"
+    },
+    {
+      "id": "boundary-6",
+      "input": "2 1 2\nab\na\nb\n",
+      "output": "0\n",
+      "origin": "generated-boundary"
+    },
+    {
+      "id": "boundary-7",
+      "input": "2 6 3\nab\na\naa\naaa\n",
+      "output": "1\n",
+      "origin": "generated-boundary"
+    },
+    {
+      "id": "boundary-8",
+      "input": "2 6 2\nab\nab\nba\n",
+      "output": "2\n",
+      "origin": "generated-boundary"
+    },
+    {
+      "id": "boundary-9",
+      "input": "2 7 2\nab\naba\nbab\n",
+      "output": "42\n",
+      "origin": "generated-boundary"
+    },
+    {
+      "id": "boundary-10",
+      "input": "3 6 3\nabc\naa\nbc\ncab\n",
+      "output": "148\n",
+      "origin": "generated-boundary"
+    },
+    {
+      "id": "boundary-11",
+      "input": "3 5 2\n0!?\n!?\n0\n",
+      "output": "6\n",
+      "origin": "generated-boundary"
+    },
+    {
+      "id": "boundary-12",
+      "input": "2 8 2\naA\naa\nAA\n",
+      "output": "2\n",
+      "origin": "generated-boundary"
+    },
+    {
+      "id": "boundary-13",
+      "input": "3 3 1\nabc\nabc\n",
+      "output": "26\n",
+      "origin": "generated-boundary"
+    },
+    {
+      "id": "boundary-14",
+      "input": "3 3 3\nabc\na\nb\nc\n",
+      "output": "0\n",
+      "origin": "generated-boundary"
+    },
+    {
+      "id": "boundary-15",
+      "input": "2 4 3\nab\nab\naba\nabab\n",
+      "output": "5\n",
+      "origin": "generated-boundary"
+    },
+    {
+      "id": "boundary-16",
+      "input": "3 4 2\nzyx\nxy\nyz\n",
+      "output": "37\n",
+      "origin": "generated-boundary"
+    },
+    {
+      "id": "stress-1",
+      "input": "80 100 0\n!\"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnop\n",
+      "output": "834490810\n",
+      "origin": "generated-stress"
+    },
+    {
+      "id": "stress-2",
+      "input": "26 100 0\nabcdefghijklmnopqrstuvwxyz\n",
+      "output": "449141237\n",
+      "origin": "generated-stress"
+    },
+    {
+      "id": "stress-3",
+      "input": "2 100 1\nab\nbb\n",
+      "output": "470199269\n",
+      "origin": "generated-stress"
+    },
+    {
+      "id": "stress-4",
+      "input": "3 100 4\nabc\nab\nbc\nca\naaa\n",
+      "output": "322671829\n",
+      "origin": "generated-stress"
+    },
+    {
+      "id": "stress-5",
+      "input": "3 100 3\nabc\na\nb\nc\n",
+      "output": "0\n",
+      "origin": "generated-stress"
+    },
+    {
+      "id": "stress-6",
+      "input": "80 2 2\n!\"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnop\n!\"\n\"#\n",
+      "output": "6398\n",
+      "origin": "generated-stress"
+    },
+    {
+      "id": "stress-7",
+      "input": "1 100 10\na\na\naa\naaa\naaaa\naaaaa\naaaaaa\naaaaaaa\naaaaaaaa\naaaaaaaaa\naaaaaaaaaa\n",
+      "output": "0\n",
+      "origin": "generated-stress"
+    },
+    {
+      "id": "generated-25",
+      "input": "2 2 1\n01\n00\n",
+      "output": "3\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-26",
+      "input": "3 4 10\n012\n1201\n1210\n221\n0012\n2001\n2022\n1220\n2002\n2121\n1202\n",
+      "output": "66\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-27",
+      "input": "3 1 3\n!@#\n#\n@\n!\n",
+      "output": "0\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-28",
+      "input": "2 7 2\nab\naab\nabab\n",
+      "output": "39\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-29",
+      "input": "3 5 1\naAz\naAAa\n",
+      "output": "237\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-30",
+      "input": "3 4 5\naAz\nAaAz\naAzA\nzzAz\naAAz\nzAaz\n",
+      "output": "76\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-31",
+      "input": "2 6 10\n01\n101\n111\n001\n0011\n010\n1\n0100\n011\n0010\n000\n",
+      "output": "0\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-32",
+      "input": "2 8 2\n01\n0111\n1\n",
+      "output": "1\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-33",
+      "input": "3 6 4\nabc\ncc\nbaaa\ncaac\nc\n",
+      "output": "52\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-34",
+      "input": "2 9 2\n01\n111\n101\n",
+      "output": "104\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-35",
+      "input": "2 7 3\n01\n0001\n1011\n100\n",
+      "output": "19\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-36",
+      "input": "3 6 2\n!@#\n!@!#\n@#@#\n",
+      "output": "676\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-37",
+      "input": "3 2 2\n!@#\n@\n##\n",
+      "output": "3\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-38",
+      "input": "2 9 6\n01\n0101\n011\n10\n00\n1001\n11\n",
+      "output": "0\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-39",
+      "input": "3 2 1\n012\n22\n",
+      "output": "8\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-40",
+      "input": "2 4 3\nab\nbbab\nab\nabb\n",
+      "output": "5\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-41",
+      "input": "3 3 9\n!@#\n!!\n##\n@@\n!#!\n#@#\n#!\n@##\n##!\n#@\n",
+      "output": "4\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-42",
+      "input": "3 3 9\nabc\nbcc\ncac\nb\nba\ncbc\nbba\nab\nbbc\nbaa\n",
+      "output": "7\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-43",
+      "input": "3 6 5\n!@#\n#@@@\n@@#@\n!!##\n#@#!\n!@@\n",
+      "output": "525\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-44",
+      "input": "2 5 0\nab\n",
+      "output": "32\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-45",
+      "input": "3 5 8\n012\n1220\n1000\n2201\n222\n12\n2022\n0111\n0112\n",
+      "output": "112\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-46",
+      "input": "3 4 0\n012\n",
+      "output": "81\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-47",
+      "input": "2 1 2\n01\n0\n1\n",
+      "output": "0\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-48",
+      "input": "2 2 3\nab\naa\nba\na\n",
+      "output": "1\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-49",
+      "input": "3 4 9\n012\n0212\n2122\n0122\n1100\n20\n111\n1002\n0020\n1121\n",
+      "output": "44\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-50",
+      "input": "2 4 9\nab\nbb\nab\nbbbb\nabba\na\nabab\nbab\nb\nbabb\n",
+      "output": "0\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-51",
+      "input": "2 8 5\n01\n1011\n010\n111\n11\n1101\n",
+      "output": "4\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-52",
+      "input": "3 5 7\n!@#\n#@!#\n!@@#\n!#!\n!!@#\n!#@!\n!@@!\n@@#!\n",
+      "output": "184\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-53",
+      "input": "3 4 0\naAz\n",
+      "output": "81\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-54",
+      "input": "3 1 1\nabc\nb\n",
+      "output": "2\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-55",
+      "input": "3 5 0\nabc\n",
+      "output": "243\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-56",
+      "input": "2 5 3\n01\n010\n111\n001\n",
+      "output": "7\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-57",
+      "input": "3 6 6\n!@#\n#!#!\n@@@#\n##@!\n##!#\n#!#@\n##@#\n",
+      "output": "581\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-58",
+      "input": "3 7 10\n!@#\n@!@@\n!#@!\n!!##\n@#@@\n@!##\n##@\n#!#!\n#@!!\n!!@@\n#!!\n",
+      "output": "860\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-59",
+      "input": "2 8 8\nab\nbbaa\nbabb\naab\naaab\nabab\naabb\nbb\nbbbb\n",
+      "output": "4\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-60",
+      "input": "3 3 10\naAz\naaz\naa\nzAz\naza\nzzA\nzAa\nzAA\nAz\nzza\nAA\n",
+      "output": "8\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-61",
+      "input": "2 4 5\n01\n001\n100\n1101\n1111\n011\n",
+      "output": "4\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-62",
+      "input": "2 1 1\n01\n0\n",
+      "output": "1\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-63",
+      "input": "2 4 7\nab\nbaaa\nb\naaaa\nabab\naaba\nabba\naaab\n",
+      "output": "0\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-64",
+      "input": "3 7 5\nabc\naabc\nbcac\naacb\nacaa\ncacb\n",
+      "output": "1704\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-65",
+      "input": "3 5 5\n!@#\n!##@\n@!!\n@@\n#!#@\n!!#\n",
+      "output": "116\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-66",
+      "input": "3 6 8\n!@#\n@@#!\n@@#@\n##!@\n!@!#\n#@#\n!#@!\n!#!\n#@@\n",
+      "output": "336\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-67",
+      "input": "2 7 6\n01\n0110\n1111\n1100\n1101\n0011\n100\n",
+      "output": "13\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-68",
+      "input": "2 7 7\nab\nb\nbab\naaaa\naba\nba\naa\nbbaa\n",
+      "output": "0\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-69",
+      "input": "3 8 4\n012\n2011\n0110\n1211\n1010\n",
+      "output": "5146\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-70",
+      "input": "3 1 3\nabc\nc\na\nb\n",
+      "output": "0\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-71",
+      "input": "3 4 2\naAz\nAAza\nAazz\n",
+      "output": "79\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-72",
+      "input": "3 7 4\naAz\nzaa\naza\nazza\nAAaa\n",
+      "output": "1391\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-73",
+      "input": "3 4 10\nabc\ncaba\nbaba\nbc\nabab\ncc\nccac\nbcab\nbcc\nc\nbbca\n",
+      "output": "14\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-74",
+      "input": "3 6 2\nabc\nccaa\nabcc\n",
+      "output": "676\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-75",
+      "input": "3 1 0\n!@#\n",
+      "output": "3\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-76",
+      "input": "3 3 9\n012\n102\n201\n22\n222\n20\n0\n110\n100\n12\n",
+      "output": "2\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-77",
+      "input": "3 5 6\nabc\ncbab\ncccc\ncb\nacc\nbcb\ncba\n",
+      "output": "122\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-78",
+      "input": "2 3 8\nab\nabb\nbab\na\naaa\nbaa\nbb\nbba\nba\n",
+      "output": "0\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-79",
+      "input": "3 1 2\n012\n2\n1\n",
+      "output": "1\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-80",
+      "input": "2 7 7\nab\nabb\nbbb\nba\naaba\naabb\nb\nabbb\n",
+      "output": "1\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-81",
+      "input": "3 3 3\n012\n10\n01\n010\n",
+      "output": "17\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-82",
+      "input": "2 8 8\nab\naaba\nbbab\nbb\nbbba\nb\nabba\nabbb\nbbaa\n",
+      "output": "1\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-83",
+      "input": "3 2 8\nabc\ncb\nba\na\nbc\naa\nbb\nb\nab\n",
+      "output": "1\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-84",
+      "input": "2 2 0\n01\n",
+      "output": "4\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-85",
+      "input": "2 3 1\nab\naaa\n",
+      "output": "7\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-86",
+      "input": "3 3 2\nabc\nacb\ncba\n",
+      "output": "25\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-87",
+      "input": "2 2 3\nab\nb\na\nbb\n",
+      "output": "0\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-88",
+      "input": "3 8 5\nabc\naaba\nbccc\nbcac\naa\naba\n",
+      "output": "2200\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-89",
+      "input": "2 5 7\nab\nbbaa\nabab\na\naaa\nbbab\nabbb\naaab\n",
+      "output": "1\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-90",
+      "input": "3 2 10\n!@#\n!@\n#\n!#\n!\n#!\n##\n#@\n@!\n@\n@@\n",
+      "output": "0\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-91",
+      "input": "3 1 0\naAz\n",
+      "output": "3\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-92",
+      "input": "2 1 0\n01\n",
+      "output": "2\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-93",
+      "input": "2 8 6\n01\n0000\n0111\n1001\n1111\n10\n001\n",
+      "output": "0\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-94",
+      "input": "2 5 4\n01\n0111\n1110\n0001\n0100\n",
+      "output": "17\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-95",
+      "input": "3 8 3\n!@#\n@!@@\n@@@@\n@@@\n",
+      "output": "5257\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-96",
+      "input": "3 3 3\naAz\nzza\nAaA\naAA\n",
+      "output": "24\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-97",
+      "input": "3 1 2\n012\n0\n1\n",
+      "output": "1\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-98",
+      "input": "3 2 5\n!@#\n!@\n#\n!#\n##\n@@\n",
+      "output": "2\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-99",
+      "input": "3 4 8\n012\n1112\n1121\n02\n0111\n002\n2020\n01\n21\n",
+      "output": "14\n",
+      "origin": "generated"
+    },
+    {
+      "id": "generated-100",
+      "input": "2 9 0\nab\n",
+      "output": "512\n",
+      "origin": "generated"
+    }
+  ]
+}

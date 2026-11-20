@@ -1,0 +1,20 @@
+{
+  "manifest_version": 3,
+  "name": "Algo Practice — Dia Bridge",
+  "description": "Локальные задачи, импорт материалов и отправка Python-решений через открытый аккаунт.",
+  "version": "0.1.0",
+  "permissions": ["scripting", "storage", "alarms"],
+  "host_permissions": [
+    "http://127.0.0.1:8765/*",
+    "http://localhost:8765/*",
+    "https://official.contest.yandex.ru/contest/*",
+    "https://leetcode.com/*"
+  ],
+  "background": {"service_worker": "background.js", "type": "module"},
+  "action": {"default_popup": "popup.html", "default_title": "Algo Practice — связь с Dia"},
+  "content_scripts": [{
+    "matches": ["http://127.0.0.1:8765/*", "http://localhost:8765/*"],
+    "js": ["trainer.js"],
+    "run_at": "document_idle"
+  }]
+}
